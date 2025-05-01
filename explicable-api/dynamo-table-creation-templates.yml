@@ -1,0 +1,136 @@
+resources:
+  Resources:
+    
+    #   Type: AWS::DynamoDB::Table
+    #   Properties:
+    #     TableName: Users
+    #     BillingMode: PAY_PER_REQUEST
+    #     AttributeDefinitions:
+    #       - AttributeName: user_id
+    #         AttributeType: N
+    #       - AttributeName: username
+    #         AttributeType: S
+    #       - AttributeName: time_zone
+    #         AttributeType: S
+    #       - AttributeName: created_at
+    #         AttributeType: S
+    #     KeySchema:
+    #       - AttributeName: user_id
+    #         KeyType: HASH
+    #     GlobalSecondaryIndexes:
+    #       - IndexName: UsernameIndex
+    #         KeySchema:
+    #           - AttributeName: username
+    #             KeyType: HASH
+    #           - AttributeName: created_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: TimeZoneCreatedAtIndex
+    #         KeySchema:
+    #           - AttributeName: time_zone
+    #             KeyType: HASH
+    #           - AttributeName: created_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+
+    # DecisionTreesTable:
+    #   Type: AWS::DynamoDB::Table
+    #   Properties:
+    #     TableName: DecisionTrees
+    #     BillingMode: PAY_PER_REQUEST
+    #     AttributeDefinitions:
+    #       - AttributeName: tree_id
+    #         AttributeType: S
+    #       - AttributeName: owner_id
+    #         AttributeType: N
+    #       - AttributeName: publication_status
+    #         AttributeType: S
+    #       - AttributeName: created_at
+    #         AttributeType: S
+    #       - AttributeName: updated_at
+    #         AttributeType: S
+    #     KeySchema:
+    #       - AttributeName: tree_id
+    #         KeyType: HASH
+    #     GlobalSecondaryIndexes:
+    #       - IndexName: OwnerIndex
+    #         KeySchema:
+    #           - AttributeName: owner_id
+    #             KeyType: HASH
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: OwnerCreatedAtIndex
+    #         KeySchema:
+    #           - AttributeName: owner_id
+    #             KeyType: HASH
+    #           - AttributeName: created_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: StatusUpdatedAtIndex
+    #         KeySchema:
+    #           - AttributeName: publication_status
+    #             KeyType: HASH
+    #           - AttributeName: updated_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+
+    # NodesTable:
+    #   Type: AWS::DynamoDB::Table
+    #   Properties:
+    #     TableName: Nodes
+    #     BillingMode: PAY_PER_REQUEST
+    #     AttributeDefinitions:
+    #       - AttributeName: node_id
+    #         AttributeType: S
+    #       - AttributeName: tree_id
+    #         AttributeType: S
+    #       - AttributeName: node_type
+    #         AttributeType: S
+    #       - AttributeName: created_at
+    #         AttributeType: S
+    #       - AttributeName: usage_views
+    #         AttributeType: N
+    #       - AttributeName: usage_selections
+    #         AttributeType: N
+    #     KeySchema:
+    #       - AttributeName: node_id
+    #         KeyType: HASH
+    #     GlobalSecondaryIndexes:
+    #       - IndexName: TreeCreatedAtIndex
+    #         KeySchema:
+    #           - AttributeName: tree_id
+    #             KeyType: HASH
+    #           - AttributeName: created_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: NodeTypeCreatedAtIndex
+    #         KeySchema:
+    #           - AttributeName: node_type
+    #             KeyType: HASH
+    #           - AttributeName: created_at
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: NodeTypeViewsIndex
+    #         KeySchema:
+    #           - AttributeName: node_type
+    #             KeyType: HASH
+    #           - AttributeName: usage_views
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+    #       - IndexName: NodeTypeSelectionsIndex
+    #         KeySchema:
+    #           - AttributeName: node_type
+    #             KeyType: HASH
+    #           - AttributeName: usage_selections
+    #             KeyType: RANGE
+    #         Projection:
+    #           ProjectionType: ALL
+
+    

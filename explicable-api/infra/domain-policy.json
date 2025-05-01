@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::730335210046:role/explicable-api-dev-us-east-2-lambdaRole"
+      },
+      "Action": [
+        "es:ESHttpGet",
+        "es:ESHttpPost",
+        "es:ESHttpPut",
+        "es:ESHttpDelete"
+      ],
+      "Resource": "arn:aws:es:us-east-2:730335210046:domain/explicable-search-domain/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:*",
+      "Resource": "arn:aws:es:us-east-2:730335210046:domain/explicable-search-domain/*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "149.102.228.74/32"
+        }
+      }
+    }
+  ]
+}

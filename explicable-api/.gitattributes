@@ -1,0 +1,28 @@
+# Enforce LF line endings for all text files
+* text=auto eol=lf
+
+# Explicitly declare shell and config scripts as text
+*.sh     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.env    text eol=lf
+
+# JavaScript and JSON
+*.js     text eol=lf
+*.mjs    text eol=lf
+*.json   text eol=lf
+
+# Markdown & docs
+*.md     text eol=lf
+
+# Prevent diffing on binary assets (if added later)
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.ico    binary
+*.zip    binary
+*.pdf    binary
+
+# Lock generated directories (ignored by .gitignore anyway)
+node_modules/ export-ignore
+.serverless/  export-ignore

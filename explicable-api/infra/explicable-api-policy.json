@@ -1,0 +1,54 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "DynamoDBAccess",
+        "Effect": "Allow",
+        "Action": [
+          "dynamodb:Scan",
+          "dynamodb:GetItem",
+          "dynamodb:Query",
+          "dynamodb:PutItem",
+          "dynamodb:UpdateItem",
+          "dynamodb:DeleteItem"
+        ],
+        "Resource": [
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Users",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Users/index/UsernameIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Users/index/TimeZoneCreatedAtIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/OwnerIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/OwnerCreatedAtIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/StatusUpdatedAtIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Nodes",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/TreeCreatedAtIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeCreatedAtIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeViewsIndex",
+          "arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeSelectionsIndex"
+        ]
+      },
+      {
+        "Sid": "OpenSearchAccess",
+        "Effect": "Allow",
+        "Action": [
+          "es:ESHttpGet",
+          "es:ESHttpPost",
+          "es:ESHttpPut",
+          "es:ESHttpDelete"
+        ],
+        "Resource": "arn:aws:es:us-east-2:730335210046:domain/explicable-search-domain/*"
+      },
+      {
+        "Sid": "ListDynamoTables",
+        "Effect": "Allow",
+        "Action": "dynamodb:ListTables",
+        "Resource": "*"
+      },
+      {
+        "Sid": "ListOpensearchDomains",
+        "Effect": "Allow",
+        "Action": "es:ListDomainNames",
+        "Resource": "*"
+      }
+    ]
+  }

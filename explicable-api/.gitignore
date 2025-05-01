@@ -1,0 +1,46 @@
+# Node.js dependencies
+node_modules/
+
+# Serverless build output
+.serverless/
+
+# AWS credentials and secrets
+.env
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific junk files
+.DS_Store
+Thumbs.db
+._*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+*.testlog
+*.out
+*.report
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.json.backup
+
+# Frontend build artifacts (optional)
+dist/
+build/
+
+# Test coverage (if added later)
+coverage/
+
+# Scripts
+scripts/*.sh
+!scripts/smoke-test-el-grande.sh
+!scripts/deploy.sh

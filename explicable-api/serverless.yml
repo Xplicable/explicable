@@ -1,0 +1,141 @@
+service: explicable-api
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-2
+  environment:
+    OPENSEARCH_ENDPOINT: ${env:OPENSEARCH_ENDPOINT}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - es:ESHttpGet
+        - es:ESHttpPost
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:Query
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - arn:aws:es:us-east-2:730335210046:domain/explicable-search-domain/*
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Users
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Users/index/UsernameIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Users/index/TimeZoneCreatedAtIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees
+        - arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/OwnerIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/OwnerCreatedAtIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/DecisionTrees/index/StatusUpdatedAtIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Nodes
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/TreeCreatedAtIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeCreatedAtIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeViewsIndex
+        - arn:aws:dynamodb:us-east-2:730335210046:table/Nodes/index/NodeTypeSelectionsIndex
+
+functions:
+  api:
+    handler: src/handler.handler
+    events:
+      - http:
+          path: users
+          method: get
+          private: true
+      - http:
+          path: users/{user_id}
+          method: get
+          private: true
+      - http:
+          path: users
+          method: post
+          private: true
+      - http:
+          path: users/{user_id}
+          method: patch
+          private: true
+      - http:
+          path: users/{user_id}
+          method: delete
+          private: true
+      - http:
+          path: decisionTrees
+          method: get
+          private: true
+      - http:
+          path: decisionTrees/{tree_id}
+          method: get
+          private: true
+      - http:
+          path: decisionTrees
+          method: post
+          private: true
+      - http:
+          path: decisionTrees/{tree_id}
+          method: patch
+          private: true
+      - http:
+          path: decisionTrees/{tree_id}
+          method: delete
+          private: true
+      - http:
+          path: nodes
+          method: get
+          private: true
+      - http:
+          path: nodes/{node_id}
+          method: get
+          private: true
+      - http:
+          path: nodes
+          method: post
+          private: true
+      - http:
+          path: nodes/{node_id}
+          method: patch
+          private: true
+      - http:
+          path: nodes/{node_id}
+          method: delete
+          private: true
+      - http:
+          path: /
+          method: any
+          private: false
+      - http:
+          path: /{proxy+}
+          method: any
+          private: true
+
+resources:
+  Resources:
+
+    ExplicableApiKey:
+      Type: AWS::ApiGateway::ApiKey
+      Properties:
+        Name: explicable-api-key
+        Enabled: true
+
+    ExplicableUsagePlan:
+      Type: AWS::ApiGateway::UsagePlan
+      Properties:
+        UsagePlanName: explicable-usage-plan
+        ApiStages:
+          - ApiId:
+              Ref: ApiGatewayRestApi
+            Stage: ${self:provider.stage}    # ← literal “dev”, not a Ref
+        Throttle:
+          BurstLimit: 200
+          RateLimit: 50
+        Quota:
+          Limit: 10000
+          Period: MONTH
+
+    ExplicableUsagePlanKey:
+      Type: AWS::ApiGateway::UsagePlanKey
+      Properties:
+        KeyId:
+          Ref: ExplicableApiKey
+        KeyType: API_KEY
+        UsagePlanId:
+          Ref: ExplicableUsagePlan
