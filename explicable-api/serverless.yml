@@ -42,74 +42,90 @@ functions:
           path: users
           method: get
           private: true
+          cors: true
       - http:
           path: users/{user_id}
           method: get
           private: true
+          cors: true
       - http:
           path: users
           method: post
           private: true
+          cors: true
       - http:
           path: users/{user_id}
           method: patch
           private: true
+          cors: true
       - http:
           path: users/{user_id}
           method: delete
           private: true
+          cors: true
       - http:
           path: decisionTrees
           method: get
           private: true
+          cors: true
       - http:
           path: decisionTrees/{tree_id}
           method: get
           private: true
+          cors: true
       - http:
           path: decisionTrees
           method: post
           private: true
+          cors: true
       - http:
           path: decisionTrees/{tree_id}
           method: patch
           private: true
+          cors: true
       - http:
           path: decisionTrees/{tree_id}
           method: delete
           private: true
+          cors: true
       - http:
           path: nodes
           method: get
           private: true
+          cors: true
       - http:
           path: nodes/{node_id}
           method: get
           private: true
+          cors: true
       - http:
           path: nodes
           method: post
           private: true
+          cors: true
       - http:
           path: nodes/{node_id}
           method: patch
           private: true
+          cors: true
       - http:
           path: nodes/{node_id}
           method: delete
           private: true
+          cors: true
       - http:
           path: /
           method: any
           private: false
+          cors: true
       - http:
           path: /{proxy+}
           method: any
           private: true
+          cors: true
 
 resources:
   Resources:
-
     ExplicableApiKey:
       Type: AWS::ApiGateway::ApiKey
       Properties:
@@ -123,7 +139,7 @@ resources:
         ApiStages:
           - ApiId:
               Ref: ApiGatewayRestApi
-            Stage: ${self:provider.stage}    # ← literal “dev”, not a Ref
+            Stage: ${self:provider.stage}
         Throttle:
           BurstLimit: 200
           RateLimit: 50
