@@ -9,6 +9,9 @@ import nodesRoutes from './routes/nodes.js';
 const app = express();
 app.use(express.json());
 
+import cors from 'cors';
+app.use(cors());
+
 app.use('/users', usersRoutes);
 app.use('/decisionTrees', treesRoutes);
 app.use('/nodes', nodesRoutes);
