@@ -1,10 +1,35 @@
 import './App.css';
+import { useEffect, useState } from 'react';
+import { Auth } from 'aws-amplify';
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+      .then(setUser)
+      .catch(() => setUser(null))
+      .finally(() => setLoadingUser(false));
+  }, []);
+
+  const signIn = () => {
+    Auth.federatedSignIn(); // Launch Hosted UI
+  };
+
+  const signOut = () => {
+    Auth.signOut()
+      .then(() => {
+        setUser(null);
+        window.location.reload();
+      })
+      .catch(console.error);
+  };
+
   const fetchUsers = () => {
-    fetch('https://kym19kis0l.execute-api.us-east-2.amazonaws.com/dev/users', {
+    fetch(`${process.env.REACT_APP_API_URL}/users`, {
       headers: {
-        'x-api-key': 'TNqG6DHCUk2AM1FkiLUGt8V2XpBq6Llw7d19MPIB'
+        'x-api-key': process.env.REACT_APP_API_KEY
       }
     })
       .then(res => res.json())
@@ -12,15 +37,23 @@ function App() {
       .catch(err => console.error('Error:', err));
   };
 
+  if (loadingUser) return <p>Loading authentication...</p>;
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Explicable</h1>
-        <p>React frontend successfully initialized. Ready to connect to the API!</p>
+        <p>React frontend using classic aws-amplify is fully connected to Cognito.</p>
 
-        <button onClick={fetchUsers}>
-          Fetch Users from API
-        </button>
+        {!user ? (
+          <button onClick={signIn}>Log In / Sign Up</button>
+        ) : (
+          <>
+            <p>Welcome, {user.attributes?.email || user.username}</p>
+            <button onClick={fetchUsers}>Fetch Users from API</button>
+            <button onClick={signOut}>Log Out</button>
+          </>
+        )}
 
         <a
           className="App-link"
