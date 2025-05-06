@@ -1,91 +1,89 @@
-import './App.css';
 import { useAuth } from "react-oidc-context";
+import "./App.css";
 
 function App() {
   const auth = useAuth();
 
-  const signOutRedirect = () => {
-    const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
-    const appUrl = process.env.REACT_APP_APP_URL;
-    const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
-  
-    const loginUrl = `${cognitoDomain}/login?client_id=${clientId}&response_type=code&scope=email+openid+phone+profile&redirect_uri=${encodeURIComponent(appUrl)}`;
-  
-    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(loginUrl)}`;
-  };  
+  const signOutRedirect = async () => {
+    try {
+      await auth.removeUser();  // clears localStorage state
+      const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
+      const logoutUri = encodeURIComponent(process.env.REACT_APP_COGNITO_LOGOUT_URI);
+      const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
+      window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
+    } catch (err) {
+      console.error("Error during sign-out:", err);
+    }
+  };
 
   if (auth.isLoading) {
-    return <div>Loading...</div>;
+    return <div className="App-header"><h2>Loading Authentication...</h2></div>;
   }
 
   if (auth.error) {
-    return <div>Encountering error... {auth.error.message}</div>;
+    return <div className="App-header"><h2>Authentication Error</h2><p>{auth.error.message}</p></div>;
   }
 
   if (auth.isAuthenticated) {
     return (
-      <div>
-        <pre> Hello: {auth.user?.profile.email} </pre>
-        <pre> ID Token: {auth.user?.id_token} </pre>
-        <pre> Access Token: {auth.user?.access_token} </pre>
-        <pre> Refresh Token: {auth.user?.refresh_token} </pre>
-
-        <button onClick={() => auth.removeUser()}>Sign out</button>
+      <div className="App-header">
+        <h2>Main Explicable Page (Logged In)</h2>
+        <pre>Hello: {auth.user?.profile.email}</pre>
+        <button onClick={signOutRedirect}>Sign Out</button>
       </div>
     );
   }
 
+  // Landing page (Not Authenticated)
   return (
-    <div>
-      <button onClick={() => auth.signinRedirect()}>Sign in</button>
-      <button onClick={() => signOutRedirect()}>Sign out</button>
+    <div className="App-header">
+      <h2>Landing Page (Not Logged In)</h2>
+      <button onClick={() => auth.signinRedirect()}>Log In</button>
     </div>
   );
 }
 
 export default App;
 
-// // App.js
 
-// import { useAuth } from "react-oidc-context";
 
-// function App() {
-//   const auth = useAuth();
 
-//   const signOutRedirect = () => {
-//     const clientId = "58br895ro7pi2ho11j69d9mqkg";
-//     const logoutUri = "http://localhost:3000";
-//     const cognitoDomain = "https://explicable.auth.us-east-2.amazoncognito.com";
-//     window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
-//   };
 
-//   if (auth.isLoading) {
-//     return <div>Loading...</div>;
-//   }
+/*
 
-//   if (auth.error) {
-//     return <div>Encountering error... {auth.error.message}</div>;
-//   }
+https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=http://localhost:3000
 
-//   if (auth.isAuthenticated) {
-//     return (
-//       <div>
-//         <pre> Hello: {auth.user?.profile.email} </pre>
-//         <pre> ID Token: {auth.user?.id_token} </pre>
-//         <pre> Access Token: {auth.user?.access_token} </pre>
-//         <pre> Refresh Token: {auth.user?.refresh_token} </pre>
+https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000
 
-//         <button onClick={() => auth.removeUser()}>Sign out</button>
-//       </div>
-//     );
-//   }
+https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&response_type=code&scope=email+openid+phone+profile
 
-//   return (
-//     <div>
-//       <button onClick={() => auth.signinRedirect()}>Sign in</button>
-//       <button onClick={() => signOutRedirect()}>Sign out</button>
-//     </div>
-//   );
-// }
+https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000
 
-// export default App;
+https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&response_type=code&scope=email+openid+phone+profile
+
+https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&response_type=code&scope=email+openid+phone+profile&redirect_uri=http%3A%2F%2Flocalhost%3A3000
+
+https://explicable.auth.us-east-2.amazoncognito.com/login?client_id=58br895ro7pi2ho11j69d9mqkg&
+
+localhost:3000
+
+/*
+  const signOutRedirect = () => {
+    const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
+    const logoutUri = encodeURIComponent(process.env.REACT_APP_COGNITO_LOGOUT_URI);
+    const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
+  
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
+  };
+
+  const signOutRedirect = () => {
+    auth.signoutRedirect();
+  };
+
+  const signOutRedirect = () => {
+    const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
+    const logoutUri = encodeURIComponent(process.env.REACT_APP_COGNITO_LOGOUT_URI);
+    const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
+    window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
+  };
+  */
