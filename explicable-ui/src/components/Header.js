@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
-import { FaSignOutAlt } from 'react-icons/fa';
-
+import translations from "../i18n/translations";
+import { FaSignOutAlt, FaUser, FaCog } from 'react-icons/fa';
 
 const Header = ({ auth, signOut }) => {
   const navigate = useNavigate();
-  const [selectedLang, setSelectedLang] = useState(localStorage.getItem("lang") || navigator.language.split("-")[0] || "en");
+  const [selectedLang, setSelectedLang] = useState(
+    localStorage.getItem("lang") || navigator.language.split("-")[0] || "en"
+  );
+
+  const t = translations[selectedLang] || translations["en"];
 
   const handleProfileClick = () => {
     if (auth?.isAuthenticated) {
@@ -31,25 +35,40 @@ const Header = ({ auth, signOut }) => {
 
   return (
     <header className="app-header">
-        <div className="brand-title" style={{ cursor: "pointer" }} onClick={() => navigate("/app")}>Explicable</div>
-        <div style={{ display: "flex", gap: "20px" }}>
-            <div className="lang-selector">
-            <select value={selectedLang} onChange={handleLangChange}>
-                {languages.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                    {lang.flag} {lang.label}
-                </option>
-                ))}
-            </select>
-            </div>
+      <div
+        className="brand-title"
+        onClick={() => navigate("/app")}
+        style={{ cursor: "pointer" }}
+      >
+        Explicable{" "}
+        {!["en", "es", "fr"].includes(selectedLang) && t.explicable_explained && (
+            <span style={{ fontSize: "0.8rem" }}>
+                ({t.explicable_explained})
+            </span>
+        )}
+      </div>
+
+      <div style={{ display: "flex", gap: "20px" }}>
+        <div className="lang-selector">
+          <select value={selectedLang} onChange={handleLangChange}>
+            {languages.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.flag} {lang.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {auth.isAuthenticated && (
+          <>
             <div
                 className="profile-icon"
                 onClick={handleProfileClick}
-                title={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
-                aria-label={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
+                title="Profile"
+                aria-label="Profile"
                 role="button"
             >
-                👤
+                <FaUser />
             </div>
             <div
                 className="profile-icon"
@@ -58,18 +77,20 @@ const Header = ({ auth, signOut }) => {
                 aria-label="Settings"
                 role="button"
             >
-                ⚙️
+                <FaCog />
             </div>
             <div
-                className="profile-icon"
-                onClick={signOut}
-                title="Log Out"
-                aria-label="Log Out"
-                role="button"
+              className="profile-icon"
+              onClick={signOut}
+              title="Log Out"
+              aria-label="Log Out"
+              role="button"
             >
-                <FaSignOutAlt />
+              <FaSignOutAlt />
             </div>
-        </div>
+          </>
+        )}
+      </div>
     </header>
   );
 };

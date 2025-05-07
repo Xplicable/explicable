@@ -47,7 +47,7 @@ const translations = {
     settings_profile: "Actualizar información del perfil",
     settings_password: "Cambiar contraseña",
     settings_delete: "Eliminar cuenta (próximamente)",
-    explicable_explained: "Explicable"
+    explicable_explained: ""
   },
   fr: {
     name: "Nom",
@@ -72,7 +72,7 @@ const translations = {
     settings_profile: "Mettre à jour le profil",
     settings_password: "Changer le mot de passe",
     settings_delete: "Supprimer le compte (bientôt disponible)",
-    explicable_explained: "Explicable"
+    explicable_explained: ""
   },
   de: {
     name: "Name",
