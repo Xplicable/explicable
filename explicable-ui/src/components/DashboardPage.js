@@ -1,10 +1,9 @@
-// src/components/DashboardPage.js
 import React from "react";
 import Header from "./Header";
 import translations from "../i18n/translations";
 
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang];
+const t = translations[lang] || translations["en"];
 
 export default function DashboardPage({ auth, signOut }) {
   if (window.location.search.includes("code=") || window.location.search.includes("state=")) {

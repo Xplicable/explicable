@@ -1,14 +1,15 @@
+// src/components/ProfilePage.js
 import React, { useState } from "react";
 import Header from "./Header";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
 import translations from "../i18n/translations";
 
+const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
+const t = translations[lang] || translations["en"];
+
 export default function ProfilePage() {
   const auth = useAuth();
-  const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-  const t = translations[lang];
-
   const [selectedLang, setSelectedLang] = useState(lang);
 
   const [formData, setFormData] = useState({
@@ -47,35 +48,39 @@ export default function ProfilePage() {
     <>
       <Header auth={auth} signOut={signOutRedirect} />
       <div style={{ padding: "120px 20px 40px", maxWidth: "600px", margin: "0 auto" }}>
-        <h2>{t.settings_profile}</h2> {/* 'Update Profile Info' */}
+        <h2>{t.settings_profile}</h2>
 
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '12px 20px', alignItems: 'center' }}>
-
-          <label style={{ textAlign: "right" }}>{t.name}:</label> {/* 'Name:' */}
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: "grid", gridTemplateColumns: "150px 1fr", gap: "12px 20px", alignItems: "center" }}
+        >
+          <label style={{ textAlign: "right" }}>{t.name}:</label>
           <input type="text" value={formData.name} onChange={handleChange("name")} />
 
-          <label style={{ textAlign: "right" }}>{t.username}:</label> {/* 'Username:' */}
+          <label style={{ textAlign: "right" }}>{t.username}:</label>
           <input type="text" value={formData.username} onChange={handleChange("username")} />
 
-          <label style={{ textAlign: "right" }}>{t.email}:</label> {/* 'Email:' */}
+          <label style={{ textAlign: "right" }}>{t.email}:</label>
           <input type="email" value={formData.email} readOnly />
 
-          <label style={{ textAlign: "right" }}>{t.mobile_number}:</label> {/* 'Mobile Number:' */}
+          <label style={{ textAlign: "right" }}>{t.mobile_number}:</label>
           <input type="tel" value={formData.mobile_number} onChange={handleChange("mobile_number")} />
 
-          <label style={{ textAlign: "right" }}>{t.time_zone}:</label> {/* 'Time Zone:' */}
+          <label style={{ textAlign: "right" }}>{t.time_zone}:</label>
           <select value={formData.time_zone} onChange={handleChange("time_zone")}>
             {Intl.supportedValuesOf("timeZone").map((tz) => (
-              <option key={tz} value={tz}>{tz}</option>
+              <option key={tz} value={tz}>
+                {tz}
+              </option>
             ))}
           </select>
 
-          <label style={{ textAlign: "right" }}>{t.email_verified}:</label> {/* 'Email Verified:' */}
+          <label style={{ textAlign: "right" }}>{t.email_verified}:</label>
           <div style={{ textAlign: "left" }}>
             {formData.isEmailVerified ? t.verified_yes : t.verified_no}
           </div>
 
-          <label style={{ textAlign: "right" }}>{t.mobile_verified}:</label> {/* 'Mobile Verified:' */}
+          <label style={{ textAlign: "right" }}>{t.mobile_verified}:</label>
           <div style={{ textAlign: "left" }}>
             {formData.isMobilePhoneVerified ? t.verified_yes : t.verified_no}
           </div>
@@ -87,7 +92,7 @@ export default function ProfilePage() {
               const lang = e.target.value;
               setSelectedLang(lang);
               localStorage.setItem("lang", lang);
-              window.location.reload(); // Simple refresh
+              window.location.reload();
             }}
           >
             {languages.map((lang) => (
@@ -98,7 +103,7 @@ export default function ProfilePage() {
           </select>
 
           <div></div>
-          <button type="submit">{t.save}</button> {/* 'Save Profile' */}
+          <button type="submit">{t.save}</button>
         </form>
       </div>
     </>

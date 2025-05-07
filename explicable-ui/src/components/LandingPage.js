@@ -1,11 +1,10 @@
-// src/components/LandingPage.js
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import translations from "../i18n/translations";
 
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang];
+const t = translations[lang] || translations["en"];
 
 const LandingPage = ({ auth }) => {
   const navigate = useNavigate();

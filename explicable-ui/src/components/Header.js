@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
@@ -12,7 +11,8 @@ const Header = ({ auth, signOut }) => {
     localStorage.getItem("lang") || navigator.language.split("-")[0] || "en"
   );
 
-  const t = translations[selectedLang] || translations["en"];
+  const lang = selectedLang;
+  const t = translations[lang] || translations["en"];
 
   const handleProfileClick = () => {
     if (auth?.isAuthenticated) {
@@ -41,7 +41,7 @@ const Header = ({ auth, signOut }) => {
         style={{ cursor: "pointer" }}
       >
         Explicable{" "}
-        {!["en", "es", "fr"].includes(selectedLang) && t.explicable_explained && (
+        {!["en", "es", "fr"].includes(lang) && t.explicable_explained && (
           <span style={{ fontSize: "0.8rem" }}>
             ({t.explicable_explained})
           </span>
@@ -64,7 +64,7 @@ const Header = ({ auth, signOut }) => {
             <div
               className="profile-icon"
               onClick={handleProfileClick}
-              title={t.profile}       // 'Profile'
+              title={t.profile}
               aria-label={t.profile}
               role="button"
             >
@@ -73,7 +73,7 @@ const Header = ({ auth, signOut }) => {
             <div
               className="profile-icon"
               onClick={handleSettingsClick}
-              title={t.settings}      // 'Settings'
+              title={t.settings}
               aria-label={t.settings}
               role="button"
             >
@@ -82,7 +82,7 @@ const Header = ({ auth, signOut }) => {
             <div
               className="profile-icon"
               onClick={signOut}
-              title={t.logout_icon_header}       // 'Log Out'
+              title={t.logout_icon_header}
               aria-label={t.logout_icon_header}
               role="button"
             >

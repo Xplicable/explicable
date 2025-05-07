@@ -1,11 +1,10 @@
-// src/components/SettingsPage.js
 import React from "react";
 import Header from "./Header";
 import { useAuth } from "react-oidc-context";
 import translations from "../i18n/translations";
 
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang];
+const t = translations[lang] || translations["en"];
 
 export default function SettingsPage() {
   const auth = useAuth();
@@ -26,12 +25,12 @@ export default function SettingsPage() {
     <>
       <Header auth={auth} signOut={signOutRedirect} />
       <div style={{ padding: "120px 20px 40px" }}>
-        <h2>{t.settings_title}</h2> {/* 'Settings' */}
+        <h2>{t.settings_title}</h2>
         <ul>
-          <li>🔐 {t.settings_mfa}</li> {/* 'Set Up Multi-Factor Authentication' */}
-          <li>🧑 {t.settings_profile}</li> {/* 'Update Profile Info' */}
-          <li>🔑 {t.settings_password}</li> {/* 'Change Password' */}
-          <li>🗑️ {t.settings_delete}</li> {/* 'Delete Account (Coming Soon)' */}
+          <li>🔐 {t.settings_mfa}</li>
+          <li>🧑 {t.settings_profile}</li>
+          <li>🔑 {t.settings_password}</li>
+          <li>🗑️ {t.settings_delete}</li>
         </ul>
       </div>
     </>
