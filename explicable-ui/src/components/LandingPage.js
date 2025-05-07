@@ -15,7 +15,11 @@ const LandingPage = ({ auth }) => {
   const handleLogin = () => {
     if (auth?.signinRedirect) {
       console.log("Auth config:", auth);
-      auth.signinRedirect();
+      const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
+      const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
+      const redirectUri = encodeURIComponent(process.env.REACT_APP_COGNITO_REDIRECT_URI);
+      const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
+      window.location.href = `${cognitoDomain}/login?client_id=${clientId}&response_type=code&scope=email+openid+profile&redirect_uri=${redirectUri}&locale=${lang}`;
     } else {
       console.warn("Auth not ready yet.");
     }
