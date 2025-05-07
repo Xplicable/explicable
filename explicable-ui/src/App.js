@@ -25,6 +25,13 @@ function App() {
   }
 
   if (auth.isAuthenticated) {
+    // Clean up URL
+    if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
+      const url = new URL(window.location.href);
+      url.search = ""; // remove query params
+      window.history.replaceState({}, document.title, url.toString());
+    }
+  
     return (
       <div className="App-header">
         <h2>Main Explicable Page (Logged In)</h2>
@@ -33,6 +40,18 @@ function App() {
       </div>
     );
   }
+
+  /*
+  if (auth.isAuthenticated) {
+    return (
+      <div className="App-header">
+        <h2>Main Explicable Page (Logged In)</h2>
+        <pre>Hello: {auth.user?.profile.email}</pre>
+        <button onClick={signOutRedirect}>Sign Out</button>
+      </div>
+    );
+  }
+  */
 
   // Landing page (Not Authenticated)
   return (
