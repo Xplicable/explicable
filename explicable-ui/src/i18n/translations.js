@@ -22,7 +22,9 @@ const translations = {
     settings_profile: "Update Profile Info",
     settings_password: "Change Password",
     settings_delete: "Delete Account (Coming Soon)",
-    explicable_explained: ""
+    explicable_explained: "",
+    profile: "Profile",
+    settings: "Settings"
   },
   es: {
     name: "Nombre",
@@ -47,7 +49,9 @@ const translations = {
     settings_profile: "Actualizar información del perfil",
     settings_password: "Cambiar contraseña",
     settings_delete: "Eliminar cuenta (próximamente)",
-    explicable_explained: ""
+    explicable_explained: "",
+    profile: "Perfil",
+    settings: "Configuración"
   },
   fr: {
     name: "Nom",
@@ -72,7 +76,9 @@ const translations = {
     settings_profile: "Mettre à jour le profil",
     settings_password: "Changer le mot de passe",
     settings_delete: "Supprimer le compte (bientôt disponible)",
-    explicable_explained: ""
+    explicable_explained: "",
+    profile: "Profil",
+    settings: "Paramètres"
   },
   de: {
     name: "Name",
@@ -97,7 +103,9 @@ const translations = {
     settings_profile: "Profilinformationen aktualisieren",
     settings_password: "Passwort ändern",
     settings_delete: "Konto löschen (Demnächst verfügbar)",
-    explicable_explained: "Erklärbar"
+    explicable_explained: "Erklärbar",
+    profile: "Profil",
+    settings: "Einstellungen"
   },
   zh: {
     name: "姓名",
@@ -122,7 +130,9 @@ const translations = {
     settings_profile: "更新个人信息",
     settings_password: "更改密码",
     settings_delete: "删除账户（即将推出）",
-    explicable_explained: "可解释的"
+    explicable_explained: "可解释的",
+    profile: "个人资料",
+    settings: "设置"
   },
   hi: {
     name: "नाम",
@@ -147,7 +157,9 @@ const translations = {
     settings_profile: "प्रोफ़ाइल जानकारी अपडेट करें",
     settings_password: "पासवर्ड बदलें",
     settings_delete: "खाता हटाएं (जल्द आ रहा है)",
-    explicable_explained: "व्याख्यायोग्य"
+    explicable_explained: "व्याख्यायोग्य",
+    profile: "प्रोफ़ाइल",
+    settings: "सेटिंग्स"
   },
   ja: {
     name: "名前",
@@ -172,7 +184,9 @@ const translations = {
     settings_profile: "プロフィール情報を更新する",
     settings_password: "パスワードを変更する",
     settings_delete: "アカウントを削除する（近日公開）",
-    explicable_explained: "説明可能"
+    explicable_explained: "説明可能",
+    profile: "プロフィール",
+    settings: "設定"
   },
   ko: {
     name: "이름",
@@ -197,7 +211,9 @@ const translations = {
     settings_profile: "프로필 정보 업데이트",
     settings_password: "비밀번호 변경",
     settings_delete: "계정 삭제 (곧 제공)",
-    explicable_explained: "설명가능"
+    explicable_explained: "설명가능",
+    profile: "프로필",
+    settings: "설정"
   },
   vi: {
     name: "Tên",
@@ -222,7 +238,9 @@ const translations = {
     settings_profile: "Cập nhật thông tin hồ sơ",
     settings_password: "Đổi mật khẩu",
     settings_delete: "Xóa tài khoản (Sắp ra mắt)",
-    explicable_explained: "Giải thích được"
+    explicable_explained: "Giải thích được",
+    profile: "Hồ sơ",
+    settings: "Cài đặt"
   },
   id: {
     name: "Nama",
@@ -247,7 +265,9 @@ const translations = {
     settings_profile: "Perbarui info profil",
     settings_password: "Ganti kata sandi",
     settings_delete: "Hapus akun (Segera hadir)",
-    explicable_explained: "Dapat dijelaskan"
+    explicable_explained: "Dapat dijelaskan",
+    profile: "Profil",
+    settings: "Pengaturan"
   }
 };
 

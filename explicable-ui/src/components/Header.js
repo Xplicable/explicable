@@ -42,9 +42,9 @@ const Header = ({ auth, signOut }) => {
       >
         Explicable{" "}
         {!["en", "es", "fr"].includes(selectedLang) && t.explicable_explained && (
-            <span style={{ fontSize: "0.8rem" }}>
-                ({t.explicable_explained})
-            </span>
+          <span style={{ fontSize: "0.8rem" }}>
+            ({t.explicable_explained})
+          </span>
         )}
       </div>
 
@@ -62,28 +62,28 @@ const Header = ({ auth, signOut }) => {
         {auth.isAuthenticated && (
           <>
             <div
-                className="profile-icon"
-                onClick={handleProfileClick}
-                title="Profile"
-                aria-label="Profile"
-                role="button"
+              className="profile-icon"
+              onClick={handleProfileClick}
+              title={t.profile}       // 'Profile'
+              aria-label={t.profile}
+              role="button"
             >
-                <FaUser />
+              <FaUser />
             </div>
             <div
-                className="profile-icon"
-                onClick={handleSettingsClick}
-                title="Settings"
-                aria-label="Settings"
-                role="button"
+              className="profile-icon"
+              onClick={handleSettingsClick}
+              title={t.settings}      // 'Settings'
+              aria-label={t.settings}
+              role="button"
             >
-                <FaCog />
+              <FaCog />
             </div>
             <div
               className="profile-icon"
               onClick={signOut}
-              title="Log Out"
-              aria-label="Log Out"
+              title={t.logout}       // 'Log Out'
+              aria-label={t.logout}
               role="button"
             >
               <FaSignOutAlt />
