@@ -14,22 +14,34 @@
   --pre-bg-dark: #444;
 }
 
-body, html {
-  height: 100%;
+body, html, #root {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: sans-serif;
+}
+
+body {
+  background-image: url('./assets/explicable-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body, html {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 body.theme-auto, body.theme-light {
-  background: var(--bg-gradient-light);
+  background-color: #e8e8ff;
   color: var(--text-color-light);
 }
 
 body.theme-dark {
-  background: var(--bg-gradient-dark);
+  background-color: #101216;
   color: var(--text-color-dark);
 }
 
