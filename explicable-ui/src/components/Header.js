@@ -82,8 +82,8 @@ const Header = ({ auth, signOut }) => {
             <div
               className="profile-icon"
               onClick={signOut}
-              title={t.logout}       // 'Log Out'
-              aria-label={t.logout}
+              title={t.logout_icon_header}       // 'Log Out'
+              aria-label={t.logout_icon_header}
               role="button"
             >
               <FaSignOutAlt />

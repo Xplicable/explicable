@@ -24,7 +24,8 @@ const translations = {
     settings_delete: "Delete Account (Coming Soon)",
     explicable_explained: "",
     profile: "Profile",
-    settings: "Settings"
+    settings: "Settings",
+    logout_icon_header: "Logout"
   },
   es: {
     name: "Nombre",
@@ -51,7 +52,8 @@ const translations = {
     settings_delete: "Eliminar cuenta (próximamente)",
     explicable_explained: "",
     profile: "Perfil",
-    settings: "Configuración"
+    settings: "Configuración",
+    logout_icon_header: "Cerrar sesión"
   },
   fr: {
     name: "Nom",
@@ -78,7 +80,8 @@ const translations = {
     settings_delete: "Supprimer le compte (bientôt disponible)",
     explicable_explained: "",
     profile: "Profil",
-    settings: "Paramètres"
+    settings: "Paramètres",
+    logout_icon_header: "Se déconnecter"
   },
   de: {
     name: "Name",
@@ -105,7 +108,8 @@ const translations = {
     settings_delete: "Konto löschen (Demnächst verfügbar)",
     explicable_explained: "Erklärbar",
     profile: "Profil",
-    settings: "Einstellungen"
+    settings: "Einstellungen",
+    logout_icon_header: "Abmelden"
   },
   zh: {
     name: "姓名",
@@ -132,7 +136,8 @@ const translations = {
     settings_delete: "删除账户（即将推出）",
     explicable_explained: "可解释的",
     profile: "个人资料",
-    settings: "设置"
+    settings: "设置",
+    logout_icon_header: "登出"
   },
   hi: {
     name: "नाम",
@@ -159,7 +164,8 @@ const translations = {
     settings_delete: "खाता हटाएं (जल्द आ रहा है)",
     explicable_explained: "व्याख्यायोग्य",
     profile: "प्रोफ़ाइल",
-    settings: "सेटिंग्स"
+    settings: "सेटिंग्स",
+    logout_icon_header: "लॉगआउट"
   },
   ja: {
     name: "名前",
@@ -186,7 +192,8 @@ const translations = {
     settings_delete: "アカウントを削除する（近日公開）",
     explicable_explained: "説明可能",
     profile: "プロフィール",
-    settings: "設定"
+    settings: "設定",
+    logout_icon_header: "ログアウト"
   },
   ko: {
     name: "이름",
@@ -213,7 +220,8 @@ const translations = {
     settings_delete: "계정 삭제 (곧 제공)",
     explicable_explained: "설명가능",
     profile: "프로필",
-    settings: "설정"
+    settings: "설정",
+    logout_icon_header: "로그아웃"
   },
   vi: {
     name: "Tên",
@@ -240,7 +248,8 @@ const translations = {
     settings_delete: "Xóa tài khoản (Sắp ra mắt)",
     explicable_explained: "Giải thích được",
     profile: "Hồ sơ",
-    settings: "Cài đặt"
+    settings: "Cài đặt",
+    logout_icon_header: "Đăng xuất"
   },
   id: {
     name: "Nama",
@@ -267,7 +276,36 @@ const translations = {
     settings_delete: "Hapus akun (Segera hadir)",
     explicable_explained: "Dapat dijelaskan",
     profile: "Profil",
-    settings: "Pengaturan"
+    settings: "Pengaturan",
+    logout_icon_header: "Keluar"
+  },
+  pt: {
+    name: "Nome",
+    username: "Nome de usuário",
+    email: "Email",
+    mobile_number: "Número de telefone",
+    time_zone: "Fuso horário",
+    email_verified: "Email verificado",
+    mobile_verified: "Telefone verificado",
+    verified_yes: "Sim, já verificado",
+    verified_no: "Não, ainda não verificado",
+    save: "Salvar perfil",
+    login: "Criar conta ou entrar",
+    logout: "Sair",
+    dashboard_title: "Página principal do Explicable (Conectado)",
+    hello: "Olá:",
+    sign_out: "Sair",
+    auth_loading: "Carregando autenticação...",
+    auth_error: "Erro de autenticação",
+    settings_title: "Configurações",
+    settings_mfa: "Configurar autenticação multifator",
+    settings_profile: "Atualizar informações do perfil",
+    settings_password: "Alterar senha",
+    settings_delete: "Excluir conta (em breve)",
+    explicable_explained: "Explicável",
+    profile: "Perfil",
+    settings: "Configurações",
+    logout_icon_header: "xxx Encerrar sessão"
   }
 };
 
