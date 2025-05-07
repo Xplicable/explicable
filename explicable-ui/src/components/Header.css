@@ -26,6 +26,16 @@
     font-family: 'Courier New', 'Lucida Console', 'American Typewriter', monospace;
   }
   
+  .lang-selector {
+    margin-left: 20px;
+  }
+  
+  .lang-selector select {
+    font-size: 1rem;
+    padding: 4px;
+    border-radius: 5px;
+  }
+
   .profile-icon {
     cursor: pointer;
     font-size: 1.5rem;
