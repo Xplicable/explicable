@@ -2,6 +2,10 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import './LandingPage.css';
+import translations from "../i18n/translations";
+
+const lang = localStorage.getItem("lang") || "en";
+const t = translations[lang];
 
 const LandingPage = ({ auth }) => {
   if (auth?.isAuthenticated) {
@@ -19,10 +23,10 @@ const LandingPage = ({ auth }) => {
 
   return (
     <div className="landing-page">
-      <div className="text-logo">Explicable</div>
-      <button onClick={handleLogin}>Create a New Account or Login</button>
+        <div className="text-logo">Explicable</div>
+        <button onClick={handleLogin}>{t.login}</button>
     </div>
-  );
+    );
 };
 
 export default LandingPage;
