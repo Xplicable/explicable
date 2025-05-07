@@ -2,6 +2,10 @@
 import React from "react";
 import Header from "./Header";
 import { useAuth } from "react-oidc-context";
+import translations from "../i18n/translations";
+
+const lang = localStorage.getItem("lang") || "en";
+const t = translations[lang];
 
 export default function SettingsPage() {
   const auth = useAuth();
@@ -22,12 +26,12 @@ export default function SettingsPage() {
     <>
       <Header auth={auth} signOut={signOutRedirect} />
       <div style={{ padding: "120px 20px 40px" }}>
-        <h2>Settings</h2>
+        <h2>{t.settings_title}</h2> {/* 'Settings' */}
         <ul>
-          <li>🔐 Set Up Multi-Factor Authentication</li>
-          <li>🧑 Update Profile Info</li>
-          <li>🔑 Change Password</li>
-          <li>🗑️ Delete Account (Coming Soon)</li>
+          <li>🔐 {t.settings_mfa}</li> {/* 'Set Up Multi-Factor Authentication' */}
+          <li>🧑 {t.settings_profile}</li> {/* 'Update Profile Info' */}
+          <li>🔑 {t.settings_password}</li> {/* 'Change Password' */}
+          <li>🗑️ {t.settings_delete}</li> {/* 'Delete Account (Coming Soon)' */}
         </ul>
       </div>
     </>

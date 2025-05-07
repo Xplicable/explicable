@@ -13,7 +13,12 @@ const translations = {
     login: "Create Account or Log In",
     dashboard_title: "Main Explicable Page (Logged In)",
     hello: "Hello:",
-    sign_out: "Sign Out"
+    sign_out: "Sign Out",
+    settings_title: "Settings",
+    settings_mfa: "Set Up Multi-Factor Authentication",
+    settings_profile: "Update Profile Info",
+    settings_password: "Change Password",
+    settings_delete: "Delete Account (Coming Soon)"
   },
   es: {
     name: "Nombre",
@@ -29,7 +34,12 @@ const translations = {
     login: "Crear cuenta o iniciar sesión",
     dashboard_title: "Página principal de Explicable (Conectado)",
     hello: "Hola:",
-    sign_out: "Cerrar sesión"
+    sign_out: "Cerrar sesión",
+    settings_title: "Configuración",
+    settings_mfa: "Configurar autenticación multifactor",
+    settings_profile: "Actualizar información del perfil",
+    settings_password: "Cambiar contraseña",
+    settings_delete: "Eliminar cuenta (próximamente)"
   },
   fr: {
     name: "Nom",
@@ -45,7 +55,12 @@ const translations = {
     login: "Créer un compte ou se connecter",
     dashboard_title: "Page principale d’Explicable (Connecté)",
     hello: "Bonjour:",
-    sign_out: "Se déconnecter"
+    sign_out: "Se déconnecter",
+    settings_title: "Paramètres",
+    settings_mfa: "Configurer l'authentification à deux facteurs",
+    settings_profile: "Mettre à jour le profil",
+    settings_password: "Changer le mot de passe",
+    settings_delete: "Supprimer le compte (bientôt disponible)"
   },
   de: {
     name: "Name",
@@ -61,7 +76,12 @@ const translations = {
     login: "Konto erstellen oder anmelden",
     dashboard_title: "Hauptseite von Explicable (Eingeloggt)",
     hello: "Hallo:",
-    sign_out: "Abmelden"
+    sign_out: "Abmelden",
+    settings_title: "Einstellungen",
+    settings_mfa: "Multi-Faktor-Authentifizierung einrichten",
+    settings_profile: "Profilinformationen aktualisieren",
+    settings_password: "Passwort ändern",
+    settings_delete: "Konto löschen (Demnächst verfügbar)"
   },
   zh: {
     name: "姓名",
@@ -77,7 +97,12 @@ const translations = {
     login: "创建账户或登录",
     dashboard_title: "Explicable 主页面（已登录）",
     hello: "您好：",
-    sign_out: "登出"
+    sign_out: "登出",
+    settings_title: "设置",
+    settings_mfa: "设置多因素认证",
+    settings_profile: "更新个人信息",
+    settings_password: "更改密码",
+    settings_delete: "删除账户（即将推出）"
   },
   hi: {
     name: "नाम",
@@ -93,7 +118,12 @@ const translations = {
     login: "खाता बनाएँ या लॉग इन करें",
     dashboard_title: "मुख्य Explicable पृष्ठ (लॉग इन)",
     hello: "नमस्ते:",
-    sign_out: "साइन आउट"
+    sign_out: "साइन आउट",
+    settings_title: "सेटिंग्स",
+    settings_mfa: "मल्टी-फैक्टर प्रमाणीकरण सेट करें",
+    settings_profile: "प्रोफ़ाइल जानकारी अपडेट करें",
+    settings_password: "पासवर्ड बदलें",
+    settings_delete: "खाता हटाएं (जल्द आ रहा है)"
   },
   ja: {
     name: "名前",
@@ -109,7 +139,12 @@ const translations = {
     login: "アカウントを作成またはログイン",
     dashboard_title: "Explicable メインページ（ログイン済み）",
     hello: "こんにちは：",
-    sign_out: "ログアウト"
+    sign_out: "ログアウト",
+    settings_title: "設定",
+    settings_mfa: "多要素認証を設定する",
+    settings_profile: "プロフィール情報を更新する",
+    settings_password: "パスワードを変更する",
+    settings_delete: "アカウントを削除する（近日公開）"
   },
   ko: {
     name: "이름",
@@ -125,7 +160,12 @@ const translations = {
     login: "계정 만들기 또는 로그인",
     dashboard_title: "Explicable 메인 페이지 (로그인됨)",
     hello: "안녕하세요:",
-    sign_out: "로그아웃"
+    sign_out: "로그아웃",
+    settings_title: "설정",
+    settings_mfa: "다단계 인증 설정",
+    settings_profile: "프로필 정보 업데이트",
+    settings_password: "비밀번호 변경",
+    settings_delete: "계정 삭제 (곧 제공)"
   },
   vi: {
     name: "Tên",
@@ -141,7 +181,12 @@ const translations = {
     login: "Tạo tài khoản hoặc đăng nhập",
     dashboard_title: "Trang chính Explicable (Đã đăng nhập)",
     hello: "Xin chào:",
-    sign_out: "Đăng xuất"
+    sign_out: "Đăng xuất",
+    settings_title: "Cài đặt",
+    settings_mfa: "Thiết lập xác thực đa yếu tố",
+    settings_profile: "Cập nhật thông tin hồ sơ",
+    settings_password: "Đổi mật khẩu",
+    settings_delete: "Xóa tài khoản (Sắp ra mắt)"
   },
   id: {
     name: "Nama",
@@ -157,7 +202,12 @@ const translations = {
     login: "Buat akun atau masuk",
     dashboard_title: "Halaman utama Explicable (Masuk)",
     hello: "Halo:",
-    sign_out: "Keluar"
+    sign_out: "Keluar",
+    settings_title: "Pengaturan",
+    settings_mfa: "Atur autentikasi multi-faktor",
+    settings_profile: "Perbarui info profil",
+    settings_password: "Ganti kata sandi",
+    settings_delete: "Hapus akun (Segera hadir)"
   }
 };
 
