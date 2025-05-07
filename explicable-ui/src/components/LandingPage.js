@@ -23,10 +23,12 @@ const LandingPage = ({ auth }) => {
 
   return (
     <div className="landing-page">
-        <div className="text-logo">Explicable</div>
-        <button onClick={handleLogin}>{t.login}</button>
+      <div className="text-logo">Explicable</div>
+      <button onClick={handleLogin}>
+        {t.login} {/* 'Create Account or Log In' */}
+      </button>
     </div>
-    );
+  );
 };
 
 export default LandingPage;
