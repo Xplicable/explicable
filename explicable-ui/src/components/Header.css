@@ -1,0 +1,34 @@
+/* src/components/Header.css */
+
+* {
+    box-sizing: border-box; /* prevent weird overflow behavior */
+  }
+  
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* ensure contents stay inside */
+  }
+  
+  .brand-title {
+    font-size: 1.5rem;
+    font-family: 'Courier New', 'Lucida Console', 'American Typewriter', monospace;
+  }
+  
+  .profile-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: auto; /* just in case */
+  }
+  

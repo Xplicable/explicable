@@ -1,7 +1,8 @@
+// src/components/DashboardPage.js
 import React from "react";
+import Header from "./Header";
 
 export default function DashboardPage({ auth, signOut }) {
-  // Clean URL query params
   if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
     const url = new URL(window.location.href);
     url.search = "";
@@ -9,10 +10,13 @@ export default function DashboardPage({ auth, signOut }) {
   }
 
   return (
-    <div className="App-header">
-      <h2>Main Explicable Page (Logged In)</h2>
-      <pre>Hello: {auth.user?.profile.email}</pre>
-      <button onClick={signOut}>Sign Out</button>
-    </div>
+    <>
+      <Header auth={auth} signOut={signOut} /> {/* <-- This line resolves the warning */}
+      <div style={{ paddingTop: "80px" }} className="App-header">
+        <h2>Main Explicable Page (Logged In)</h2>
+        <pre>Hello: {auth.user?.profile.email}</pre>
+        <button onClick={signOut}>Sign Out</button>
+      </div>
+    </>
   );
 }
