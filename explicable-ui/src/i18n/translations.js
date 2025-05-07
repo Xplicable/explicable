@@ -21,7 +21,8 @@ const translations = {
     settings_mfa: "Set Up Multi-Factor Authentication",
     settings_profile: "Update Profile Info",
     settings_password: "Change Password",
-    settings_delete: "Delete Account (Coming Soon)"
+    settings_delete: "Delete Account (Coming Soon)",
+    explicable_explained: ""
   },
   es: {
     name: "Nombre",
@@ -45,7 +46,8 @@ const translations = {
     settings_mfa: "Configurar autenticación multifactor",
     settings_profile: "Actualizar información del perfil",
     settings_password: "Cambiar contraseña",
-    settings_delete: "Eliminar cuenta (próximamente)"
+    settings_delete: "Eliminar cuenta (próximamente)",
+    explicable_explained: "Explicable"
   },
   fr: {
     name: "Nom",
@@ -69,7 +71,8 @@ const translations = {
     settings_mfa: "Configurer l'authentification à deux facteurs",
     settings_profile: "Mettre à jour le profil",
     settings_password: "Changer le mot de passe",
-    settings_delete: "Supprimer le compte (bientôt disponible)"
+    settings_delete: "Supprimer le compte (bientôt disponible)",
+    explicable_explained: "Explicable"
   },
   de: {
     name: "Name",
@@ -93,7 +96,8 @@ const translations = {
     settings_mfa: "Multi-Faktor-Authentifizierung einrichten",
     settings_profile: "Profilinformationen aktualisieren",
     settings_password: "Passwort ändern",
-    settings_delete: "Konto löschen (Demnächst verfügbar)"
+    settings_delete: "Konto löschen (Demnächst verfügbar)",
+    explicable_explained: "Erklärbar"
   },
   zh: {
     name: "姓名",
@@ -117,7 +121,8 @@ const translations = {
     settings_mfa: "设置多因素认证",
     settings_profile: "更新个人信息",
     settings_password: "更改密码",
-    settings_delete: "删除账户（即将推出）"
+    settings_delete: "删除账户（即将推出）",
+    explicable_explained: "可解释的"
   },
   hi: {
     name: "नाम",
@@ -141,7 +146,8 @@ const translations = {
     settings_mfa: "मल्टी-फैक्टर प्रमाणीकरण सेट करें",
     settings_profile: "प्रोफ़ाइल जानकारी अपडेट करें",
     settings_password: "पासवर्ड बदलें",
-    settings_delete: "खाता हटाएं (जल्द आ रहा है)"
+    settings_delete: "खाता हटाएं (जल्द आ रहा है)",
+    explicable_explained: "व्याख्यायोग्य"
   },
   ja: {
     name: "名前",
@@ -165,7 +171,8 @@ const translations = {
     settings_mfa: "多要素認証を設定する",
     settings_profile: "プロフィール情報を更新する",
     settings_password: "パスワードを変更する",
-    settings_delete: "アカウントを削除する（近日公開）"
+    settings_delete: "アカウントを削除する（近日公開）",
+    explicable_explained: "説明可能"
   },
   ko: {
     name: "이름",
@@ -189,7 +196,8 @@ const translations = {
     settings_mfa: "다단계 인증 설정",
     settings_profile: "프로필 정보 업데이트",
     settings_password: "비밀번호 변경",
-    settings_delete: "계정 삭제 (곧 제공)"
+    settings_delete: "계정 삭제 (곧 제공)",
+    explicable_explained: "설명가능"
   },
   vi: {
     name: "Tên",
@@ -213,7 +221,8 @@ const translations = {
     settings_mfa: "Thiết lập xác thực đa yếu tố",
     settings_profile: "Cập nhật thông tin hồ sơ",
     settings_password: "Đổi mật khẩu",
-    settings_delete: "Xóa tài khoản (Sắp ra mắt)"
+    settings_delete: "Xóa tài khoản (Sắp ra mắt)",
+    explicable_explained: "Giải thích được"
   },
   id: {
     name: "Nama",
@@ -237,7 +246,8 @@ const translations = {
     settings_mfa: "Atur autentikasi multi-faktor",
     settings_profile: "Perbarui info profil",
     settings_password: "Ganti kata sandi",
-    settings_delete: "Hapus akun (Segera hadir)"
+    settings_delete: "Hapus akun (Segera hadir)",
+    explicable_explained: "Dapat dijelaskan"
   }
 };
 
