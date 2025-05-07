@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
+import { FaSignOutAlt } from 'react-icons/fa';
+
 
 const Header = ({ auth, signOut }) => {
   const navigate = useNavigate();
@@ -29,36 +31,45 @@ const Header = ({ auth, signOut }) => {
 
   return (
     <header className="app-header">
-      <div className="brand-title" style={{ cursor: "pointer" }} onClick={() => navigate("/app")}>Explicable</div>
-      <div style={{ display: "flex", gap: "20px" }}>
-        <div className="lang-selector">
-          <select value={selectedLang} onChange={handleLangChange}>
-            {languages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.flag} {lang.label}
-              </option>
-            ))}
-          </select>
+        <div className="brand-title" style={{ cursor: "pointer" }} onClick={() => navigate("/app")}>Explicable</div>
+        <div style={{ display: "flex", gap: "20px" }}>
+            <div className="lang-selector">
+            <select value={selectedLang} onChange={handleLangChange}>
+                {languages.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                    {lang.flag} {lang.label}
+                </option>
+                ))}
+            </select>
+            </div>
+            <div
+                className="profile-icon"
+                onClick={handleProfileClick}
+                title={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
+                aria-label={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
+                role="button"
+            >
+                👤
+            </div>
+            <div
+                className="profile-icon"
+                onClick={handleSettingsClick}
+                title="Settings"
+                aria-label="Settings"
+                role="button"
+            >
+                ⚙️
+            </div>
+            <div
+                className="profile-icon"
+                onClick={signOut}
+                title="Log Out"
+                aria-label="Log Out"
+                role="button"
+            >
+                <FaSignOutAlt />
+            </div>
         </div>
-        <div
-          className="profile-icon"
-          onClick={handleProfileClick}
-          title={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
-          aria-label={auth?.isAuthenticated ? "Sign Out" : "Sign In"}
-          role="button"
-        >
-          👤
-        </div>
-        <div
-          className="profile-icon"
-          onClick={handleSettingsClick}
-          title="Settings"
-          aria-label="Settings"
-          role="button"
-        >
-          ⚙️
-        </div>
-      </div>
     </header>
   );
 };
