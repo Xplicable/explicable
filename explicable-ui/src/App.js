@@ -45,10 +45,6 @@ function App() {
 
 export default App;
 
-
-
-
-
 /*
 
 https://explicable.auth.us-east-2.amazoncognito.com/logout?client_id=58br895ro7pi2ho11j69d9mqkg&logout_uri=http://localhost:3000
