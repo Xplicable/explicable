@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import DashboardPage from "./components/DashboardPage";
+import SettingsPage from "./components/SettingsPage";
+
 
 function App() {
   const auth = useAuth();
@@ -30,6 +32,14 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route
+          path="/settings"
+          element={
+            auth.isAuthenticated
+            ? <SettingsPage />
+            : <Navigate to="/" replace />
+          }
+        />
         <Route path="/" element={<LandingPage auth={auth} />} />
         <Route
           path="/app"
