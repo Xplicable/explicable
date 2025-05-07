@@ -6,7 +6,7 @@ import translations from "../i18n/translations";
 
 export default function ProfilePage() {
   const auth = useAuth();
-  const lang = localStorage.getItem("lang") || "en";
+  const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
   const t = translations[lang];
 
   const [selectedLang, setSelectedLang] = useState(lang);

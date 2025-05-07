@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./Header";
 import translations from "../i18n/translations";
 
-const lang = localStorage.getItem("lang") || "en";
+const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
 const t = translations[lang];
 
 export default function DashboardPage({ auth, signOut }) {
