@@ -29,7 +29,7 @@ const Header = ({ auth, signOut }) => {
 
   return (
     <header className="app-header">
-      <div className="brand-title">Explicable</div>
+      <div className="brand-title" style={{ cursor: "pointer" }} onClick={() => navigate("/app")}>Explicable</div>
       <div style={{ display: "flex", gap: "20px" }}>
         <div className="lang-selector">
           <select value={selectedLang} onChange={handleLangChange}>
