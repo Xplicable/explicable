@@ -1,6 +1,10 @@
 // src/components/DashboardPage.js
 import React from "react";
 import Header from "./Header";
+import translations from "../i18n/translations";
+
+const lang = localStorage.getItem("lang") || "en";
+const t = translations[lang];
 
 export default function DashboardPage({ auth, signOut }) {
   if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
@@ -11,11 +15,11 @@ export default function DashboardPage({ auth, signOut }) {
 
   return (
     <>
-      <Header auth={auth} signOut={signOut} /> {/* <-- This line resolves the warning */}
+      <Header auth={auth} signOut={signOut} />
       <div style={{ paddingTop: "80px" }} className="App-header">
-        <h2>Main Explicable Page (Logged In)</h2>
-        <pre>Hello: {auth.user?.profile.email}</pre>
-        <button onClick={signOut}>Sign Out</button>
+        <h2>{t.dashboard_title}</h2> {/* 'Main Explicable Page (Logged In)' */}
+        <pre>{t.hello} {auth.user?.profile.email}</pre> {/* 'Hello:' */}
+        <button onClick={signOut}>{t.sign_out}</button> {/* 'Sign Out' */}
       </div>
     </>
   );

@@ -10,7 +10,10 @@ const translations = {
     verified_yes: "Yes, already verified",
     verified_no: "No, not yet verified",
     save: "Save Profile",
-    login: "Create Account or Log In"
+    login: "Create Account or Log In",
+    dashboard_title: "Main Explicable Page (Logged In)",
+    hello: "Hello:",
+    sign_out: "Sign Out"
   },
   es: {
     name: "Nombre",
@@ -23,7 +26,10 @@ const translations = {
     verified_yes: "Sí, ya verificado",
     verified_no: "No, aún no verificado",
     save: "Guardar perfil",
-    login: "Crear cuenta o iniciar sesión"
+    login: "Crear cuenta o iniciar sesión",
+    dashboard_title: "Página principal de Explicable (Conectado)",
+    hello: "Hola:",
+    sign_out: "Cerrar sesión"
   },
   fr: {
     name: "Nom",
@@ -36,7 +42,10 @@ const translations = {
     verified_yes: "Oui, déjà vérifié",
     verified_no: "Non, pas encore vérifié",
     save: "Enregistrer le profil",
-    login: "Créer un compte ou se connecter"
+    login: "Créer un compte ou se connecter",
+    dashboard_title: "Page principale d’Explicable (Connecté)",
+    hello: "Bonjour:",
+    sign_out: "Se déconnecter"
   },
   de: {
     name: "Name",
@@ -49,7 +58,10 @@ const translations = {
     verified_yes: "Ja, bereits verifiziert",
     verified_no: "Nein, noch nicht verifiziert",
     save: "Profil speichern",
-    login: "Konto erstellen oder anmelden"
+    login: "Konto erstellen oder anmelden",
+    dashboard_title: "Hauptseite von Explicable (Eingeloggt)",
+    hello: "Hallo:",
+    sign_out: "Abmelden"
   },
   zh: {
     name: "姓名",
@@ -62,7 +74,10 @@ const translations = {
     verified_yes: "是，已验证",
     verified_no: "否，尚未验证",
     save: "保存资料",
-    login: "创建账户或登录"
+    login: "创建账户或登录",
+    dashboard_title: "Explicable 主页面（已登录）",
+    hello: "您好：",
+    sign_out: "登出"
   },
   hi: {
     name: "नाम",
@@ -75,7 +90,10 @@ const translations = {
     verified_yes: "हाँ, पहले से सत्यापित",
     verified_no: "नहीं, अभी तक सत्यापित नहीं",
     save: "प्रोफ़ाइल सहेजें",
-    login: "खाता बनाएँ या लॉग इन करें"
+    login: "खाता बनाएँ या लॉग इन करें",
+    dashboard_title: "मुख्य Explicable पृष्ठ (लॉग इन)",
+    hello: "नमस्ते:",
+    sign_out: "साइन आउट"
   },
   ja: {
     name: "名前",
@@ -88,7 +106,10 @@ const translations = {
     verified_yes: "はい、確認済みです",
     verified_no: "いいえ、まだ確認されていません",
     save: "プロフィールを保存",
-    login: "アカウントを作成またはログイン"
+    login: "アカウントを作成またはログイン",
+    dashboard_title: "Explicable メインページ（ログイン済み）",
+    hello: "こんにちは：",
+    sign_out: "ログアウト"
   },
   ko: {
     name: "이름",
@@ -101,7 +122,10 @@ const translations = {
     verified_yes: "예, 인증되었습니다",
     verified_no: "아니요, 아직 인증되지 않았습니다",
     save: "프로필 저장",
-    login: "계정 만들기 또는 로그인"
+    login: "계정 만들기 또는 로그인",
+    dashboard_title: "Explicable 메인 페이지 (로그인됨)",
+    hello: "안녕하세요:",
+    sign_out: "로그아웃"
   },
   vi: {
     name: "Tên",
@@ -114,7 +138,10 @@ const translations = {
     verified_yes: "Có, đã xác minh",
     verified_no: "Không, chưa xác minh",
     save: "Lưu hồ sơ",
-    login: "Tạo tài khoản hoặc đăng nhập"
+    login: "Tạo tài khoản hoặc đăng nhập",
+    dashboard_title: "Trang chính Explicable (Đã đăng nhập)",
+    hello: "Xin chào:",
+    sign_out: "Đăng xuất"
   },
   id: {
     name: "Nama",
@@ -127,7 +154,10 @@ const translations = {
     verified_yes: "Ya, sudah diverifikasi",
     verified_no: "Tidak, belum diverifikasi",
     save: "Simpan profil",
-    login: "Buat akun atau masuk"
+    login: "Buat akun atau masuk",
+    dashboard_title: "Halaman utama Explicable (Masuk)",
+    hello: "Halo:",
+    sign_out: "Keluar"
   }
 };
 
