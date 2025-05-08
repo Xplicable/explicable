@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
-import translations from "../i18n/translations";
+import translations, { DEFAULT_LANG } from "../i18n/translations";
 
-const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang] || translations["en"];
+// Determine active language
+const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
+const t = translations[lang] || translations[DEFAULT_LANG];
+
+// Cognito-supported locales only
+const supportedLocales = ["en", "es", "fr", "de", "it", "ja", "ko", "pt-BR", "zh-CN"];
+const cognitoLocale = supportedLocales.includes(lang) ? lang : "en";
 
 const LandingPage = ({ auth }) => {
   const navigate = useNavigate();
@@ -19,7 +24,7 @@ const LandingPage = ({ auth }) => {
     if (auth?.signinRedirect) {
       auth.signinRedirect({
         extraQueryParams: {
-          locale: lang
+          lang: cognitoLocale
         }
       });
     } else {

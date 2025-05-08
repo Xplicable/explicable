@@ -1,3 +1,5 @@
+export const DEFAULT_LANG = "en";
+
 const translations = {
   en: {
     name: "Name",
@@ -111,7 +113,35 @@ const translations = {
     settings: "Einstellungen",
     logout_icon_header: "Abmelden"
   },
-  zh: {
+  it: {
+    name: "Nome",
+    username: "Nome utente",
+    email: "Email",
+    mobile_number: "Numero di telefono",
+    time_zone: "Fuso orario",
+    email_verified: "Email verificata",
+    mobile_verified: "Telefono verificato",
+    verified_yes: "Sì, già verificato",
+    verified_no: "No, non ancora verificato",
+    save: "Salva profilo",
+    login: "Crea un account o accedi",
+    logout: "Disconnetti",
+    dashboard_title: "Pagina principale di Explicable (Accesso effettuato)",
+    hello: "Ciao:",
+    sign_out: "Disconnetti",
+    auth_loading: "Caricamento autenticazione...",
+    auth_error: "Errore di autenticazione",
+    settings_title: "Impostazioni",
+    settings_mfa: "Imposta l'autenticazione a più fattori",
+    settings_profile: "Aggiorna informazioni profilo",
+    settings_password: "Cambia password",
+    settings_delete: "Elimina account (presto disponibile)",
+    explicable_explained: "Spiegabile",
+    profile: "Profilo",
+    settings: "Impostazioni",
+    logout_icon_header: "Disconnetti"
+  },
+  "zh-CN": {
     name: "姓名",
     username: "用户名",
     email: "电子邮件",
@@ -279,7 +309,7 @@ const translations = {
     settings: "Pengaturan",
     logout_icon_header: "Keluar"
   },
-  pt: {
+  "pt-BR": {
     name: "Nome",
     username: "Nome de usuário",
     email: "Email",
@@ -305,8 +335,36 @@ const translations = {
     explicable_explained: "Explicável",
     profile: "Perfil",
     settings: "Configurações",
-    logout_icon_header: "xxx Encerrar sessão"
-  }
+    logout_icon_header: "Encerrar sessão"
+  },
+  ar: {
+    name: "الاسم",
+    username: "اسم المستخدم",
+    email: "البريد الإلكتروني",
+    mobile_number: "رقم الهاتف المحمول",
+    time_zone: "المنطقة الزمنية",
+    email_verified: "تم التحقق من البريد الإلكتروني",
+    mobile_verified: "تم التحقق من الهاتف المحمول",
+    verified_yes: "نعم، تم التحقق",
+    verified_no: "لا، لم يتم التحقق بعد",
+    save: "حفظ الملف الشخصي",
+    login: "إنشاء حساب أو تسجيل الدخول",
+    logout: "تسجيل الخروج",
+    dashboard_title: "الصفحة الرئيسية لتطبيق Explicable (تم تسجيل الدخول)",
+    hello: "مرحبًا:",
+    sign_out: "تسجيل الخروج",
+    auth_loading: "جاري تحميل التحقق...",
+    auth_error: "خطأ في التحقق",
+    settings_title: "الإعدادات",
+    settings_mfa: "إعداد المصادقة متعددة العوامل",
+    settings_profile: "تحديث معلومات الملف الشخصي",
+    settings_password: "تغيير كلمة المرور",
+    settings_delete: "حذف الحساب (قريبًا)",
+    explicable_explained: "قابل للتفسير",
+    profile: "الملف الشخصي",
+    settings: "الإعدادات",
+    logout_icon_header: "تسجيل الخروج"
+  }  
 };
 
 export default translations;
