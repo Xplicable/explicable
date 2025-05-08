@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Header";
-import translations from "../i18n/translations";
+import translations, { DEFAULT_LANG } from "../i18n/translations";
 
-const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang] || translations["en"];
+
+const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
+const t = translations[lang] || translations[DEFAULT_LANG];
 
 export default function DashboardPage({ auth, signOut }) {
   if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
@@ -14,7 +14,6 @@ export default function DashboardPage({ auth, signOut }) {
 
   return (
     <>
-      <Header auth={auth} signOut={signOut} />
       <div style={{ paddingTop: "80px" }} className="App-header">
         <h2>{t.dashboard_title}</h2> {/* 'Main Explicable Page (Logged In)' */}
         <pre>{t.hello} {auth.user?.profile.email}</pre> {/* 'Hello:' */}

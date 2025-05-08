@@ -10,7 +10,7 @@ import SettingsPage from "./components/SettingsPage";
 import { getLanguageContext } from "./i18n/getLanguageContext";
 
 
-const { lang, t } = getLanguageContext();
+const { t } = getLanguageContext();
 
 function App() {
   const auth = useAuth();

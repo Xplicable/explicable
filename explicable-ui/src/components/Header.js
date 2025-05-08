@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
-import { FaSignOutAlt, FaUser, FaCog } from 'react-icons/fa';
+import { FaSignOutAlt, FaUser, FaCog, FaHome } from 'react-icons/fa';
 import { getLanguageContext } from "../i18n/getLanguageContext";
 
 
@@ -78,6 +78,15 @@ const Header = ({ auth, signOut }) => {
               role="button"
             >
               <FaCog />
+            </div>
+            <div
+              className="profile-icon"
+              onClick={() => navigate("/app")}
+              title={t.dashboard_title}
+              aria-label={t.dashboard_title}
+              role="button"
+            >
+              <FaHome />
             </div>
             <div
               className="profile-icon"

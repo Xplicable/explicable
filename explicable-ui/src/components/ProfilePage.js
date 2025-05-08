@@ -1,12 +1,12 @@
 // src/components/ProfilePage.js
 import React, { useState } from "react";
-import Header from "./Header";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
-import translations from "../i18n/translations";
+import translations, { DEFAULT_LANG } from "../i18n/translations";
 
-const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang] || translations["en"];
+
+const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
+const t = translations[lang] || translations[DEFAULT_LANG];
 
 export default function ProfilePage() {
   const auth = useAuth();
@@ -32,21 +32,9 @@ export default function ProfilePage() {
     console.log("Submitted profile data:", formData);
   };
 
-  const signOutRedirect = async () => {
-    try {
-      await auth.removeUser();
-      const clientId = process.env.REACT_APP_COGNITO_CLIENT_ID;
-      const logoutUri = encodeURIComponent(process.env.REACT_APP_COGNITO_LOGOUT_URI);
-      const cognitoDomain = process.env.REACT_APP_COGNITO_DOMAIN;
-      window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${logoutUri}`;
-    } catch (err) {
-      console.error("Error during sign-out:", err);
-    }
-  };
 
   return (
     <>
-      <Header auth={auth} signOut={signOutRedirect} />
       <div style={{ padding: "120px 20px 40px", maxWidth: "600px", margin: "0 auto" }}>
         <h2>{t.settings_profile}</h2>
 
