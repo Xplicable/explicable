@@ -1,16 +1,16 @@
 // src/App.js
 import { useAuth } from "react-oidc-context";
 import "./App.css";
+import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import DashboardPage from "./components/DashboardPage";
 import ProfilePage from "./components/ProfilePage";
 import SettingsPage from "./components/SettingsPage";
-import translations from "./i18n/translations";
+import { getLanguageContext } from "./i18n/getLanguageContext";
 
 
-const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || "en";
-const t = translations[lang];
+const { lang, t } = getLanguageContext();
 
 function App() {
   const auth = useAuth();
@@ -42,7 +42,8 @@ function App() {
 
   return (
     <Router>
-      <Routes>
+      <Header auth={auth} signOut={signOutRedirect} />
+      <Routes> 
         <Route path="/profile" element={auth.isAuthenticated ? <ProfilePage /> : <Navigate to="/" replace />} />
         <Route path="/settings" element={auth.isAuthenticated ? <SettingsPage /> : <Navigate to="/" replace />} />
         <Route path="/" element={<LandingPage auth={auth} />} />
