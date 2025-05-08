@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
-import translations from "../i18n/translations";
 import { FaSignOutAlt, FaUser, FaCog } from 'react-icons/fa';
+import { getLanguageContext } from "../i18n/getLanguageContext";
+
+
+const { lang, t } = getLanguageContext();
 
 const Header = ({ auth, signOut }) => {
   const navigate = useNavigate();
   const [selectedLang, setSelectedLang] = useState(
     localStorage.getItem("lang") || navigator.language.split("-")[0] || "en"
   );
-
-  const lang = selectedLang;
-  const t = translations[lang] || translations["en"];
 
   const handleProfileClick = () => {
     if (auth?.isAuthenticated) {
