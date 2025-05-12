@@ -1,9 +1,7 @@
-// src/components/ProfilePage.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
-
 
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
 const t = translations[lang] || translations[DEFAULT_LANG];
@@ -15,7 +13,7 @@ export default function ProfilePage() {
   const [formData, setFormData] = useState({
     name: "",
     username: "",
-    email: auth.user?.profile.email || "",
+    email: "",
     mobile_number: "",
     time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     preferences: "{}",
@@ -23,15 +21,58 @@ export default function ProfilePage() {
     isMobilePhoneVerified: false,
   });
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const userId = "u9999"; // 🔧 Hardcoded for testing
+
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+          headers: {
+            "x-api-key": process.env.REACT_APP_API_KEY,
+          }
+        });
+
+        if (!response.ok) throw new Error("Failed to fetch profile");
+
+        const data = await response.json();
+        setFormData(data);
+      } catch (err) {
+        console.error("Error loading profile:", err.message);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   const handleChange = (field) => (e) => {
     setFormData({ ...formData, [field]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted profile data:", formData);
-  };
 
+    try {
+      const userId = "u9999"; // 🔧 Same ID for update
+
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) throw new Error("Failed to update profile");
+
+      const updated = await response.json();
+      setFormData(updated);
+      alert("Profile saved.");
+    } catch (err) {
+      console.error("Save failed:", err.message);
+      alert("Save failed: " + err.message);
+    }
+  };
 
   return (
     <>
@@ -57,9 +98,7 @@ export default function ProfilePage() {
           <label style={{ textAlign: "right" }}>{t.time_zone}:</label>
           <select value={formData.time_zone} onChange={handleChange("time_zone")}>
             {Intl.supportedValuesOf("timeZone").map((tz) => (
-              <option key={tz} value={tz}>
-                {tz}
-              </option>
+              <option key={tz} value={tz}>{tz}</option>
             ))}
           </select>
 

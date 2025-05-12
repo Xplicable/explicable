@@ -1,0 +1,145 @@
+[
+  {
+    "created_at": "2025-04-09T09:00:00Z",
+    "time_zone": "America/Los_Angeles",
+    "banner_photo_metadata": {
+      "width": {
+        "N": "1200"
+      },
+      "format": {
+        "S": "png"
+      },
+      "file_size": {
+        "N": "132456"
+      },
+      "crop_info": {
+        "M": {
+          "x": {
+            "N": "0"
+          },
+          "width": {
+            "N": "1200"
+          },
+          "y": {
+            "N": "0"
+          },
+          "height": {
+            "N": "300"
+          }
+        }
+      },
+      "height": {
+        "N": "300"
+      }
+    },
+    "credits": 750,
+    "email": "alice.johnson@example.com",
+    "name": "Alice Johnson",
+    "updated_at": "2025-04-09T09:00:00Z",
+    "user_id": 1002,
+    "password_hash": "hashed_password_2",
+    "mobile_visible": false,
+    "email_visible": false,
+    "profile_photo_url": "https://s3.amazonaws.com/explicable/profiles/1002/profile.jpg",
+    "banner_photo_url": "https://s3.amazonaws.com/explicable/profiles/1002/banner.jpg",
+    "username": "alicej",
+    "preferences": {
+      "default_view": {
+        "S": "list"
+      },
+      "language": {
+        "S": "en"
+      },
+      "theme": {
+        "S": "dark"
+      }
+    },
+    "isMobilePhoneVerified": false,
+    "profile_links": {
+      "L": [
+        {
+          "M": {
+            "platform": {
+              "S": "LinkedIn"
+            },
+            "url": {
+              "S": "https://www.linkedin.com/in/alicej"
+            }
+          }
+        },
+        {
+          "M": {
+            "platform": {
+              "S": "Facebook"
+            },
+            "url": {
+              "S": "https://www.facebook.com/alicej"
+            }
+          }
+        },
+        {
+          "M": {
+            "platform": {
+              "S": "X (Formerly Twitter)"
+            },
+            "url": {
+              "S": "https://x.com/alicej"
+            }
+          }
+        },
+        {
+          "M": {
+            "platform": {
+              "S": "Instagram"
+            },
+            "url": {
+              "S": "https://www.instagram.com/alicej"
+            }
+          }
+        },
+        {
+          "M": {
+            "platform": {
+              "S": "GitHub"
+            },
+            "url": {
+              "S": "https://github.com/alicej"
+            }
+          }
+        }
+      ]
+    },
+    "mobile_number": "+15557654321",
+    "profile_photo_metadata": {
+      "width": {
+        "N": "400"
+      },
+      "format": {
+        "S": "png"
+      },
+      "file_size": {
+        "N": "48765"
+      },
+      "crop_info": {
+        "M": {
+          "x": {
+            "N": "10"
+          },
+          "width": {
+            "N": "380"
+          },
+          "y": {
+            "N": "10"
+          },
+          "height": {
+            "N": "380"
+          }
+        }
+      },
+      "height": {
+        "N": "400"
+      }
+    },
+    "isEmailVerified": false
+  }
+]

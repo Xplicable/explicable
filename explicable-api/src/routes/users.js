@@ -57,7 +57,7 @@ router.get('/:user_id', async (req, res) => {
   try {
     const { Item } = await ddb.get({
       TableName: 'Users',
-      Key: { user_id: Number(user_id) }
+      Key: { user_id }
     }).promise();
     if (!Item) return res.status(404).json({ error: 'Not found' });
     res.json(Item);
@@ -125,7 +125,7 @@ router.patch('/:user_id', async (req, res) => {
   try {
     const { Attributes } = await ddb.update({
       TableName: 'Users',
-      Key: { user_id: Number(user_id) },
+      Key: { user_id },
       UpdateExpression: 'SET ' + setClauses.join(', '),
       ExpressionAttributeNames: exprAttrNames,
       ExpressionAttributeValues: exprAttrValues,
@@ -143,7 +143,7 @@ router.delete('/:user_id', async (req, res) => {
   try {
     const { Attributes } = await ddb.delete({
       TableName: 'Users',
-      Key: { user_id: Number(user_id) },
+      Key: { user_id },
       ReturnValues: 'ALL_OLD'
     }).promise();
     if (!Attributes) return res.status(404).json({ error: 'Not found' });
