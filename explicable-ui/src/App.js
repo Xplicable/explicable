@@ -9,8 +9,10 @@ import ProfilePage from "./components/ProfilePage";
 import SettingsPage from "./components/SettingsPage";
 import { getLanguageContext } from "./i18n/getLanguageContext";
 
-
 const { t } = getLanguageContext();
+
+// Set document title
+document.title = t.explicable_explained || "Explicable";
 
 function App() {
   const auth = useAuth();
