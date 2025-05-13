@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
+import "./ProfilePage.css";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
+import timezones from "../utils/timezones";
 
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
 const t = translations[lang] || translations[DEFAULT_LANG];
 
 export default function ProfilePage() {
   const auth = useAuth();
-  const [selectedLang, setSelectedLang] = useState(lang);
+
+// TODO: Uncomment setSelectedLang when implementing language update from navbar
+// const [selectedLang, setSelectedLang] = useState(lang);
+  const [selectedLang] = useState(lang);
+
+  const languageMap = Object.fromEntries(languages.map(l => [l.code, l]));
+  const { flag, label } = languageMap[selectedLang] || { flag: "🏳️", label: selectedLang };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,116 +31,116 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      try {
-        const userId = "u9999"; // 🔧 Hardcoded for testing
+      const userId = auth.user?.profile?.sub;
 
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+      let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY,
+        },
+      });
+
+      if (response.status === 404) {
+        const newUser = {
+          user_id: userId,
+          username: auth.user?.profile?.preferred_username || "newuser",
+          email: auth.user?.profile?.email || "",
+          mobile_number: auth.user?.profile?.phone_number || "",
+          time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          preferences: {},
+          isEmailVerified: auth.user?.profile?.email_verified || false,
+          isMobilePhoneVerified: auth.user?.profile?.phone_number_verified || false,
+        };
+
+        await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+          method: "POST",
           headers: {
+            "Content-Type": "application/json",
             "x-api-key": process.env.REACT_APP_API_KEY,
-          }
+          },
+          body: JSON.stringify(newUser),
         });
 
-        if (!response.ok) throw new Error("Failed to fetch profile");
+        response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.REACT_APP_API_KEY,
+          },
+        });
+      }
 
-        const data = await response.json();
-        setFormData(data);
-      } catch (err) {
-        console.error("Error loading profile:", err.message);
+      if (response.ok) {
+        const userData = await response.json();
+        setFormData(userData);
       }
     };
 
-    fetchProfile();
-  }, []);
+    if (auth.isAuthenticated) {
+      fetchProfile();
+    }
+  }, [auth]);
 
-  const handleChange = (field) => (e) => {
-    setFormData({ ...formData, [field]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const userId = auth.user?.profile?.sub;
 
-    try {
-      const userId = "u9999"; // 🔧 Same ID for update
-
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": process.env.REACT_APP_API_KEY
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) throw new Error("Failed to update profile");
-
-      const updated = await response.json();
-      setFormData(updated);
-      alert("Profile saved.");
-    } catch (err) {
-      console.error("Save failed:", err.message);
-      alert("Save failed: " + err.message);
-    }
+    await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": process.env.REACT_APP_API_KEY,
+      },
+      body: JSON.stringify(formData),
+    });
   };
 
   return (
-    <>
-      <div style={{ padding: "120px 20px 40px", maxWidth: "600px", margin: "0 auto" }}>
-        <h2>{t.settings_profile}</h2>
+    <div className="profile-container">
+      <h2>{t["profile_title"]}</h2>
+      <form onSubmit={handleSubmit} className="profile-form">
+        <label htmlFor="name">{t["name"]}:</label>
+        <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} />
 
-        <form
-          onSubmit={handleSubmit}
-          style={{ display: "grid", gridTemplateColumns: "150px 1fr", gap: "12px 20px", alignItems: "center" }}
-        >
-          <label style={{ textAlign: "right" }}>{t.name}:</label>
-          <input type="text" value={formData.name} onChange={handleChange("name")} />
+        <label htmlFor="username">{t["username"]}:</label>
+        <input id="username" type="text" name="username" value={formData.username} onChange={handleChange} />
 
-          <label style={{ textAlign: "right" }}>{t.username}:</label>
-          <input type="text" value={formData.username} onChange={handleChange("username")} />
+        <label htmlFor="email">{t["email"]}:</label>
+        <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} />
 
-          <label style={{ textAlign: "right" }}>{t.email}:</label>
-          <input type="email" value={formData.email} readOnly />
+        <label htmlFor="mobile_number">{t["mobile_number"]}:</label>
+        <input id="mobile_number" type="text" name="mobile_number" value={formData.mobile_number} onChange={handleChange} />
 
-          <label style={{ textAlign: "right" }}>{t.mobile_number}:</label>
-          <input type="tel" value={formData.mobile_number} onChange={handleChange("mobile_number")} />
+        <label htmlFor="time_zone">{t["time_zone"]}:</label>
 
-          <label style={{ textAlign: "right" }}>{t.time_zone}:</label>
-          <select value={formData.time_zone} onChange={handleChange("time_zone")}>
-            {Intl.supportedValuesOf("timeZone").map((tz) => (
-              <option key={tz} value={tz}>{tz}</option>
-            ))}
-          </select>
-
-          <label style={{ textAlign: "right" }}>{t.email_verified}:</label>
-          <div style={{ textAlign: "left" }}>
-            {formData.isEmailVerified ? t.verified_yes : t.verified_no}
-          </div>
-
-          <label style={{ textAlign: "right" }}>{t.mobile_verified}:</label>
-          <div style={{ textAlign: "left" }}>
-            {formData.isMobilePhoneVerified ? t.verified_yes : t.verified_no}
-          </div>
-
-          <label style={{ textAlign: "right" }}>Language:</label>
-          <select
-            value={selectedLang}
-            onChange={(e) => {
-              const lang = e.target.value;
-              setSelectedLang(lang);
-              localStorage.setItem("lang", lang);
-              window.location.reload();
-            }}
+        <select
+            id="time_zone"
+            name="time_zone"
+            value={formData.time_zone}
+            onChange={handleChange}
           >
-            {languages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.flag} {lang.label}
-              </option>
-            ))}
+            {timezones
+              .sort((a, b) => a.text.localeCompare(b.text))
+              .map(({ value, text }) => (
+                <option key={value} value={value}>
+                  {text}
+                </option>
+              ))}
           </select>
 
-          <div></div>
-          <button type="submit">{t.save}</button>
-        </form>
-      </div>
-    </>
+        <label>Language:</label>
+        <div className="readonly">{flag} {label}</div>
+
+        <div></div>
+        <button type="submit">{t["save"]}</button>
+      </form>
+    </div>
   );
 }
