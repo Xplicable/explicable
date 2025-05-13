@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import debounce from "lodash.debounce";
 import "./ProfilePage.css";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
@@ -10,6 +11,24 @@ const t = translations[lang] || translations[DEFAULT_LANG];
 
 export default function ProfilePage() {
   const auth = useAuth();
+
+  const userId = auth.user?.profile?.sub;
+
+  // Debounced save function (defined once)
+  const debouncedSave = useMemo(() => {
+  return debounce(async (fieldName, fieldValue) => {
+    if (!userId) return;
+
+    await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": process.env.REACT_APP_API_KEY,
+      },
+      body: JSON.stringify({ [fieldName]: fieldValue }),
+    });
+  }, 800);
+}, [userId]);
 
 // TODO: Uncomment setSelectedLang when implementing language update from navbar
 // const [selectedLang, setSelectedLang] = useState(lang);
@@ -30,8 +49,10 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
+    
     const fetchProfile = async () => {
-      const userId = auth.user?.profile?.sub;
+      
+    const userId = auth.user?.profile?.sub;
 
       let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
         headers: {
@@ -78,14 +99,25 @@ export default function ProfilePage() {
     if (auth.isAuthenticated) {
       fetchProfile();
     }
-  }, [auth]);
+  }, [auth, debouncedSave]);
+
+  useEffect(() => {
+    return () => {
+      debouncedSave.cancel();
+    };
+  }, [debouncedSave]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Update form state immediately
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+
+    // Trigger debounced save
+    debouncedSave(name, value);
   };
 
   const handleSubmit = async (e) => {
@@ -140,7 +172,7 @@ return (
         <div className="readonly">{flag} {label}</div>
 
         <div></div>
-        <button type="submit">{t["save"]}</button>
+        {/* <button type="submit">{t["save"]}</button> */}
       </form>
     </div>
   );
