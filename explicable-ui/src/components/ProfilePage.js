@@ -102,9 +102,10 @@ export default function ProfilePage() {
     });
   };
 
-  return (
-    <div className="profile-container">
-      <h2>{t["profile_title"]}</h2>
+return (
+  <div className="profile-container">
+    <h2>{t.profile_title || "Profile"}</h2>
+
       <form onSubmit={handleSubmit} className="profile-form">
         <label htmlFor="name">{t["name"]}:</label>
         <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} />
