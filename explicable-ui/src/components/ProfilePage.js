@@ -101,7 +101,16 @@ export default function ProfilePage() {
 
         if (response.ok) {
           const userData = await response.json();
-          setFormData(userData);
+
+          setFormData((prevData) => {
+              const updated = { ...prevData };
+              for (const key in userData) {
+                if (key in prevData && userData[key] !== prevData[key]) {
+                  updated[key] = userData[key];
+                }
+              }
+              return updated;
+            });
         }
       };
 
