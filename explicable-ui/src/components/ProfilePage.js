@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
       setSaveStatus("saved");
       setTimeout(() => setSaveStatus(""), 2000);
-    }, 800);
+    }, 2000);
   }, [userId]);
 
   // TODO: Uncomment setSelectedLang when implementing language update from navbar
@@ -57,67 +57,71 @@ export default function ProfilePage() {
       isMobilePhoneVerified: false,
     });
 
-    useEffect(() => {
-      
-      const fetchProfile = async () => {
-        
-      const userId = auth.user?.profile?.sub;
+ useEffect(() => {
+  const fetchProfile = async () => {
+    const userId = auth.user?.profile?.sub;
 
-        let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.REACT_APP_API_KEY,
-          },
-        });
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": process.env.REACT_APP_API_KEY,
+      },
+    });
 
-        if (response.status === 404) {
-          const newUser = {
-            user_id: userId,
-            username: auth.user?.profile?.preferred_username || "newuser",
-            email: auth.user?.profile?.email || "",
-            mobile_number: auth.user?.profile?.phone_number || "",
-            time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            preferences: {},
-            isEmailVerified: auth.user?.profile?.email_verified || false,
-            isMobilePhoneVerified: auth.user?.profile?.phone_number_verified || false,
-          };
-
-          await fetch(`${process.env.REACT_APP_API_URL}/users`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": process.env.REACT_APP_API_KEY,
-            },
-            body: JSON.stringify(newUser),
-          });
-
-          response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": process.env.REACT_APP_API_KEY,
-            },
-          });
-        }
-
-        if (response.ok) {
-          const userData = await response.json();
-
-          setFormData((prevData) => {
-              const updated = { ...prevData };
-              for (const key in userData) {
-                if (key in prevData && userData[key] !== prevData[key]) {
-                  updated[key] = userData[key];
-                }
-              }
-              return updated;
-            });
-        }
+    if (response.status === 404) {
+      const newUser = {
+        user_id: userId,
+        username: auth.user?.profile?.preferred_username || "newuser",
+        email: auth.user?.profile?.email || "",
+        mobile_number: auth.user?.profile?.phone_number || "",
+        time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        preferences: {},
+        isEmailVerified: auth.user?.profile?.email_verified || false,
+        isMobilePhoneVerified: auth.user?.profile?.phone_number_verified || false,
       };
 
-      if (auth.isAuthenticated) {
-        fetchProfile();
-      }
-    }, [auth, debouncedSave]);
+      await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY,
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY,
+        },
+      });
+    }
+
+    if (response.ok) {
+      const userData = await response.json();
+
+      const activeField = document.activeElement?.name;
+
+      setFormData((prevData) => {
+        const updated = { ...prevData };
+        for (const key in userData) {
+          if (
+            key in prevData &&
+            userData[key] !== prevData[key] &&
+            key !== activeField
+          ) {
+            updated[key] = userData[key];
+          }
+        }
+        return updated;
+      });
+    }
+  };
+
+  if (auth.isAuthenticated) {
+    fetchProfile();
+  }
+}, [auth, debouncedSave]);
 
     useEffect(() => {
       return () => {
@@ -152,6 +156,21 @@ export default function ProfilePage() {
       return regex.test(value);
     };
 
+    const handleBackClick = async () => {
+      if (!userId) return;
+
+      await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      window.location.href = "/app";
+    };
+
     /*
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -171,10 +190,15 @@ export default function ProfilePage() {
   return (
 
     <div className="profile-container">
-    
-      <h2>{t.profile_title || "Profile"}</h2>
 
+      <div className="profile-header">
+        <div className="back-arrow-row">
+          <span className="back-arrow" onClick={handleBackClick}>← Back</span>
+        </div>
+        <h2 className="profile-title">{t.profile_title || "Profile"}</h2>
+      </div>
       <form className="profile-form">
+
         <label htmlFor="name">{t.name}:</label>
         <input
           id="name"
@@ -248,6 +272,7 @@ export default function ProfilePage() {
           {saveStatus === "saving" && t.saving_status}
           {saveStatus === "saved" && t.saved_status}
         </div>
+
       </form>
     </div>
   );
