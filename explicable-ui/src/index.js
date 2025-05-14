@@ -1,10 +1,10 @@
-// index.js
+/// index.js
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { AuthProvider } from "react-oidc-context";
-import { WebStorageStateStore } from "oidc-client-ts"; // Correct import location ✅
+import { WebStorageStateStore } from "oidc-client-ts";
 
 const cognitoAuthConfig = {
   authority: process.env.REACT_APP_COGNITO_DOMAIN,
@@ -13,7 +13,7 @@ const cognitoAuthConfig = {
   response_type: "code",
   scope: "openid email phone profile",
   userStore: new WebStorageStateStore({ store: window.localStorage }),
-  automaticSilentRenew: true, // ✅ Minimal addition for smoother session handling
+  automaticSilentRenew: true,
   metadata: {
     issuer:                 process.env.REACT_APP_COGNITO_DOMAIN,
     authorization_endpoint: `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/authorize`,
@@ -21,6 +21,9 @@ const cognitoAuthConfig = {
     userinfo_endpoint:      `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/userInfo`,
     revocation_endpoint:    `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/revoke`,
     end_session_endpoint:   `${process.env.REACT_APP_COGNITO_DOMAIN}/logout`
+  },
+  extraQueryParams: {
+    identity_provider: "Google"
   }
 };
 
@@ -35,9 +38,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 document.body.classList.add("theme-auto");
 
 root.render(
-  <React.StrictMode>
-    <AuthProvider {...cognitoAuthConfig}>
-      <App />
-    </AuthProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+      <AuthProvider {...cognitoAuthConfig}>
+        <App />
+      </AuthProvider>
+    </React.StrictMode>
 );
