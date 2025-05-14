@@ -70,21 +70,21 @@ router.get('/:user_id', async (req, res) => {
 router.post('/', async (req, res) => {
   const body = normalizeBody(req.body);
   const {
-    user_id, name, username, email, mobile_number,
+    user_id, name, username, email, mobile_number, country_code,
     isEmailVerified = false, isMobilePhoneVerified = false,
     time_zone, preferences = {}
   } = body;
 
-  if (!user_id || !name || !username || !email || !mobile_number || !time_zone) {
+  if (!user_id || !name || !username || !email || !mobile_number || !country_code || !time_zone) {
     return res.status(400).json({
       error: 'Validation failed',
-      message: 'user_id, name, username, email, mobile_number and time_zone are required'
+      message: 'user_id, name, username, email, mobile_number, country_code and time_zone are required'
     });
   }
 
   const now = new Date().toISOString();
   const item = {
-    user_id, name, username, email, mobile_number,
+    user_id, name, username, email, mobile_number, country_code,
     isEmailVerified, isMobilePhoneVerified, time_zone,
     preferences, created_at: now, updated_at: now
   };
@@ -103,7 +103,7 @@ router.patch('/:user_id', async (req, res) => {
   const { user_id } = req.params;
   if (!user_id) return res.status(400).json({ error: 'Missing user_id in path' });
 
-  const allowed = ['name','username','email','mobile_number','isEmailVerified','isMobilePhoneVerified','time_zone','preferences'];
+  const allowed = ['name','username','email','mobile_number','country_code','isEmailVerified','isMobilePhoneVerified','time_zone','preferences'];
   const setClauses = [];
   const exprAttrNames = {};
   const exprAttrValues = {};

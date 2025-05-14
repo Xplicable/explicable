@@ -1,0 +1,1125 @@
+{
+    "Items": [
+        {
+            "tree_id": {
+                "S": "1ec1da10-d4db-4a6a-9f4f-0ec663819031"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-30T17:41:14.161Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-30T17:41:14.161Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-30T17:41:14.161Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "This is a test"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Hello Search"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "905b73ae-0b21-4b99-a5dc-57c58e3c5356"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-05-01T01:26:47.454Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-05-01T01:26:47.454Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-05-01T01:26:47.454Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "This is a test"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Hello Search"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "0f521e1c-851b-4e34-8ffb-7d0cf0503212"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-22T20:15:18.618Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-22T20:15:18.618Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-22T20:15:18.618Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "..."
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "smoke"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Smoke Tree"
+            }
+        },
+        {
+            "publication_status": {
+                "S": "approved"
+            },
+            "tree_id": {
+                "S": "44c590b2-e6da-4796-a682-8ef2ee3a1132"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "version": {
+                "N": "1"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-22T20:57:33.981Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-22T20:57:33.981Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-22T20:57:37.208Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "..."
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "smoke"
+                    },
+                    {
+                        "S": "tested"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Smoke Tree"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "bd72bd6c-f808-411b-acec-5cca94383e15"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "catSmoke"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-29T18:27:35.023Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-29T18:27:35.023Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "9999"
+            },
+            "updated_at": {
+                "S": "2025-04-29T18:27:35.023Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "subSmoke"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "A test decision tree"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Smoke DT"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "7df08279-36bd-4fcf-a9b9-7e8d83936706"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-05-01T01:30:59.025Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-05-01T01:30:59.025Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-05-01T01:30:59.025Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "This is a test"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Hello Search"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "tree2"
+            },
+            "publication_status": {
+                "S": "approved"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat002"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-09T10:10:00Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "public"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-09T10:12:00Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {
+                            "safe_search": {
+                                "M": {
+                                    "spoof": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "racy": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "medical": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "adult": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "violence": {
+                                        "S": "VERY_UNLIKELY"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-09T10:10:00Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "subcat002"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "A decision tree to plan your ideal travel experience."
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "travel"
+                    },
+                    {
+                        "S": "vacation"
+                    },
+                    {
+                        "S": "planning"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Travel Decisions"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "78b7e65e-3402-441d-b26d-77e2a10cefd0"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-30T17:37:04.416Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-30T17:37:04.416Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-30T17:37:04.416Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "This is a test"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Hello Search"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "e4893794-e5a8-48f7-a220-3d69998d8c23"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-22T20:42:42.291Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-22T20:42:42.291Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-22T20:42:42.291Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "Testing…"
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "smoke"
+                    }
+                ]
+            },
+            "title": {
+                "S": "My Smoke Tree"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "78737aab-d7f5-4d79-8768-e55f66037d3a"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-16T20:12:27.292Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "public"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-16T20:12:27.292Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-16T20:12:27.292Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "subcat001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "Step-by-step guide"
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "example"
+                    },
+                    {
+                        "S": "test"
+                    }
+                ]
+            },
+            "title": {
+                "S": "My New Tree"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "tree3"
+            },
+            "publication_status": {
+                "S": "approved"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat002"
+            },
+            "flags": {
+                "L": [
+                    {
+                        "M": {
+                            "flag_id": {
+                                "S": "flag001"
+                            },
+                            "reason": {
+                                "S": "Suspected inappropriate content"
+                            },
+                            "created_at": {
+                                "S": "2025-04-09T10:23:00Z"
+                            },
+                            "user_id": {
+                                "N": "1001"
+                            }
+                        }
+                    }
+                ]
+            },
+            "created_at": {
+                "S": "2025-04-09T10:20:00Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": [
+                            {
+                                "N": "1002"
+                            }
+                        ]
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "specific_accounts"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": [
+                            {
+                                "N": "1001"
+                            }
+                        ]
+                    },
+                    "flag_count": {
+                        "N": "1"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-09T10:22:00Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {
+                            "safe_search": {
+                                "M": {
+                                    "spoof": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "racy": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "medical": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "adult": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "violence": {
+                                        "S": "UNLIKELY"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1002"
+            },
+            "updated_at": {
+                "S": "2025-04-09T10:20:00Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "subcat002"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "A decision tree for choosing between various investment options."
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "investment"
+                    },
+                    {
+                        "S": "finance"
+                    },
+                    {
+                        "S": "stocks"
+                    },
+                    {
+                        "S": "bonds"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Investment Decisions"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "tree4"
+            },
+            "publication_status": {
+                "S": "pending"
+            },
+            "version": {
+                "N": "2"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-09T11:00:00Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": [
+                            {
+                                "S": "grp001"
+                            }
+                        ]
+                    },
+                    "access_type": {
+                        "S": "specific_groups"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-10T12:00:00Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {
+                            "safe_search": {
+                                "M": {
+                                    "spoof": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "racy": {
+                                        "S": "UNLIKELY"
+                                    },
+                                    "medical": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "adult": {
+                                        "S": "VERY_UNLIKELY"
+                                    },
+                                    "violence": {
+                                        "S": "VERY_UNLIKELY"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-10T12:00:00Z"
+            },
+            "history": {
+                "L": [
+                    {
+                        "M": {
+                            "updated_by": {
+                                "N": "1001"
+                            },
+                            "update_description": {
+                                "S": "Added multi-choice branching for Canadian call reasons"
+                            },
+                            "updated_at": {
+                                "S": "2025-04-10T12:00:00Z"
+                            }
+                        }
+                    }
+                ]
+            },
+            "subcategory_id": {
+                "S": "subcat001"
+            },
+            "shared_with": {
+                "L": [
+                    {
+                        "M": {
+                            "user_id": {
+                                "N": "1002"
+                            },
+                            "access_type": {
+                                "S": "read-only"
+                            }
+                        }
+                    }
+                ]
+            },
+            "description": {
+                "S": "Decision tree for phone agents handling customer calls based on location and call reason."
+            },
+            "tags": {
+                "L": [
+                    {
+                        "S": "call_center"
+                    },
+                    {
+                        "S": "customer_service"
+                    },
+                    {
+                        "S": "support"
+                    }
+                ]
+            },
+            "title": {
+                "S": "Call Center Decision Tree"
+            }
+        },
+        {
+            "tree_id": {
+                "S": "95bb3b59-f3e0-42d6-a883-be66ddf85952"
+            },
+            "publication_status": {
+                "S": "draft"
+            },
+            "version": {
+                "N": "1"
+            },
+            "category_id": {
+                "S": "cat001"
+            },
+            "flags": {
+                "L": []
+            },
+            "created_at": {
+                "S": "2025-04-30T17:43:40.664Z"
+            },
+            "access_config": {
+                "M": {
+                    "allowed_accounts": {
+                        "L": []
+                    },
+                    "allowed_groups": {
+                        "L": []
+                    },
+                    "access_type": {
+                        "S": "only_me"
+                    }
+                }
+            },
+            "moderation_info": {
+                "M": {
+                    "flagged_by": {
+                        "L": []
+                    },
+                    "flag_count": {
+                        "N": "0"
+                    },
+                    "last_moderation_check": {
+                        "S": "2025-04-30T17:43:40.664Z"
+                    },
+                    "rekognition_analysis": {
+                        "M": {}
+                    }
+                }
+            },
+            "owner_id": {
+                "N": "1001"
+            },
+            "updated_at": {
+                "S": "2025-04-30T17:43:40.664Z"
+            },
+            "history": {
+                "L": []
+            },
+            "subcategory_id": {
+                "S": "sub001"
+            },
+            "shared_with": {
+                "L": []
+            },
+            "description": {
+                "S": "This is a test"
+            },
+            "tags": {
+                "L": []
+            },
+            "title": {
+                "S": "Hello Search"
+            }
+        }
+    ],
+    "Count": 13,
+    "ScannedCount": 13,
+    "ConsumedCapacity": null
+}

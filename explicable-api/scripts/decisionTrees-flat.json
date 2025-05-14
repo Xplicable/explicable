@@ -1,0 +1,704 @@
+[
+  {
+    "tree_id": "1ec1da10-d4db-4a6a-9f4f-0ec663819031",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-30T17:41:14.161Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-30T17:41:14.161Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-30T17:41:14.161Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "This is a test",
+    "tags": [],
+    "title": "Hello Search"
+  },
+  {
+    "tree_id": "905b73ae-0b21-4b99-a5dc-57c58e3c5356",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-05-01T01:26:47.454Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-05-01T01:26:47.454Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-05-01T01:26:47.454Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "This is a test",
+    "tags": [],
+    "title": "Hello Search"
+  },
+  {
+    "tree_id": "0f521e1c-851b-4e34-8ffb-7d0cf0503212",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-22T20:15:18.618Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-22T20:15:18.618Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-22T20:15:18.618Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "...",
+    "tags": [
+      {
+        "S": "smoke"
+      }
+    ],
+    "title": "Smoke Tree"
+  },
+  {
+    "publication_status": "approved",
+    "tree_id": "44c590b2-e6da-4796-a682-8ef2ee3a1132",
+    "category_id": "cat001",
+    "version": "1",
+    "flags": [],
+    "created_at": "2025-04-22T20:57:33.981Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-22T20:57:33.981Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-22T20:57:37.208Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "...",
+    "tags": [
+      {
+        "S": "smoke"
+      },
+      {
+        "S": "tested"
+      }
+    ],
+    "title": "Smoke Tree"
+  },
+  {
+    "tree_id": "bd72bd6c-f808-411b-acec-5cca94383e15",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "catSmoke",
+    "flags": [],
+    "created_at": "2025-04-29T18:27:35.023Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-29T18:27:35.023Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "9999",
+    "updated_at": "2025-04-29T18:27:35.023Z",
+    "history": [],
+    "subcategory_id": "subSmoke",
+    "shared_with": [],
+    "description": "A test decision tree",
+    "tags": [],
+    "title": "Smoke DT"
+  },
+  {
+    "tree_id": "7df08279-36bd-4fcf-a9b9-7e8d83936706",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-05-01T01:30:59.025Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-05-01T01:30:59.025Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-05-01T01:30:59.025Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "This is a test",
+    "tags": [],
+    "title": "Hello Search"
+  },
+  {
+    "tree_id": "tree2",
+    "publication_status": "approved",
+    "version": "1",
+    "category_id": "cat002",
+    "flags": [],
+    "created_at": "2025-04-09T10:10:00Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "public"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-09T10:12:00Z"
+      },
+      "rekognition_analysis": {
+        "M": {
+          "safe_search": {
+            "M": {
+              "spoof": {
+                "S": "UNLIKELY"
+              },
+              "racy": {
+                "S": "UNLIKELY"
+              },
+              "medical": {
+                "S": "VERY_UNLIKELY"
+              },
+              "adult": {
+                "S": "VERY_UNLIKELY"
+              },
+              "violence": {
+                "S": "VERY_UNLIKELY"
+              }
+            }
+          }
+        }
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-09T10:10:00Z",
+    "history": [],
+    "subcategory_id": "subcat002",
+    "shared_with": [],
+    "description": "A decision tree to plan your ideal travel experience.",
+    "tags": [
+      {
+        "S": "travel"
+      },
+      {
+        "S": "vacation"
+      },
+      {
+        "S": "planning"
+      }
+    ],
+    "title": "Travel Decisions"
+  },
+  {
+    "tree_id": "78b7e65e-3402-441d-b26d-77e2a10cefd0",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-30T17:37:04.416Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-30T17:37:04.416Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-30T17:37:04.416Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "This is a test",
+    "tags": [],
+    "title": "Hello Search"
+  },
+  {
+    "tree_id": "e4893794-e5a8-48f7-a220-3d69998d8c23",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-22T20:42:42.291Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-22T20:42:42.291Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-22T20:42:42.291Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "Testing…",
+    "tags": [
+      {
+        "S": "smoke"
+      }
+    ],
+    "title": "My Smoke Tree"
+  },
+  {
+    "tree_id": "78737aab-d7f5-4d79-8768-e55f66037d3a",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-16T20:12:27.292Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "public"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-16T20:12:27.292Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-16T20:12:27.292Z",
+    "history": [],
+    "subcategory_id": "subcat001",
+    "shared_with": [],
+    "description": "Step-by-step guide",
+    "tags": [
+      {
+        "S": "example"
+      },
+      {
+        "S": "test"
+      }
+    ],
+    "title": "My New Tree"
+  },
+  {
+    "tree_id": "tree3",
+    "publication_status": "approved",
+    "version": "1",
+    "category_id": "cat002",
+    "flags": [
+      {
+        "M": {
+          "flag_id": {
+            "S": "flag001"
+          },
+          "reason": {
+            "S": "Suspected inappropriate content"
+          },
+          "created_at": {
+            "S": "2025-04-09T10:23:00Z"
+          },
+          "user_id": {
+            "N": "1001"
+          }
+        }
+      }
+    ],
+    "created_at": "2025-04-09T10:20:00Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": [
+          {
+            "N": "1002"
+          }
+        ]
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "specific_accounts"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": [
+          {
+            "N": "1001"
+          }
+        ]
+      },
+      "flag_count": {
+        "N": "1"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-09T10:22:00Z"
+      },
+      "rekognition_analysis": {
+        "M": {
+          "safe_search": {
+            "M": {
+              "spoof": {
+                "S": "UNLIKELY"
+              },
+              "racy": {
+                "S": "VERY_UNLIKELY"
+              },
+              "medical": {
+                "S": "VERY_UNLIKELY"
+              },
+              "adult": {
+                "S": "UNLIKELY"
+              },
+              "violence": {
+                "S": "UNLIKELY"
+              }
+            }
+          }
+        }
+      }
+    },
+    "owner_id": "1002",
+    "updated_at": "2025-04-09T10:20:00Z",
+    "history": [],
+    "subcategory_id": "subcat002",
+    "shared_with": [],
+    "description": "A decision tree for choosing between various investment options.",
+    "tags": [
+      {
+        "S": "investment"
+      },
+      {
+        "S": "finance"
+      },
+      {
+        "S": "stocks"
+      },
+      {
+        "S": "bonds"
+      }
+    ],
+    "title": "Investment Decisions"
+  },
+  {
+    "tree_id": "tree4",
+    "publication_status": "pending",
+    "version": "2",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-09T11:00:00Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": [
+          {
+            "S": "grp001"
+          }
+        ]
+      },
+      "access_type": {
+        "S": "specific_groups"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-10T12:00:00Z"
+      },
+      "rekognition_analysis": {
+        "M": {
+          "safe_search": {
+            "M": {
+              "spoof": {
+                "S": "UNLIKELY"
+              },
+              "racy": {
+                "S": "UNLIKELY"
+              },
+              "medical": {
+                "S": "VERY_UNLIKELY"
+              },
+              "adult": {
+                "S": "VERY_UNLIKELY"
+              },
+              "violence": {
+                "S": "VERY_UNLIKELY"
+              }
+            }
+          }
+        }
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-10T12:00:00Z",
+    "history": [
+      {
+        "M": {
+          "updated_by": {
+            "N": "1001"
+          },
+          "update_description": {
+            "S": "Added multi-choice branching for Canadian call reasons"
+          },
+          "updated_at": {
+            "S": "2025-04-10T12:00:00Z"
+          }
+        }
+      }
+    ],
+    "subcategory_id": "subcat001",
+    "shared_with": [
+      {
+        "M": {
+          "user_id": {
+            "N": "1002"
+          },
+          "access_type": {
+            "S": "read-only"
+          }
+        }
+      }
+    ],
+    "description": "Decision tree for phone agents handling customer calls based on location and call reason.",
+    "tags": [
+      {
+        "S": "call_center"
+      },
+      {
+        "S": "customer_service"
+      },
+      {
+        "S": "support"
+      }
+    ],
+    "title": "Call Center Decision Tree"
+  },
+  {
+    "tree_id": "95bb3b59-f3e0-42d6-a883-be66ddf85952",
+    "publication_status": "draft",
+    "version": "1",
+    "category_id": "cat001",
+    "flags": [],
+    "created_at": "2025-04-30T17:43:40.664Z",
+    "access_config": {
+      "allowed_accounts": {
+        "L": []
+      },
+      "allowed_groups": {
+        "L": []
+      },
+      "access_type": {
+        "S": "only_me"
+      }
+    },
+    "moderation_info": {
+      "flagged_by": {
+        "L": []
+      },
+      "flag_count": {
+        "N": "0"
+      },
+      "last_moderation_check": {
+        "S": "2025-04-30T17:43:40.664Z"
+      },
+      "rekognition_analysis": {
+        "M": {}
+      }
+    },
+    "owner_id": "1001",
+    "updated_at": "2025-04-30T17:43:40.664Z",
+    "history": [],
+    "subcategory_id": "sub001",
+    "shared_with": [],
+    "description": "This is a test",
+    "tags": [],
+    "title": "Hello Search"
+  }
+]

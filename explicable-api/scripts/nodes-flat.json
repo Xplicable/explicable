@@ -1,0 +1,1284 @@
+[
+  {
+    "updated_at": "2025-04-09T10:05:00Z",
+    "tree_id": "tree1",
+    "photo_url": "http://example.com/photos/steak.jpg",
+    "created_at": "2025-04-09T10:05:00Z",
+    "additional_content": [
+      {
+        "M": {
+          "content_type": {
+            "S": "document"
+          },
+          "description": {
+            "M": {
+              "de": {
+                "S": "Detailliertes Rezept zur Steakzubereitung und Tipps."
+              },
+              "hi": {
+                "S": "स्टेक बनाने की विस्तृत विधि और सुझाव।"
+              },
+              "vi": {
+                "S": "Công thức chi tiết chế biến bít tết và mẹo."
+              },
+              "ko": {
+                "S": "스테이크 준비 방법 및 팁에 대한 자세한 레시피."
+              },
+              "ja": {
+                "S": "ステーキ調理の詳細なレシピとヒント。"
+              },
+              "en": {
+                "S": "Detailed steak preparation recipe and tips."
+              },
+              "id": {
+                "S": "Resep detail dan tips untuk menyiapkan steak."
+              },
+              "fr": {
+                "S": "Recette détaillée pour préparer un steak et conseils."
+              },
+              "es": {
+                "S": "Receta detallada para preparar bistec y consejos."
+              },
+              "zh": {
+                "S": "详细的牛排烹饪方法和技巧。"
+              }
+            }
+          },
+          "url": {
+            "S": "http://example.com/docs/steak_recipe.pdf"
+          }
+        }
+      }
+    ],
+    "text": {
+      "de": {
+        "S": "Steak zubereiten"
+      },
+      "hi": {
+        "S": "स्टेक बनाएं"
+      },
+      "vi": {
+        "S": "Nấu bít tết"
+      },
+      "ko": {
+        "S": "스테이크 만들기"
+      },
+      "ja": {
+        "S": "ステーキを作る"
+      },
+      "en": {
+        "S": "Make Steak"
+      },
+      "id": {
+        "S": "Buat Steak"
+      },
+      "fr": {
+        "S": "Préparer un steak"
+      },
+      "es": {
+        "S": "Prepare bistec"
+      },
+      "zh": {
+        "S": "做牛排"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "90"
+      },
+      "selections": {
+        "N": "45"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Bereiten Sie ein köstliches Steak-Dinner zu, indem Sie es grillen oder in der Pfanne braten. Marinieren Sie das Steak über Nacht für zusätzlichen Geschmack und servieren Sie es mit geröstetem Gemüse und einem knackigen Salat."
+      },
+      "hi": {
+        "S": "स्टेक को ग्रिल या पैन-फ्राई करके स्वादिष्ट डिनर तैयार करें। अतिरिक्त स्वाद के लिए स्टेक को रात भर मेरिनेट करें, और भुनी हुई सब्जियों तथा कुरकुरे सलाद के साथ परोसें।"
+      },
+      "vi": {
+        "S": "Nấu bít tết bằng cách nướng hoặc chiên, ướp qua đêm để tăng hương vị và dùng kèm với rau củ nướng cùng salad giòn."
+      },
+      "ko": {
+        "S": "스테이크를 그릴이나 팬에 구워, 하룻밤 동안 재워 추가 맛을 내고, 구운 야채와 바삭한 샐러드와 함께 제공하세요."
+      },
+      "ja": {
+        "S": "ステーキをグリルまたはフライパンで調理し、一晩漬け込むことで風味を増します。ロースト野菜とシャキシャキのサラダを添えてお召し上がりください。"
+      },
+      "en": {
+        "S": "Prepare a delicious steak dinner by grilling or pan-frying. Marinate the steak overnight for extra flavor, and serve with roasted vegetables and a crisp salad."
+      },
+      "id": {
+        "S": "Siapkan steak yang lezat dengan cara dipanggang atau digoreng; rendam steak semalaman untuk rasa ekstra, lalu sajikan dengan sayuran panggang dan salad renyah."
+      },
+      "fr": {
+        "S": "Préparez un délicieux dîner de steak en le grillant ou en le faisant frire. Faites mariner le steak pendant la nuit pour plus de saveur, puis servez-le avec des légumes rôtis et une salade croquante."
+      },
+      "es": {
+        "S": "Prepare una cena deliciosa de bistec asándolo o friéndolo. Marine el bistec durante la noche para más sabor, y sírvalo con verduras asadas y una ensalada fresca."
+      },
+      "zh": {
+        "S": "将牛排烤或煎，腌制一夜以增添风味，然后搭配烤蔬菜和爽脆的沙拉一起享用。"
+      }
+    },
+    "node_id": "n2"
+  },
+  {
+    "updated_at": "2025-04-03T10:00:00Z",
+    "tree_id": "treeB",
+    "usage_views": "0",
+    "created_at": "2025-04-03T10:00:00Z",
+    "usage_selections": "0",
+    "text": {
+      "en": {
+        "S": "First question"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "node_id": "q1"
+  },
+  {
+    "updated_at": "2025-04-22T20:45:07.772Z",
+    "tree_id": "tree1",
+    "created_at": "2025-04-22T20:45:07.772Z",
+    "additional_content": [],
+    "text": {
+      "en": {
+        "S": "Smoke‑test node?"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "node_id": "bbaf4fe1-f6b9-43de-8e83-ca290f366eb6"
+  },
+  {
+    "updated_at": "2025-04-09T10:00:00Z",
+    "tree_id": "tree1",
+    "photo_url": "http://example.com/photos/meat_check.jpg",
+    "created_at": "2025-04-09T10:00:00Z",
+    "additional_content": [],
+    "translation_metadata": {
+      "source_language": {
+        "S": "en"
+      },
+      "auto_translated": {
+        "BOOL": true
+      },
+      "last_translated": {
+        "S": "2025-04-09T10:00:00Z"
+      }
+    },
+    "text": {
+      "de": {
+        "S": "Haben Sie Fleisch?"
+      },
+      "hi": {
+        "S": "क्या आपके पास मांस है?"
+      },
+      "vi": {
+        "S": "Bạn có thịt không?"
+      },
+      "ko": {
+        "S": "고기가 있습니까?"
+      },
+      "ja": {
+        "S": "お肉はありますか？"
+      },
+      "en": {
+        "S": "Do you have meat?"
+      },
+      "id": {
+        "S": "Apakah Anda memiliki daging?"
+      },
+      "fr": {
+        "S": "Avez-vous de la viande ?"
+      },
+      "es": {
+        "S": "¿Tiene carne?"
+      },
+      "zh": {
+        "S": "你有肉吗？"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "100"
+      },
+      "selections": {
+        "N": "50"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Überprüfen Sie, ob Sie Fleisch für das Abendessen haben. Das hilft bei der Planung der Gerichte."
+      },
+      "hi": {
+        "S": "इस बात की जांच करें कि आपके पास रात के खाने के लिए मांस है या नहीं, ताकि तय किया जा सके कि कौन से व्यंजन बनाए जाएँ।"
+      },
+      "vi": {
+        "S": "Kiểm tra xem bạn có thịt cho bữa tối không, để từ đó quyết định món ăn cần chuẩn bị."
+      },
+      "ko": {
+        "S": "저녁 식사용 고기가 있는지 확인하세요. 이렇게 하면 만들 요리를 결정하는 데 도움이 됩니다."
+      },
+      "ja": {
+        "S": "夕食のために肉があるかどうか確認してください。これにより、作る料理を決定できます。"
+      },
+      "en": {
+        "S": "Check if you have meat available for dinner. This will help determine which meals can be prepared tonight."
+      },
+      "id": {
+        "S": "Periksa apakah Anda memiliki daging untuk makan malam, sehingga dapat menentukan hidangan yang harus disiapkan."
+      },
+      "fr": {
+        "S": "Vérifiez si vous avez de la viande pour le dîner. Cela déterminera les repas à préparer."
+      },
+      "es": {
+        "S": "Verifique si tiene carne para la cena. Esto ayudará a determinar qué comidas se pueden preparar."
+      },
+      "zh": {
+        "S": "检查您是否有肉做晚餐，以便确定今晚可以做哪些菜。"
+      }
+    },
+    "node_id": "n1"
+  },
+  {
+    "updated_at": "2025-04-09T11:11:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/billing.jpg",
+    "created_at": "2025-04-09T11:11:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Rechnungsfrage"
+      },
+      "hi": {
+        "S": "बिलिंग प्रश्न"
+      },
+      "vi": {
+        "S": "Vấn đề hóa đơn"
+      },
+      "ko": {
+        "S": "청구 질문"
+      },
+      "ja": {
+        "S": "請求に関する質問"
+      },
+      "en": {
+        "S": "Billing Question"
+      },
+      "id": {
+        "S": "Pertanyaan Tagihan"
+      },
+      "fr": {
+        "S": "Question de facturation"
+      },
+      "es": {
+        "S": "Consulta de facturación"
+      },
+      "zh": {
+        "S": "账单问题"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "160"
+      },
+      "selections": {
+        "N": "80"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Leiten Sie Rechnungsfragen an die zuständige Abteilung weiter. Diese Lösung erläutert, wie man die Rechnungsinformationen prüft, Gebühren erklärt und Unstimmigkeiten schnell behebt."
+      },
+      "hi": {
+        "S": "बिलिंग प्रश्नों को विशेषज्ञ विभाग में भेजें। यह समाधान बिलिंग जानकारी की पुष्टि करने, शुल्क समझाने और अंतराल को जल्दी सुलझाने का विवरण देता है।"
+      },
+      "vi": {
+        "S": "Chuyển các câu hỏi về hóa đơn đến bộ phận chuyên môn. Giải pháp này trình bày chi tiết cách xác minh thông tin hóa đơn, giải thích cước phí và xử lý nhanh các sai sót."
+      },
+      "ko": {
+        "S": "청구 관련 질문은 전문 부서로 연결하십시오. 이 솔루션은 청구 정보를 확인하고, 요금을 설명하며, 문제를 신속하게 해결하는 방법을 자세히 설명합니다."
+      },
+      "ja": {
+        "S": "請求に関する質問は、専門の部署にルーティングします。このソリューションは、請求情報の確認、料金の説明、不一致の迅速な解決方法について詳細に説明します。"
+      },
+      "en": {
+        "S": "Route billing questions to the specialized department. This solution details how to verify billing info, explain charges, and resolve discrepancies promptly."
+      },
+      "id": {
+        "S": "Arahkan pertanyaan tagihan ke departemen khusus. Solusi ini merinci cara memverifikasi informasi tagihan, menjelaskan biaya, dan menyelesaikan perbedaan dengan cepat."
+      },
+      "fr": {
+        "S": "Dirigez les questions de facturation vers le service spécialisé. Cette solution détaille comment vérifier les informations de facturation, expliquer les frais et résoudre rapidement les divergences."
+      },
+      "es": {
+        "S": "Dirija las consultas de facturación al departamento especializado. Esta solución explica cómo verificar la información, detallar los cargos y resolver discrepancias de manera rápida."
+      },
+      "zh": {
+        "S": "将账单问题转接至专门部门。该方案详细说明了如何核对账单信息、解释费用以及迅速解决问题。"
+      }
+    },
+    "node_id": "n14"
+  },
+  {
+    "updated_at": "2025-04-09T11:14:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/other_reason.jpg",
+    "created_at": "2025-04-09T11:14:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Anderer Grund"
+      },
+      "hi": {
+        "S": "कुछ और"
+      },
+      "vi": {
+        "S": "Lý do khác"
+      },
+      "ko": {
+        "S": "다른 이유"
+      },
+      "ja": {
+        "S": "その他の理由"
+      },
+      "en": {
+        "S": "Other Reason"
+      },
+      "id": {
+        "S": "Alasan Lain"
+      },
+      "fr": {
+        "S": "Autre motif"
+      },
+      "es": {
+        "S": "Otro motivo"
+      },
+      "zh": {
+        "S": "其他原因"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "145"
+      },
+      "selections": {
+        "N": "70"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Für Anrufe, die nicht in die Standardkategorien passen, stellen Sie eine alternative Lösung bereit, die den Kunden mit einem Spezialisten für allgemeine Anfragen verbindet, sodass alle Anliegen abgedeckt sind."
+      },
+      "hi": {
+        "S": "उन कॉलों के लिए जो मानक श्रेणियों में फिट नहीं होतीं, एक वैकल्पिक समाधान प्रदान करें जो ग्राहक को एक सामान्य पूछताछ विशेषज्ञ से जोड़ दे ताकि सभी चिंताओं का समाधान हो सके।"
+      },
+      "vi": {
+        "S": "Đối với những cuộc gọi không thuộc danh mục tiêu chuẩn, hãy cung cấp một giải pháp thay thế kết nối khách hàng với chuyên gia tư vấn chung để giải quyết mọi mối quan tâm."
+      },
+      "ko": {
+        "S": "표준 범주에 속하지 않는 통화의 경우, 고객을 일반 문의 전문가와 연결하여 모든 문제를 해결할 수 있는 대체 솔루션을 제공합니다."
+      },
+      "ja": {
+        "S": "標準のカテゴリーに当てはまらない通話には、顧客を一般の問い合わせ専門家に接続する代替ソリューションを提供し、すべての懸念事項に対処します。"
+      },
+      "en": {
+        "S": "For calls that do not fit standard categories, provide a fallback solution connecting the customer with a general inquiry specialist so that all concerns are addressed."
+      },
+      "id": {
+        "S": "Untuk panggilan yang tidak sesuai dengan kategori standar, sediakan solusi alternatif yang menghubungkan pelanggan dengan spesialis pertanyaan umum agar semua masalah dapat diatasi."
+      },
+      "fr": {
+        "S": "Pour les appels hors catégories standards, proposez une solution alternative reliant le client à un spécialiste général afin de traiter toutes les préoccupations."
+      },
+      "es": {
+        "S": "Para llamadas que no encajen en categorías estándar, ofrez una solución alternativa que conecte al cliente con un especialista en consultas generales para atender todas las inquietudes."
+      },
+      "zh": {
+        "S": "对于不符合标准分类的来电，提供备用解决方案，将客户与通用咨询专家对接，以确保所有问题得到解决。"
+      }
+    },
+    "node_id": "n17"
+  },
+  {
+    "updated_at": "2025-04-29T18:27:36.651Z",
+    "tree_id": "0C0C7FA0-B894-4BC3-8D7D-9DDD93CD2473",
+    "created_at": "2025-04-29T18:27:36.651Z",
+    "additional_content": [],
+    "text": {
+      "en": {
+        "S": "Smoke node"
+      }
+    },
+    "node_type": "smokeType",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "node_id": "8e372b4c-886b-48bc-9b66-a6901cca5027"
+  },
+  {
+    "updated_at": "2025-04-10T13:00:00Z",
+    "tree_id": "tree4",
+    "created_at": "2025-04-10T13:00:00Z",
+    "button_label": {
+      "de": {
+        "S": "Fertig"
+      },
+      "hi": {
+        "S": "हो गया"
+      },
+      "vi": {
+        "S": "Xong"
+      },
+      "ko": {
+        "S": "완료"
+      },
+      "ja": {
+        "S": "完了"
+      },
+      "en": {
+        "S": "Done"
+      },
+      "id": {
+        "S": "Selesai"
+      },
+      "fr": {
+        "S": "Terminé"
+      },
+      "es": {
+        "S": "Hecho"
+      },
+      "zh": {
+        "S": "完成"
+      }
+    },
+    "text": {
+      "de": {
+        "S": "Suchen Sie das Kundenkonto im AMS-System."
+      },
+      "hi": {
+        "S": "AMS खाते प्रणाली में ग्राहक खाता देखें।"
+      },
+      "vi": {
+        "S": "Tra cứu tài khoản khách hàng trong hệ thống AMS."
+      },
+      "ko": {
+        "S": "AMS 계정 관리 시스템에서 고객 계정을 확인하십시오."
+      },
+      "ja": {
+        "S": "AMSアカウント管理システムで顧客のアカウントを確認してください。"
+      },
+      "en": {
+        "S": "Look up the customer's account in the AMS Account Management System."
+      },
+      "id": {
+        "S": "Cari akun pelanggan di sistem AMS."
+      },
+      "fr": {
+        "S": "Recherchez le compte du client dans le système AMS."
+      },
+      "es": {
+        "S": "Busque la cuenta del cliente en el sistema AMS."
+      },
+      "zh": {
+        "S": "在AMS系统中查找客户账号。"
+      }
+    },
+    "node_type": "instruction",
+    "description": {
+      "de": {
+        "S": "Nachdem Sie die Kontodaten in AMS geprüft haben, klicken Sie auf 'Fertig' um fortzufahren."
+      },
+      "hi": {
+        "S": "AMS में खाते के विवरण की पुष्टि के बाद 'हो गया' पर क्लिक करें।"
+      },
+      "vi": {
+        "S": "Sau khi xác nhận chi tiết tài khoản trong AMS, nhấn 'Xong' để tiếp tục."
+      },
+      "ko": {
+        "S": "AMS에서 계정 정보를 확인한 후 '완료'를 클릭하여 진행하십시오."
+      },
+      "ja": {
+        "S": "AMSでアカウント詳細を確認したら、「完了」をクリックして進んでください。"
+      },
+      "en": {
+        "S": "After verifying account details in AMS, click 'Done' to proceed."
+      },
+      "id": {
+        "S": "Setelah memverifikasi detail akun di AMS, klik 'Selesai' untuk melanjutkan."
+      },
+      "fr": {
+        "S": "Après avoir vérifié les détails dans AMS, cliquez sur 'Terminé' pour continuer."
+      },
+      "es": {
+        "S": "Después de verificar en AMS, haga clic en 'Hecho' para continuar."
+      },
+      "zh": {
+        "S": "验证AMS中的账户信息后，点击“完成”继续。"
+      }
+    },
+    "node_id": "n18"
+  },
+  {
+    "updated_at": "2025-04-23T01:16:50.297Z",
+    "tree_id": "smokeTree",
+    "created_at": "2025-04-23T01:16:50.297Z",
+    "additional_content": [],
+    "text": {
+      "en": {
+        "S": "Smoke-test node"
+      }
+    },
+    "node_type": "smoke",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "description": "This is a smoke test.",
+    "node_id": "fe89f899-451d-4780-82e6-c6314cdbc90d"
+  },
+  {
+    "updated_at": "2025-04-09T11:00:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/country_check.jpg",
+    "created_at": "2025-04-09T11:00:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Aus welchem Land ruft der Kunde an?"
+      },
+      "hi": {
+        "S": "ग्राहक किस देश से कॉल कर रहा है?"
+      },
+      "vi": {
+        "S": "Khách hàng gọi từ quốc gia nào?"
+      },
+      "ko": {
+        "S": "고객은 어느 나라에서 전화하나요?"
+      },
+      "ja": {
+        "S": "お客様はどの国からお電話ですか？"
+      },
+      "en": {
+        "S": "Which country is the customer calling from?"
+      },
+      "id": {
+        "S": "Dari negara mana pelanggan menelepon?"
+      },
+      "fr": {
+        "S": "De quel pays provient l'appelant ?"
+      },
+      "es": {
+        "S": "¿De qué país llama el cliente?"
+      },
+      "zh": {
+        "S": "客户来自哪个国家？"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "200"
+      },
+      "selections": {
+        "N": "100"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Bestimmen Sie das Land des Kunden, damit der Anruf korrekt weitergeleitet wird und regionsspezifischer Support gewährleistet ist."
+      },
+      "hi": {
+        "S": "यह निर्धारित करें कि ग्राहक किस देश से कॉल कर रहा है ताकि कॉल को सही ढंग से रूट किया जा सके और क्षेत्रीय सहायता सुनिश्चित हो सके।"
+      },
+      "vi": {
+        "S": "Xác định quốc gia của khách hàng để cuộc gọi được chuyển đúng hướng và đảm bảo hỗ trợ theo khu vực."
+      },
+      "ko": {
+        "S": "고객의 국가를 확인하여 통화를 적절하게 라우팅함으로써 지역별 지원을 보장합니다."
+      },
+      "ja": {
+        "S": "お客様の国を特定し、通話を正しく転送することで、地域別のサポートを確実にします。"
+      },
+      "en": {
+        "S": "Determine the customer's country so the call can be routed appropriately. This ensures region-specific support."
+      },
+      "id": {
+        "S": "Tentukan negara pelanggan sehingga panggilan dapat dialihkan dengan tepat dan dukungan wilayah terjamin."
+      },
+      "fr": {
+        "S": "Déterminez le pays de l'appelant afin d'acheminer l'appel correctement. Cela garantit un support adapté à chaque région."
+      },
+      "es": {
+        "S": "Determine el país del cliente para enrutar la llamada adecuadamente y asegurar soporte regional."
+      },
+      "zh": {
+        "S": "确定客户所在国家，以便正确分流呼叫，确保区域支持。"
+      }
+    },
+    "node_id": "n10"
+  },
+  {
+    "updated_at": "2025-04-09T11:05:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/call_reason.jpg",
+    "created_at": "2025-04-09T11:05:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Was ist der Grund für den Anruf?"
+      },
+      "hi": {
+        "S": "कॉल का कारण क्या है?"
+      },
+      "vi": {
+        "S": "Lý do gọi là gì?"
+      },
+      "ko": {
+        "S": "통화 이유는 무엇입니까?"
+      },
+      "ja": {
+        "S": "通話の理由は何ですか？"
+      },
+      "en": {
+        "S": "What is the reason for the call?"
+      },
+      "id": {
+        "S": "Apa alasan panggilan?"
+      },
+      "fr": {
+        "S": "Quel est le motif de l'appel ?"
+      },
+      "es": {
+        "S": "¿Cuál es el motivo de la llamada?"
+      },
+      "zh": {
+        "S": "通话原因是什么？"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "190"
+      },
+      "selections": {
+        "N": "95"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Wählen Sie für kanadische Kunden den Grund für den Anruf. Mehrere Optionen stehen zur Verfügung, um die Anfragen genau abzubilden."
+      },
+      "hi": {
+        "S": "कनाडाई ग्राहकों के लिए, कॉल का कारण चुनें। सही जानकारी के लिए कई विकल्प उपलब्ध हैं।"
+      },
+      "vi": {
+        "S": "Đối với khách hàng Canada, hãy chọn lý do gọi. Có nhiều lựa chọn để phản ánh chính xác yêu cầu."
+      },
+      "ko": {
+        "S": "캐나다 고객의 경우, 통화 이유를 선택하십시오. 여러 옵션이 제공되어 문의 내용을 정확하게 반영합니다."
+      },
+      "ja": {
+        "S": "カナダのお客様には、通話の理由を選択してください。正確に問い合わせに対応するため、複数のオプションが提供されています。"
+      },
+      "en": {
+        "S": "For Canadian customers, select the reason for calling. Multiple options are provided to accurately reflect inquiries."
+      },
+      "id": {
+        "S": "Untuk pelanggan Kanada, pilih alasan panggilan. Beberapa opsi disediakan untuk mencerminkan pertanyaan secara akurat."
+      },
+      "fr": {
+        "S": "Pour les clients canadiens, sélectionnez le motif de l'appel. Plusieurs options sont proposées pour refléter précisément les demandes."
+      },
+      "es": {
+        "S": "Para los clientes canadienses, seleccione el motivo de la llamada. Se ofrecen varias opciones para reflejar con precisión las consultas."
+      },
+      "zh": {
+        "S": "对于加拿大客户，请选择通话原因。提供多个选项以准确反映查询。"
+      }
+    },
+    "node_id": "n11"
+  },
+  {
+    "updated_at": "2025-04-09T11:10:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/place_order.jpg",
+    "created_at": "2025-04-09T11:10:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Eine Bestellung aufgeben"
+      },
+      "hi": {
+        "S": "ऑर्डर प्लेस करें"
+      },
+      "vi": {
+        "S": "Đặt hàng"
+      },
+      "ko": {
+        "S": "주문하기"
+      },
+      "ja": {
+        "S": "注文をする"
+      },
+      "en": {
+        "S": "Place an Order"
+      },
+      "id": {
+        "S": "Buat Pesanan"
+      },
+      "fr": {
+        "S": "Passer une commande"
+      },
+      "es": {
+        "S": "Realizar un pedido"
+      },
+      "zh": {
+        "S": "下订单"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "170"
+      },
+      "selections": {
+        "N": "85"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Bearbeiten Sie die Bestellung, indem Sie Kundendaten prüfen, den Lagerbestand bestätigen und den Anruf an das Bestellteam weiterleiten. So wird sichergestellt, dass der Kunde umfassend betreut wird."
+      },
+      "hi": {
+        "S": "ग्राहक विवरण की पुष्टि, स्टॉक की जांच, और ऑर्डर प्रोसेसिंग टीम को कॉल रूट करके ऑर्डर को संभालें। इससे सुनिश्चित होता है कि ग्राहक को पूरी सहायता मिले।"
+      },
+      "vi": {
+        "S": "Xử lý đặt hàng bằng cách xác minh thông tin khách hàng, xác nhận tồn kho, và chuyển hướng cuộc gọi đến đội xử lý đơn hàng. Điều này đảm bảo khách hàng được hỗ trợ đầy đủ."
+      },
+      "ko": {
+        "S": "고객 정보를 확인하고, 재고를 확인한 후 주문 처리 팀에 통화를 연결하여 주문을 진행하세요. 이를 통해 고객에게 완벽한 지원이 제공됩니다."
+      },
+      "ja": {
+        "S": "顧客情報の確認、在庫の確認、注文処理チームへの通話ルーティングを通じて注文を処理します。これにより、顧客は十分なサポートを受けられます。"
+      },
+      "en": {
+        "S": "Handle order placement by verifying customer details, confirming stock, and routing the call to the order processing team. This ensures the customer is thoroughly assisted."
+      },
+      "id": {
+        "S": "Tangani pesanan dengan memverifikasi detail pelanggan, mengonfirmasi stok, dan mengarahkan panggilan ke tim pemrosesan pesanan. Ini memastikan bahwa pelanggan mendapatkan dukungan penuh."
+      },
+      "fr": {
+        "S": "Gérez la commande en vérifiant les informations du client, en confirmant le stock, et en dirigeant l'appel vers l'équipe de traitement pour une assistance complète."
+      },
+      "es": {
+        "S": "Gestione el pedido verificando los detalles del cliente, confirmando el stock y canalizando la llamada al equipo de procesamiento para asegurar una asistencia completa."
+      },
+      "zh": {
+        "S": "通过验证客户详细信息、确认库存，并将通话转接到订单处理团队来处理订单，从而确保客户获得全方位的支持。"
+      }
+    },
+    "node_id": "n13"
+  },
+  {
+    "updated_at": "2025-04-09T11:06:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/usa_support.jpg",
+    "created_at": "2025-04-09T11:06:00Z",
+    "additional_content": [
+      {
+        "M": {
+          "content_type": {
+            "S": "document"
+          },
+          "description": {
+            "M": {
+              "de": {
+                "S": "Vollständiger Leitfaden zu den Verfahren des Inlandssupports."
+              },
+              "hi": {
+                "S": "घरेलू समर्थन प्रक्रियाओं की पूरी गाइडलाइन।"
+              },
+              "vi": {
+                "S": "Hướng dẫn đầy đủ về quy trình hỗ trợ nội địa."
+              },
+              "ko": {
+                "S": "국내 지원 절차 전체 가이드."
+              },
+              "ja": {
+                "S": "国内サポート手順の完全ガイド。"
+              },
+              "en": {
+                "S": "Complete guide on domestic support procedures."
+              },
+              "id": {
+                "S": "Panduan lengkap tentang prosedur dukungan domestik."
+              },
+              "fr": {
+                "S": "Guide complet sur les procédures de support national."
+              },
+              "es": {
+                "S": "Guía completa sobre los procedimientos de soporte nacional."
+              },
+              "zh": {
+                "S": "国内支持流程完整指南。"
+              }
+            }
+          },
+          "url": {
+            "S": "http://example.com/docs/domestic_support_guide.pdf"
+          }
+        }
+      }
+    ],
+    "text": {
+      "de": {
+        "S": "Weiterleitung an den Inlandssupport"
+      },
+      "hi": {
+        "S": "डोमेस्टिक सपोर्ट पर रूट करें"
+      },
+      "vi": {
+        "S": "Chuyển đến hỗ trợ nội địa"
+      },
+      "ko": {
+        "S": "국내 지원으로 연결"
+      },
+      "ja": {
+        "S": "国内サポートへ転送する"
+      },
+      "en": {
+        "S": "Route to Domestic Support"
+      },
+      "id": {
+        "S": "Arahkan ke Dukungan Domestik"
+      },
+      "fr": {
+        "S": "Acheminer vers le support national"
+      },
+      "es": {
+        "S": "Encaminar a soporte nacional"
+      },
+      "zh": {
+        "S": "转接至国内支持"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "180"
+      },
+      "selections": {
+        "N": "90"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Leiten Sie Anrufe von US-Kunden an den Inlandssupport weiter. Diese Lösung beschreibt den detaillierten Prozess, einschließlich Fehlerbehebung und Weiterleitung an die zuständige Abteilung."
+      },
+      "hi": {
+        "S": "अमेरिकी ग्राहकों के लिए, कॉल को डोमेस्टिक सपोर्ट पर निर्देशित करें। यह समाधान समस्या निवारण और उचित विभाग में रूटिंग सहित विस्तृत प्रक्रिया प्रदान करता है।"
+      },
+      "vi": {
+        "S": "Đối với khách hàng Hoa Kỳ, chuyển cuộc gọi đến hỗ trợ nội địa. Giải pháp này cung cấp quy trình chi tiết, bao gồm khắc phục sự cố và chuyển hướng đúng bộ phận."
+      },
+      "ko": {
+        "S": "미국 고객의 경우, 통화를 국내 지원으로 연결하세요. 이 솔루션은 문제 해결과 적절한 부서로의 연결을 포함한 상세한 절차를 제공합니다."
+      },
+      "ja": {
+        "S": "アメリカのお客様の場合、通話を国内サポートに転送します。このソリューションは、トラブルシューティングや適切な部署へのルーティングを含む詳細なプロセスを提供します。"
+      },
+      "en": {
+        "S": "For USA customers, direct the call to domestic support. This solution provides a detailed process including troubleshooting and routing to the appropriate department."
+      },
+      "id": {
+        "S": "Untuk pelanggan AS, arahkan panggilan ke Dukungan Domestik. Solusi ini menyediakan proses terperinci termasuk pemecahan masalah dan pengalihan ke departemen yang tepat."
+      },
+      "fr": {
+        "S": "Pour les clients américains, orientez l'appel vers le support national. Cette solution détaille le processus complet, incluant la résolution de problèmes et le routage vers le service approprié."
+      },
+      "es": {
+        "S": "Para clientes de EE.UU., dirija la llamada a soporte nacional. Esta solución ofrece un proceso detallado que incluye la resolución de problemas y el direccionamiento correcto."
+      },
+      "zh": {
+        "S": "对于美国客户，将呼叫直接转接至国内支持。本方案详细说明了解决问题和路由到相应部门的流程。"
+      }
+    },
+    "node_id": "n12"
+  },
+  {
+    "updated_at": "2025-04-01T10:00:00Z",
+    "tree_id": "treeA",
+    "usage_views": "10",
+    "created_at": "2025-04-01T10:00:00Z",
+    "usage_selections": "3",
+    "text": {
+      "en": {
+        "S": "First solution"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "10"
+      },
+      "selections": {
+        "N": "3"
+      }
+    },
+    "description": "Solution sorted by views=10, selections=3",
+    "node_id": "sol1"
+  },
+  {
+    "updated_at": "2025-04-16T23:36:14.526Z",
+    "tree_id": "tree1",
+    "text": {
+      "en": {
+        "S": "Is this a test node?"
+      }
+    },
+    "created_at": "2025-04-16T23:36:14.526Z",
+    "node_type": "question",
+    "node_id": "0b4d00c4-402b-41d5-83b9-0711231ab262"
+  },
+  {
+    "updated_at": "2025-04-09T11:12:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/change_contact.jpg",
+    "created_at": "2025-04-09T11:12:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Kontaktdaten ändern"
+      },
+      "hi": {
+        "S": "संपर्क जानकारी बदलें"
+      },
+      "vi": {
+        "S": "Thay đổi thông tin liên hệ"
+      },
+      "ko": {
+        "S": "연락처 정보 변경"
+      },
+      "ja": {
+        "S": "連絡先情報を変更する"
+      },
+      "en": {
+        "S": "Change Contact Information"
+      },
+      "id": {
+        "S": "Ubah Informasi Kontak"
+      },
+      "fr": {
+        "S": "Modifier les coordonnées"
+      },
+      "es": {
+        "S": "Cambiar información de contacto"
+      },
+      "zh": {
+        "S": "更改联系信息"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "155"
+      },
+      "selections": {
+        "N": "78"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Leiten Sie Anrufe weiter, bei denen Kunden ihre Kontaktdaten aktualisieren müssen, und geben Sie detaillierte Schritt-für-Schritt-Anweisungen für einen nahtlosen Ablauf."
+      },
+      "hi": {
+        "S": "जहाँ ग्राहकों को संपर्क विवरण अपडेट करने की आवश्यकता हो, वहाँ कॉल को अग्रेषित करें और एक सहज अपडेट के लिए विस्तृत निर्देश दें।"
+      },
+      "vi": {
+        "S": "Chuyển các cuộc gọi nơi khách hàng cần cập nhật thông tin liên hệ và cung cấp hướng dẫn từng bước chi tiết để đảm bảo cập nhật liền mạch."
+      },
+      "ko": {
+        "S": "고객이 연락처 정보를 업데이트해야 하는 경우 전화를 해당 부서로 연결하고, 원활한 업데이트를 위한 단계별 지침을 제공합니다."
+      },
+      "ja": {
+        "S": "連絡先情報を更新する必要がある場合、通話を適切にルーティングし、シームレスな更新のための詳細な手順を提供します。"
+      },
+      "en": {
+        "S": "Route calls where customers need to update their contact details. Provide detailed, step-by-step instructions for a seamless update."
+      },
+      "id": {
+        "S": "Alihkan panggilan ketika pelanggan perlu memperbarui detail kontak mereka dan berikan instruksi langkah demi langkah yang terperinci untuk pembaruan yang mulus."
+      },
+      "fr": {
+        "S": "Dirigez les appels pour la mise à jour des coordonnées. Fournissez des instructions détaillées étape par étape pour une mise à jour fluide."
+      },
+      "es": {
+        "S": "Redirija las llamadas para actualizar la información de contacto. Proporcione instrucciones detalladas paso a paso para una actualización sin problemas."
+      },
+      "zh": {
+        "S": "将需要更新联系信息的来电转接，并提供逐步详细说明以实现无缝更新。"
+      }
+    },
+    "node_id": "n15"
+  },
+  {
+    "updated_at": "2025-04-02T10:00:00Z",
+    "tree_id": "treeA",
+    "usage_views": "5",
+    "created_at": "2025-04-02T10:00:00Z",
+    "usage_selections": "8",
+    "text": {
+      "en": {
+        "S": "Second solution"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "5"
+      },
+      "selections": {
+        "N": "8"
+      }
+    },
+    "description": "Solution sorted by views=5, selections=8",
+    "node_id": "sol2"
+  },
+  {
+    "tree_id": "tree1",
+    "updated_at": "2025-04-22T20:57:02.817Z",
+    "created_at": "2025-04-22T20:57:02.131Z",
+    "additional_content": [],
+    "text": {
+      "en": {
+        "S": "Updated smoke test?"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "node_id": "bda1fd22-0acd-427b-8515-6ee49ebb2f92"
+  },
+  {
+    "updated_at": "2025-04-09T10:06:00Z",
+    "tree_id": "tree1",
+    "photo_url": "http://example.com/photos/salad.jpg",
+    "created_at": "2025-04-09T10:06:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Salat zubereiten"
+      },
+      "hi": {
+        "S": "सलाद बनाएं"
+      },
+      "vi": {
+        "S": "Làm salad"
+      },
+      "ko": {
+        "S": "샐러드 만들기"
+      },
+      "ja": {
+        "S": "サラダを作る"
+      },
+      "en": {
+        "S": "Make Salad"
+      },
+      "id": {
+        "S": "Buat Salad"
+      },
+      "fr": {
+        "S": "Préparer une salade"
+      },
+      "es": {
+        "S": "Prepare ensalada"
+      },
+      "zh": {
+        "S": "做沙拉"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "80"
+      },
+      "selections": {
+        "N": "35"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Wählen Sie einen frischen, gesunden Salat aus saisonalem Gemüse, Nüssen und Käse in einer leichten Vinaigrette – ideal, wenn kein Fleisch vorhanden ist."
+      },
+      "hi": {
+        "S": "मौसमी हरी सब्जियों, नट्स और पनीर से बनी ताज़ी, स्वस्थ सलाद चुनें, हल्की विनेग्रेट के साथ — जब मांस उपलब्ध न हो तब यह उत्तम है।"
+      },
+      "vi": {
+        "S": "Chọn salad tươi và lành mạnh từ rau theo mùa, các loại hạt và phô mai kèm nước sốt nhẹ — lý tưởng khi không có thịt."
+      },
+      "ko": {
+        "S": "제철 채소, 견과류, 치즈로 만든 신선하고 건강한 샐러드를 선택하세요. 고기가 없을 때 이상적입니다."
+      },
+      "ja": {
+        "S": "季節の野菜、ナッツ、チーズを使ったフレッシュでヘルシーなサラダを選んでください。ライトなビネグレットで和え、肉がない場合に最適です。"
+      },
+      "en": {
+        "S": "Opt for a fresh, healthy salad made from seasonal greens, nuts, and cheese with a light vinaigrette—ideal when meat isn’t available."
+      },
+      "id": {
+        "S": "Pilih salad segar dan sehat yang terbuat dari sayuran musiman, kacang-kacangan, dan keju dengan vinaigrette ringan — cocok ketika daging tidak tersedia."
+      },
+      "fr": {
+        "S": "Optez pour une salade fraîche et saine à base de légumes de saison, de noix et de fromage avec une vinaigrette légère — idéal en l'absence de viande."
+      },
+      "es": {
+        "S": "Elija una ensalada fresca y saludable hecha con verduras de temporada, nueces y queso con una vinagreta ligera — ideal cuando no hay carne."
+      },
+      "zh": {
+        "S": "选择用当季蔬菜、坚果和奶酪制作的健康沙拉，加上清淡的油醋汁——当没有肉时非常适用。"
+      }
+    },
+    "node_id": "n3"
+  },
+  {
+    "updated_at": "2025-04-04T10:00:00Z",
+    "tree_id": "treeB",
+    "usage_views": "0",
+    "created_at": "2025-04-04T10:00:00Z",
+    "usage_selections": "0",
+    "text": {
+      "en": {
+        "S": "Second question"
+      }
+    },
+    "node_type": "question",
+    "usage": {
+      "views": {
+        "N": "0"
+      },
+      "selections": {
+        "N": "0"
+      }
+    },
+    "node_id": "q2"
+  },
+  {
+    "updated_at": "2025-04-09T11:13:00Z",
+    "tree_id": "tree4",
+    "photo_url": "http://example.com/photos/change_name.jpg",
+    "created_at": "2025-04-09T11:13:00Z",
+    "additional_content": [],
+    "text": {
+      "de": {
+        "S": "Namen ändern"
+      },
+      "hi": {
+        "S": "नाम बदलें"
+      },
+      "vi": {
+        "S": "Thay đổi tên"
+      },
+      "ko": {
+        "S": "이름 변경"
+      },
+      "ja": {
+        "S": "名前を変更する"
+      },
+      "en": {
+        "S": "Change Name"
+      },
+      "id": {
+        "S": "Ubah Nama"
+      },
+      "fr": {
+        "S": "Changer de nom"
+      },
+      "es": {
+        "S": "Cambiar nombre"
+      },
+      "zh": {
+        "S": "更改姓名"
+      }
+    },
+    "node_type": "solution",
+    "usage": {
+      "views": {
+        "N": "150"
+      },
+      "selections": {
+        "N": "75"
+      }
+    },
+    "description": {
+      "de": {
+        "S": "Führen Sie Kunden, die ihren Namen ändern möchten, durch den erforderlichen Dokumentations- und Genehmigungsprozess, um eine sichere Handhabung zu gewährleisten."
+      },
+      "hi": {
+        "S": "जो ग्राहक अपना नाम बदलना चाहते हैं, उन्हें आवश्यक दस्तावेज़ीकरण और अनुमोदन प्रक्रिया के माध्यम से मार्गदर्शन करें ताकि सुरक्षित प्रबंधन सुनिश्चित हो सके।"
+      },
+      "vi": {
+        "S": "Hướng dẫn khách hàng muốn thay đổi tên thông qua quy trình hồ sơ và phê duyệt cần thiết để đảm bảo xử lý an toàn."
+      },
+      "ko": {
+        "S": "이름 변경을 원하는 고객에게 필요한 문서 및 승인 절차를 안내하여 안전하게 처리되도록 합니다."
+      },
+      "ja": {
+        "S": "名前を変更したいお客様に必要な書類と承認プロセスを案内し、安全に処理されるようにします。"
+      },
+      "en": {
+        "S": "Guide customers who wish to change their name through the required documentation and approval process to ensure secure handling."
+      },
+      "id": {
+        "S": "Pandui pelanggan yang ingin mengganti nama melalui proses dokumentasi dan persetujuan yang diperlukan untuk memastikan penanganan yang aman."
+      },
+      "fr": {
+        "S": "Accompagnez les clients souhaitant changer de nom via le processus de documentation et d'approbation requis pour une gestion sécurisée."
+      },
+      "es": {
+        "S": "Guíe a los clientes que deseen cambiar su nombre mediante el proceso de documentación y aprobación necesario para una gestión segura."
+      },
+      "zh": {
+        "S": "通过必需的文档和审批流程指导希望更改姓名的客户，以确保安全处理。"
+      }
+    },
+    "node_id": "n16"
+  }
+]
