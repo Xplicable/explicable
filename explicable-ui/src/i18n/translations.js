@@ -27,7 +27,11 @@ const translations = {
     explicable_explained: "",
     profile: "Profile",
     settings: "Settings",
-    logout_icon_header: "Logout"
+    logout_icon_header: "Logout",
+    saving_status: "Saving...",
+    saved_status: "✅ Saved",
+    account_name: "Account Name",
+    invalid_phone: "Invalid phone number format."
   },
   es: {
     name: "Nombre",
@@ -55,7 +59,11 @@ const translations = {
     explicable_explained: "",
     profile: "Perfil",
     settings: "Configuración",
-    logout_icon_header: "Cerrar sesión"
+    logout_icon_header: "Cerrar sesión",
+    saving_status: "Guardando...",
+    saved_status: "✅ Guardado",
+    account_name: "Nombre de la cuenta",
+    invalid_phone: "Formato de número de teléfono no válido."
   },
   fr: {
     name: "Nom",
@@ -83,7 +91,11 @@ const translations = {
     explicable_explained: "",
     profile: "Profil",
     settings: "Paramètres",
-    logout_icon_header: "Se déconnecter"
+    logout_icon_header: "Se déconnecter",
+    saving_status: "Enregistrement...",
+    saved_status: "✅ Enregistré",
+    account_name: "Nom du compte",
+    invalid_phone: "Format de numéro de téléphone invalide."
   },
   de: {
     name: "Name",
@@ -111,7 +123,11 @@ const translations = {
     explicable_explained: "Erklärbar",
     profile: "Profil",
     settings: "Einstellungen",
-    logout_icon_header: "Abmelden"
+    logout_icon_header: "Abmelden",
+    saving_status: "Speichern...",
+    saved_status: "✅ Gespeichert",
+    account_name: "Kontoname",
+    invalid_phone: "Ungültiges Telefonnummernformat."
   },
   it: {
     name: "Nome",
@@ -139,7 +155,11 @@ const translations = {
     explicable_explained: "Spiegabile",
     profile: "Profilo",
     settings: "Impostazioni",
-    logout_icon_header: "Disconnetti"
+    logout_icon_header: "Disconnetti",
+    saving_status: "Salvataggio...",
+    saved_status: "✅ Salvato",
+    account_name: "Nome account",
+    invalid_phone: "Formato numero di telefono non valido."
   },
   "zh-CN": {
     name: "姓名",
@@ -167,7 +187,11 @@ const translations = {
     explicable_explained: "可解释的",
     profile: "个人资料",
     settings: "设置",
-    logout_icon_header: "登出"
+    logout_icon_header: "登出",
+    saving_status: "正在保存...",
+    saved_status: "✅ 已保存",
+    account_name: "账户名称",
+    invalid_phone: "电话号码格式无效。"
   },
   hi: {
     name: "नाम",
@@ -195,7 +219,11 @@ const translations = {
     explicable_explained: "व्याख्यायोग्य",
     profile: "प्रोफ़ाइल",
     settings: "सेटिंग्स",
-    logout_icon_header: "लॉगआउट"
+    logout_icon_header: "लॉगआउट",
+    saving_status: "सहेजा जा रहा है...",
+    saved_status: "✅ सहेजा गया",
+    account_name: "खाता नाम",
+    invalid_phone: "अवैध फोन नंबर प्रारूप।"
   },
   ja: {
     name: "名前",
@@ -223,7 +251,11 @@ const translations = {
     explicable_explained: "説明可能",
     profile: "プロフィール",
     settings: "設定",
-    logout_icon_header: "ログアウト"
+    logout_icon_header: "ログアウト",
+    saving_status: "保存中...",
+    saved_status: "✅ 保存済み",
+    account_name: "アカウント名",
+    invalid_phone: "無効な電話番号形式。"
   },
   ko: {
     name: "이름",
@@ -251,7 +283,11 @@ const translations = {
     explicable_explained: "설명가능",
     profile: "프로필",
     settings: "설정",
-    logout_icon_header: "로그아웃"
+    logout_icon_header: "로그아웃",
+    saving_status: "저장 중...",
+    saved_status: "✅ 저장됨",
+    account_name: "계정 이름",
+    invalid_phone: "잘못된 전화번호 형식입니다."
   },
   vi: {
     name: "Tên",
@@ -279,7 +315,11 @@ const translations = {
     explicable_explained: "Giải thích được",
     profile: "Hồ sơ",
     settings: "Cài đặt",
-    logout_icon_header: "Đăng xuất"
+    logout_icon_header: "Đăng xuất",
+    saving_status: "Đang lưu...",
+    saved_status: "✅ Đã lưu",
+    account_name: "Tên tài khoản",
+    invalid_phone: "Định dạng số điện thoại không hợp lệ."
   },
   id: {
     name: "Nama",
@@ -307,7 +347,11 @@ const translations = {
     explicable_explained: "Dapat dijelaskan",
     profile: "Profil",
     settings: "Pengaturan",
-    logout_icon_header: "Keluar"
+    logout_icon_header: "Keluar",
+    saving_status: "Menyimpan...",
+    saved_status: "✅ Tersimpan",
+    account_name: "Nama akun",
+    invalid_phone: "Format nomor telepon tidak valid."
   },
   "pt-BR": {
     name: "Nome",
@@ -335,7 +379,11 @@ const translations = {
     explicable_explained: "Explicável",
     profile: "Perfil",
     settings: "Configurações",
-    logout_icon_header: "Encerrar sessão"
+    logout_icon_header: "Encerrar sessão",
+    saving_status: "Salvando...",
+    saved_status: "✅ Salvo",
+    account_name: "Nome da conta",
+    invalid_phone: "Formato de número de telefone inválido."
   },
   ar: {
     name: "الاسم",
@@ -363,8 +411,12 @@ const translations = {
     explicable_explained: "قابل للتفسير",
     profile: "الملف الشخصي",
     settings: "الإعدادات",
-    logout_icon_header: "تسجيل الخروج"
-  }  
+    logout_icon_header: "تسجيل الخروج",
+    saving_status: "جارٍ الحفظ...",
+    saved_status: "✅ تم الحفظ",
+    account_name: "اسم الحساب",
+    invalid_phone: "تنسيق رقم الهاتف غير صالح."
+  }
 };
 
 export default translations;

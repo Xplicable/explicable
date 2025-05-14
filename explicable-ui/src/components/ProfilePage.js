@@ -127,7 +127,7 @@ export default function ProfilePage() {
       // Mobile validation
       if (name === "mobile_number") {
         if (!isValidPhoneNumber(value)) {
-          setMobileError("Invalid phone number format.");
+          setMobileError(t.invalid_phone);
           return; // Do not autosave if invalid
         } else {
           setMobileError("");
@@ -176,7 +176,7 @@ export default function ProfilePage() {
           disabled={saveStatus === "saving"}
         />
 
-        <label htmlFor="account_name">Account Name:</label>
+        <label htmlFor="account_name">{t.account_name}:</label>
         <input
           id="account_name"
           type="text"
@@ -236,8 +236,8 @@ export default function ProfilePage() {
         <div></div>
         {/* <button type="submit">{t.save}</button> */}
         <div className={`form-save-status ${saveStatus}`}>
-          {saveStatus === "saving" && "Saving..."}
-          {saveStatus === "saved" && "✅ Saved"}
+          {saveStatus === "saving" && t.saving_status}
+          {saveStatus === "saved" && t.saved_status}
         </div>
       </form>
     </div>
