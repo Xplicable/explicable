@@ -10,14 +10,17 @@ const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] ||
 const t = translations[lang] || translations[DEFAULT_LANG];
 
 export default function ProfilePage() {
+  
   const auth = useAuth();
-
   const userId = auth.user?.profile?.sub;
 
-  // Debounced save function (defined once)
-  const debouncedSave = useMemo(() => {
+  const [saveStatus, setSaveStatus] = useState(""); // "saving", "saved", etc.
+
+const debouncedSave = useMemo(() => {
   return debounce(async (fieldName, fieldValue) => {
     if (!userId) return;
+
+    setSaveStatus("saving");
 
     await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
       method: "PATCH",
@@ -27,6 +30,9 @@ export default function ProfilePage() {
       },
       body: JSON.stringify({ [fieldName]: fieldValue }),
     });
+
+    setSaveStatus("saved");
+    setTimeout(() => setSaveStatus(""), 2000);
   }, 800);
 }, [userId]);
 
@@ -120,6 +126,7 @@ export default function ProfilePage() {
     debouncedSave(name, value);
   };
 
+  /*
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userId = auth.user?.profile?.sub;
@@ -133,46 +140,83 @@ export default function ProfilePage() {
       body: JSON.stringify(formData),
     });
   };
+  */
 
-return (
-  <div className="profile-container">
-    <h2>{t.profile_title || "Profile"}</h2>
+  return (
+    <div className="profile-container">
+      <h2>{t.profile_title || "Profile"}</h2>
 
-      <form onSubmit={handleSubmit} className="profile-form">
-        <label htmlFor="name">{t["name"]}:</label>
-        <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} />
+      {saveStatus && (
+        <div className={`save-status ${saveStatus}`}>
+          {saveStatus === "saving" ? "💾 Saving..." : "✅ Saved"}
+        </div>
+      )}
 
-        <label htmlFor="username">{t["username"]}:</label>
-        <input id="username" type="text" name="username" value={formData.username} onChange={handleChange} />
+      <form className="profile-form">
+        <label htmlFor="name">{t.name}:</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          disabled={saveStatus === "saving"}
+        />
 
-        <label htmlFor="email">{t["email"]}:</label>
-        <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} />
+        <label htmlFor="username">{t.username}:</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          disabled={saveStatus === "saving"}
+        />
 
-        <label htmlFor="mobile_number">{t["mobile_number"]}:</label>
-        <input id="mobile_number" type="text" name="mobile_number" value={formData.mobile_number} onChange={handleChange} />
+        <label htmlFor="email">{t.email}:</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          disabled={saveStatus === "saving"}
+        />
 
-        <label htmlFor="time_zone">{t["time_zone"]}:</label>
+        <label htmlFor="mobile_number">{t.mobile_number}:</label>
+        <input
+          id="mobile_number"
+          type="text"
+          name="mobile_number"
+          value={formData.mobile_number}
+          onChange={handleChange}
+          disabled={saveStatus === "saving"}
+        />
 
+        <label htmlFor="time_zone">{t.time_zone}:</label>
         <select
-            id="time_zone"
-            name="time_zone"
-            value={formData.time_zone}
-            onChange={handleChange}
-          >
-            {timezones
-              .sort((a, b) => a.text.localeCompare(b.text))
-              .map(({ value, text }) => (
-                <option key={value} value={value}>
-                  {text}
-                </option>
-              ))}
-          </select>
+          id="time_zone"
+          name="time_zone"
+          value={formData.time_zone}
+          onChange={handleChange}
+          disabled={saveStatus === "saving"}
+        >
+          {timezones
+            .sort((a, b) => a.text.localeCompare(b.text))
+            .map(({ value, text }) => (
+              <option key={value} value={value}>
+                {text}
+              </option>
+            ))}
+        </select>
 
         <label>Language:</label>
-        <div className="readonly">{flag} {label}</div>
+        <div className="readonly">
+          {flag} {label}
+        </div>
 
         <div></div>
-        {/* <button type="submit">{t["save"]}</button> */}
+        {/* <button type="submit">{t.save}</button> */}
       </form>
     </div>
   );
