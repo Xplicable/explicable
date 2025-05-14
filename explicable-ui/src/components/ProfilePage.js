@@ -9,6 +9,7 @@ import timezones from "../utils/timezones";
 const lang = localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG;
 const t = translations[lang] || translations[DEFAULT_LANG];
 
+
 export default function ProfilePage() {
   
   const auth = useAuth();
@@ -16,141 +17,153 @@ export default function ProfilePage() {
 
   const [saveStatus, setSaveStatus] = useState(""); // "saving", "saved", etc.
 
-const debouncedSave = useMemo(() => {
-  return debounce(async (fieldName, fieldValue) => {
-    if (!userId) return;
+  const [mobileError, setMobileError] = useState("");
 
-    setSaveStatus("saving");
+  const debouncedSave = useMemo(() => {
+    return debounce(async (fieldName, fieldValue) => {
+      if (!userId) return;
 
-    await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": process.env.REACT_APP_API_KEY,
-      },
-      body: JSON.stringify({ [fieldName]: fieldValue }),
-    });
+      setSaveStatus("saving");
 
-    setSaveStatus("saved");
-    setTimeout(() => setSaveStatus(""), 2000);
-  }, 800);
-}, [userId]);
-
-// TODO: Uncomment setSelectedLang when implementing language update from navbar
-// const [selectedLang, setSelectedLang] = useState(lang);
-  const [selectedLang] = useState(lang);
-
-  const languageMap = Object.fromEntries(languages.map(l => [l.code, l]));
-  const { flag, label } = languageMap[selectedLang] || { flag: "🏳️", label: selectedLang };
-
-  const [formData, setFormData] = useState({
-    name: "",
-    username: "",
-    email: "",
-    mobile_number: "",
-    time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    preferences: "{}",
-    isEmailVerified: false,
-    isMobilePhoneVerified: false,
-  });
-
-  useEffect(() => {
-    
-    const fetchProfile = async () => {
-      
-    const userId = auth.user?.profile?.sub;
-
-      let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": process.env.REACT_APP_API_KEY,
         },
+        body: JSON.stringify({ [fieldName]: fieldValue }),
       });
 
-      if (response.status === 404) {
-        const newUser = {
-          user_id: userId,
-          username: auth.user?.profile?.preferred_username || "newuser",
-          email: auth.user?.profile?.email || "",
-          mobile_number: auth.user?.profile?.phone_number || "",
-          time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          preferences: {},
-          isEmailVerified: auth.user?.profile?.email_verified || false,
-          isMobilePhoneVerified: auth.user?.profile?.phone_number_verified || false,
-        };
+      setSaveStatus("saved");
+      setTimeout(() => setSaveStatus(""), 2000);
+    }, 800);
+  }, [userId]);
 
-        await fetch(`${process.env.REACT_APP_API_URL}/users`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.REACT_APP_API_KEY,
-          },
-          body: JSON.stringify(newUser),
-        });
+  // TODO: Uncomment setSelectedLang when implementing language update from navbar
+  // const [selectedLang, setSelectedLang] = useState(lang);
+    const [selectedLang] = useState(lang);
 
-        response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.REACT_APP_API_KEY,
-          },
-        });
-      }
+    const languageMap = Object.fromEntries(languages.map(l => [l.code, l]));
+    const { flag, label } = languageMap[selectedLang] || { flag: "🏳️", label: selectedLang };
 
-      if (response.ok) {
-        const userData = await response.json();
-        setFormData(userData);
-      }
-    };
-
-    if (auth.isAuthenticated) {
-      fetchProfile();
-    }
-  }, [auth, debouncedSave]);
-
-  useEffect(() => {
-    return () => {
-      debouncedSave.cancel();
-    };
-  }, [debouncedSave]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    // Update form state immediately
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-
-    // Trigger debounced save
-    debouncedSave(name, value);
-  };
-
-  /*
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const userId = auth.user?.profile?.sub;
-
-    await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": process.env.REACT_APP_API_KEY,
-      },
-      body: JSON.stringify(formData),
+    const [formData, setFormData] = useState({
+      name: "",
+      account_name: "", // was "username"
+      email: "",
+      mobile_number: "",
+      time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      preferences: "{}",
+      isEmailVerified: false,
+      isMobilePhoneVerified: false,
     });
-  };
-  */
+
+    useEffect(() => {
+      
+      const fetchProfile = async () => {
+        
+      const userId = auth.user?.profile?.sub;
+
+        let response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.REACT_APP_API_KEY,
+          },
+        });
+
+        if (response.status === 404) {
+          const newUser = {
+            user_id: userId,
+            username: auth.user?.profile?.preferred_username || "newuser",
+            email: auth.user?.profile?.email || "",
+            mobile_number: auth.user?.profile?.phone_number || "",
+            time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            preferences: {},
+            isEmailVerified: auth.user?.profile?.email_verified || false,
+            isMobilePhoneVerified: auth.user?.profile?.phone_number_verified || false,
+          };
+
+          await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": process.env.REACT_APP_API_KEY,
+            },
+            body: JSON.stringify(newUser),
+          });
+
+          response = await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": process.env.REACT_APP_API_KEY,
+            },
+          });
+        }
+
+        if (response.ok) {
+          const userData = await response.json();
+          setFormData(userData);
+        }
+      };
+
+      if (auth.isAuthenticated) {
+        fetchProfile();
+      }
+    }, [auth, debouncedSave]);
+
+    useEffect(() => {
+      return () => {
+        debouncedSave.cancel();
+      };
+    }, [debouncedSave]);
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+
+      // Mobile validation
+      if (name === "mobile_number") {
+        if (!isValidPhoneNumber(value)) {
+          setMobileError("Invalid phone number format.");
+          return; // Do not autosave if invalid
+        } else {
+          setMobileError("");
+        }
+      }
+
+      debouncedSave(name, value);
+    };
+
+    const isValidPhoneNumber = (value) => {
+      if (!value.trim()) return true; // allow blank
+      const regex = /^\+?[\d\s\-().]{7,20}$/;
+      return regex.test(value);
+    };
+
+    /*
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const userId = auth.user?.profile?.sub;
+
+      await fetch(`${process.env.REACT_APP_API_URL}/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.REACT_APP_API_KEY,
+        },
+        body: JSON.stringify(formData),
+      });
+    };
+    */
 
   return (
-    <div className="profile-container">
-      <h2>{t.profile_title || "Profile"}</h2>
 
-      {saveStatus && (
-        <div className={`save-status ${saveStatus}`}>
-          {saveStatus === "saving" ? "💾 Saving..." : "✅ Saved"}
-        </div>
-      )}
+    <div className="profile-container">
+    
+      <h2>{t.profile_title || "Profile"}</h2>
 
       <form className="profile-form">
         <label htmlFor="name">{t.name}:</label>
@@ -163,12 +176,12 @@ const debouncedSave = useMemo(() => {
           disabled={saveStatus === "saving"}
         />
 
-        <label htmlFor="username">{t.username}:</label>
+        <label htmlFor="account_name">Account Name:</label>
         <input
-          id="username"
+          id="account_name"
           type="text"
-          name="username"
-          value={formData.username}
+          name="account_name"
+          value={formData.account_name}
           onChange={handleChange}
           disabled={saveStatus === "saving"}
         />
@@ -184,14 +197,19 @@ const debouncedSave = useMemo(() => {
         />
 
         <label htmlFor="mobile_number">{t.mobile_number}:</label>
-        <input
-          id="mobile_number"
-          type="text"
-          name="mobile_number"
-          value={formData.mobile_number}
-          onChange={handleChange}
-          disabled={saveStatus === "saving"}
-        />
+        <div>
+          <input
+            id="mobile_number"
+            type="text"
+            name="mobile_number"
+            value={formData.mobile_number}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          />
+          {mobileError && (
+            <div className="form-error"><p>{mobileError}</p></div>
+          )}
+        </div>
 
         <label htmlFor="time_zone">{t.time_zone}:</label>
         <select
@@ -217,6 +235,10 @@ const debouncedSave = useMemo(() => {
 
         <div></div>
         {/* <button type="submit">{t.save}</button> */}
+        <div className={`form-save-status ${saveStatus}`}>
+          {saveStatus === "saving" && "Saving..."}
+          {saveStatus === "saved" && "✅ Saved"}
+        </div>
       </form>
     </div>
   );
