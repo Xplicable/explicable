@@ -1,5 +1,3 @@
-/// index.js
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -23,7 +21,8 @@ const cognitoAuthConfig = {
     end_session_endpoint:   `${process.env.REACT_APP_COGNITO_DOMAIN}/logout`
   },
   extraQueryParams: {
-    identity_provider: "Google"
+    identity_provider: "Google",
+    prompt: "select_account"
   }
 };
 
@@ -38,9 +37,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 document.body.classList.add("theme-auto");
 
 root.render(
-    <React.StrictMode>
-      <AuthProvider {...cognitoAuthConfig}>
-        <App />
-      </AuthProvider>
-    </React.StrictMode>
+  <React.StrictMode>
+    <AuthProvider {...cognitoAuthConfig}>
+      <App />
+    </AuthProvider>
+  </React.StrictMode>
 );

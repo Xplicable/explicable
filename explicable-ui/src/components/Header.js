@@ -5,7 +5,6 @@ import languages from "../i18n/languages";
 import { FaSignOutAlt, FaUser, FaCog, FaHome } from 'react-icons/fa';
 import { getLanguageContext } from "../i18n/getLanguageContext";
 
-
 const { lang, t } = getLanguageContext();
 
 const Header = ({ auth, signOut }) => {
@@ -30,7 +29,7 @@ const Header = ({ auth, signOut }) => {
     const lang = e.target.value;
     setSelectedLang(lang);
     localStorage.setItem("lang", lang);
-    window.location.reload(); // Reload to apply language change
+    window.location.reload();
   };
 
   return (
