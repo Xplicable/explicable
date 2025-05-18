@@ -1,50 +1,24 @@
-/* src/components/Header.css */
+/* ========== HEADER (NAVBAR) OVERRIDES ========== */
 
-* {
-    box-sizing: border-box; /* prevent weird overflow behavior */
-  }
-  
-  .app-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    overflow: hidden; /* ensure contents stay inside */
-  }
-  
-  .brand-title {
-    font-size: 1.5rem;
-    font-family: 'Courier New', 'Lucida Console', 'American Typewriter', monospace;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
-  }
-  
-  .brand-title:hover {
-    text-decoration: underline;
-    color: #007bff;
-  }
+.app-header {
+  /* All primary styles now in sitewide.css */
+}
 
-  .lang-selector select {
-    overflow-y: visible;
-  }
-  
-  .lang-selector select {
-    font-size: 1.2rem; /* increased */
-    padding: 6px;
-    border-radius: 5px;
-  }
+.brand-title {
+  font-family: 'Courier New', 'Lucida Console', 'American Typewriter', monospace;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
 
-  .profile-icon {
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin-left: auto; /* just in case */
-  }
-  
+.brand-title:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.lang-selector select {
+  /* Font-size and padding set in sitewide.css, but you can override here if needed */
+  font-size: 1.15rem;
+}
+
+.profile-icon {
+  /* font-size and color handled globally; only override if you want a bigger icon */
+}

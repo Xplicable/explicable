@@ -1,29 +1,18 @@
-/* src/components/LandingPage.css */
-
-.landing-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
-  }
-  
-  .text-logo {
-    font-family: 'Courier New', 'Lucida Console', 'American Typewriter', monospace;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .logo {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .brand-name {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-  
+.landing-page-main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+.text-logo {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 36px;
+  letter-spacing: 0.03em;
+}
+.landing-page-main-card button {
+  margin-top: 22px;
+}

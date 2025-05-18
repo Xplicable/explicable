@@ -66,6 +66,8 @@ const Header = ({ auth, signOut }) => {
               title={t.profile}
               aria-label={t.profile}
               role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && handleProfileClick()}
             >
               <FaUser />
             </div>
@@ -75,6 +77,8 @@ const Header = ({ auth, signOut }) => {
               title={t.settings}
               aria-label={t.settings}
               role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && handleSettingsClick()}
             >
               <FaCog />
             </div>
@@ -84,6 +88,8 @@ const Header = ({ auth, signOut }) => {
               title={t.dashboard_title}
               aria-label={t.dashboard_title}
               role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && navigate("/app")}
             >
               <FaHome />
             </div>
@@ -93,6 +99,8 @@ const Header = ({ auth, signOut }) => {
               title={t.logout_icon_header}
               aria-label={t.logout_icon_header}
               role="button"
+              tabIndex={0}
+              onKeyDown={e => e.key === 'Enter' && signOut()}
             >
               <FaSignOutAlt />
             </div>

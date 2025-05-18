@@ -1,42 +1,51 @@
+// index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./Sitewide.css";
 import App from "./App";
 import { AuthProvider } from "react-oidc-context";
 import { WebStorageStateStore } from "oidc-client-ts";
 
+const {
+  REACT_APP_COGNITO_CLIENT_ID: client_id,
+  REACT_APP_COGNITO_DOMAIN: domain,
+  REACT_APP_COGNITO_REDIRECT_URI: redirect_uri
+} = process.env;
+
 const cognitoAuthConfig = {
-  authority: process.env.REACT_APP_COGNITO_DOMAIN,
-  client_id: process.env.REACT_APP_COGNITO_CLIENT_ID,
-  redirect_uri: process.env.REACT_APP_COGNITO_REDIRECT_URI,
+  authority: domain,
+  client_id,
+  redirect_uri,
   response_type: "code",
   scope: "openid email phone profile",
   userStore: new WebStorageStateStore({ store: window.localStorage }),
   automaticSilentRenew: true,
-  metadata: {
-    issuer:                 process.env.REACT_APP_COGNITO_DOMAIN,
-    authorization_endpoint: `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/authorize`,
-    token_endpoint:         `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/token`,
-    userinfo_endpoint:      `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/userInfo`,
-    revocation_endpoint:    `${process.env.REACT_APP_COGNITO_DOMAIN}/oauth2/revoke`,
-    end_session_endpoint:   `${process.env.REACT_APP_COGNITO_DOMAIN}/logout`
-  },
   extraQueryParams: {
     identity_provider: "Google",
     prompt: "select_account"
+  },
+  metadata: {
+    issuer: domain,
+    authorization_endpoint: `${domain}/oauth2/authorize`,
+    token_endpoint: `${domain}/oauth2/token`,
+    userinfo_endpoint: `${domain}/oauth2/userInfo`,
+    revocation_endpoint: `${domain}/oauth2/revoke`,
+    end_session_endpoint: `${domain}/logout`
   }
 };
 
-console.log("OIDC Config Check:", {
-  client_id: cognitoAuthConfig.client_id,
-  redirect_uri: cognitoAuthConfig.redirect_uri,
-  authority: cognitoAuthConfig.authority
-});
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
 document.body.classList.add("theme-auto");
+document.title = "Explicable";
 
-root.render(
+// To force dark mode:
+//document.body.setAttribute("data-theme", "dark");
+// To force light mode:
+document.body.setAttribute("data-theme", "light");
+// To follow system preference:
+// document.body.removeAttribute("data-theme");
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider {...cognitoAuthConfig}>
       <App />

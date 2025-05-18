@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
+import './ProfilePage.css';
 import debounce from "lodash.debounce";
-import "./ProfilePage.css";
 import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
@@ -196,7 +196,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="profile-container">
+    <div className="profile-container main-card">
       <div className="profile-header">
         <div className="back-arrow-row">
           <span className="back-arrow" onClick={handleBackClick}>

@@ -1,0 +1,32 @@
+/* ========== NAVBAR (OPTIONAL) ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0 28px;
+  min-height: 54px;
+  border-bottom: 1px solid #333a45;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  transition: background var(--transition), color var(--transition);
+}
+.navbar h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--primary);
+}
+.navbar button {
+  background: var(--primary);
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
+  transition: background var(--transition);
+}
+.navbar button:hover {
+  background: var(--primary-dark);
+}

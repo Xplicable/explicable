@@ -1,0 +1,12 @@
+.dashboard-main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 340px;
+  text-align: center;
+}
+.dashboard-main-card h2 {
+  margin-bottom: 16px;
+  font-size: 1.33rem;
+  color: var(--primary-dark);
+}
