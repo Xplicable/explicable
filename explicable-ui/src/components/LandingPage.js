@@ -35,9 +35,10 @@ const LandingPage = ({ auth }) => {
     if (auth?.signinRedirect) {
       auth.signinRedirect({
         extraQueryParams: {
-          lang: cognitoLocale
-        }
-      });
+        lang: cognitoLocale,
+        prompt: "select_account"  // 👈 Forces Google to always show account picker
+      }
+    });
     } else {
       // Could show a toast/snackbar here if you want
       console.warn("Auth not ready yet.");
