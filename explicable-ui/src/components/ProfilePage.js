@@ -57,8 +57,11 @@ export default function ProfilePage() {
 
   // Form state
   const [formData, setFormData] = useState({
+    first_name: "", // ✅ add this
+    last_name: "",  // ✅ add this
+    profile_photo_url: "", // ✅ add this
     name: "",
-    account_name: "", // shows in UI, mapped to username on backend
+    account_name: "",
     email: "",
     mobile_number: "",
     time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
@@ -66,6 +69,19 @@ export default function ProfilePage() {
     isEmailVerified: false,
     isMobilePhoneVerified: false,
   });
+
+  useEffect(() => {
+    const detectedTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    console.log("Detected browser timezone:", detectedTimeZone);
+
+    if (!formData.time_zone && detectedTimeZone) {
+      setFormData((prev) => ({
+        ...prev,
+        time_zone: detectedTimeZone,
+      }));
+    }
+  }, [formData.time_zone]);
 
   // Fetch profile and map username->account_name
   useEffect(() => {
@@ -109,14 +125,13 @@ export default function ProfilePage() {
       }
 
       if (response.ok) {
-        const userData = await response.json();
 
+        const userData = await response.json();
         const activeField = document.activeElement?.name;
 
         setFormData((prevData) => {
           const updated = { ...prevData };
           for (const key in userData) {
-            // Map username from backend to account_name for UI
             if (
               ((key === "username" && "account_name" in prevData) ||
                 (key in prevData && key !== "account_name")) &&
@@ -130,11 +145,19 @@ export default function ProfilePage() {
               }
             }
           }
+
+          const detectedTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const invalidTimeZones = ["", "Azores", "(UTC-01:00) Azores", null, undefined];
+
+          if (!updated.time_zone || invalidTimeZones.includes(updated.time_zone)) {
+            console.log("Overriding invalid/missing timezone:", detectedTimeZone);
+            updated.time_zone = detectedTimeZone;
+          }
+
           return updated;
         });
       }
-    };
-
+    }
     if (auth.isAuthenticated) {
       fetchProfile();
     }
@@ -205,39 +228,58 @@ export default function ProfilePage() {
         </div>
         <h2 className="profile-title">{t.profile_title || "Profile"}</h2>
       </div>
+
       <form className="profile-form">
-        <label htmlFor="name">{t.name}:</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          disabled={saveStatus === "saving"}
-        />
+        <div className="form-field">
+          <label htmlFor="first_name">First Name:</label>
+          <input
+            id="first_name"
+            type="text"
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          />
+        </div>
 
-        <label htmlFor="account_name">{t.account_name}:</label>
-        <input
-          id="account_name"
-          type="text"
-          name="account_name"
-          value={formData.account_name}
-          onChange={handleChange}
-          disabled={saveStatus === "saving"}
-        />
+        <div className="form-field">
+          <label htmlFor="last_name">Last Name:</label>
+          <input
+            id="last_name"
+            type="text"
+            name="last_name"
+            value={formData.last_name}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          />
+        </div>
 
-        <label htmlFor="email">{t.email}:</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          disabled={saveStatus === "saving"}
-        />
+        <div className="form-field">
+          <label htmlFor="account_name">{t.account_name}:</label>
+          <input
+            id="account_name"
+            type="text"
+            name="account_name"
+            value={formData.account_name}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          />
+        </div>
 
-        <label htmlFor="mobile_number">{t.mobile_number}:</label>
-        <div>
+        <div className="form-field">
+          <label htmlFor="email">{t.email}:</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="mobile_number">{t.mobile_number}:</label>
           <input
             id="mobile_number"
             type="text"
@@ -253,35 +295,40 @@ export default function ProfilePage() {
           )}
         </div>
 
-        <label htmlFor="time_zone">{t.time_zone}:</label>
-        <select
-          id="time_zone"
-          name="time_zone"
-          value={formData.time_zone}
-          onChange={handleChange}
-          disabled={saveStatus === "saving"}
-        >
-          {timezones
-            .sort((a, b) => a.text.localeCompare(b.text))
-            .map(({ value, text }) => (
-              <option key={value} value={value}>
-                {text}
-              </option>
-            ))}
-        </select>
-
-        <label>Language:</label>
-        <div className="readonly">
-          {flag} {label}
+        <div className="form-field">
+          <label htmlFor="time_zone">{t.time_zone}:</label>
+          <select
+            id="time_zone"
+            name="time_zone"
+            value={formData.time_zone}
+            onChange={handleChange}
+            disabled={saveStatus === "saving"}
+          >
+            {timezones
+              .sort((a, b) => a.text.localeCompare(b.text))
+              .map(({ value, text }) => (
+                <option key={value} value={value}>
+                  {text}
+                </option>
+              ))}
+          </select>
         </div>
 
-        <div></div>
-        {/* <button type="submit">{t.save}</button> */}
-        <div className={`form-save-status ${saveStatus}`}>
-          {saveStatus === "saving" && t.saving_status}
-          {saveStatus === "saved" && t.saved_status}
+        <div className="form-field">
+          <label htmlFor="language">Language:</label>
+          <div id="language" className="readonly">
+            {flag} {label}
+          </div>
+        </div>
+
+        <div className="form-field">
+          {/* <button type="submit">{t.save}</button> */}
+          <div className={`form-save-status ${saveStatus}`}>
+            {saveStatus === "saving" && t.saving_status}
+            {saveStatus === "saved" && t.saved_status}
+          </div>
         </div>
       </form>
     </div>
-  );
-}
+  )
+};

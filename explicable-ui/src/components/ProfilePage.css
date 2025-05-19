@@ -1,10 +1,12 @@
 .profile-container {
-  background: var(--card-glass);
+  background: rgba(255, 255, 255, 0.3);  /* ✔️ frosted glass effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);  /* ✔️ Safari support */
   color: var(--text);
   border-radius: var(--border-radius);
-  margin: 0 auto;
+  margin: 80px auto 0;
   padding: 48px 24px 42px;
-  max-width: 600px;
+  max-width: 480px;  /* ✔️ narrower card */
   box-shadow: var(--card-shadow);
   transition: background var(--transition), color var(--transition);
   position: relative;
@@ -17,21 +19,44 @@
   margin-bottom: 20px;
 }
 .profile-form {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 14px 24px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Center the form content */
+  gap: 1rem;
   width: 100%;
+}
+.profile-form label {
+  margin-bottom: 4px;
+  color: var(--primary-dark);
+  font-weight: 500;
+  padding-right: 6px;
+  white-space: nowrap;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-width: 320px;  /* ✅ Keeps content centered & readable */
+}
+.profile-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,..."); /* optional arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
 }
 .profile-form input,
 .profile-form select {
-  background: rgba(255,255,255,0.96);
+  background: #ffffff; /* ✔️ solid white */
   color: #202226;
   border: 1.5px solid #d3d7e0;
   border-radius: var(--border-radius);
   padding: 8px 12px;
   margin-bottom: 12px;
   font-size: 1.08em;
+  width: 100%;
+  max-width: 300px;
 }
 @media (prefers-color-scheme: dark) {
   .profile-form input,
@@ -41,14 +66,10 @@
     border: 1.5px solid #444b5e;
   }
 }
-.profile-form label {
-  color: var(--primary-dark);
-  font-weight: 500;
-}
 body[data-theme="dark"] .profile-form input,
 body[data-theme="dark"] .profile-form select,
 body[data-theme="dark"] .profile-form textarea {
-  background: rgba(38,42,56,0.98);
+  background: rgba(38, 42, 56, 0.98);
   color: #f2f4fa;
   border: 1.5px solid #4466a8;
 }
@@ -58,7 +79,6 @@ body[data-theme="dark"] .profile-form textarea {
   border-color: var(--primary);
 }
 .form-save-status {
-  grid-column: span 2;
   text-align: center;
   font-size: 1.1rem;
   margin-top: 18px;

@@ -1,11 +1,13 @@
 .settings-container {
-  background: var(--card-glass);
+  background: rgba(255, 255, 255, 0.3); /* ✅ frosted glass */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--border-radius);
   color: var(--text);
   box-shadow: var(--card-shadow);
   padding: 46px 36px 34px 36px;
   margin: 110px auto 48px auto;
-  max-width: 500px;
+  max-width: 480px; /* tightened for consistency */
   width: 100%;
   position: relative;
   transition: background 0.3s;
