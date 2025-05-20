@@ -229,6 +229,16 @@ export default function ProfilePage() {
         <h2 className="profile-title">{t.profile_title || "Profile"}</h2>
       </div>
 
+      {formData.profile_photo_url && (
+        <div className="profile-avatar-wrapper">
+          <img
+            className="profile-avatar"
+            src={formData.profile_photo_url}
+            alt="Profile avatar"
+          />
+        </div>
+      )}
+
       <form className="profile-form">
         <div className="form-field">
           <label htmlFor="first_name">First Name:</label>

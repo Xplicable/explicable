@@ -112,3 +112,17 @@ body[data-theme="dark"] .profile-form textarea {
   text-decoration: underline;
   color: var(--primary);
 }
+
+.profile-avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
