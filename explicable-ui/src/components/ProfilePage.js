@@ -146,12 +146,12 @@ export default function ProfilePage() {
             }
           }
 
-          const detectedTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-          const invalidTimeZones = ["", "Azores", "(UTC-01:00) Azores", null, undefined];
+          const detectedIanaZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const matchedTz = timezones.find(tz => tz.iana === detectedIanaZone);
 
-          if (!updated.time_zone || invalidTimeZones.includes(updated.time_zone)) {
-            console.log("Overriding invalid/missing timezone:", detectedTimeZone);
-            updated.time_zone = detectedTimeZone;
+          if (matchedTz && !updated.time_zone) {
+            console.log("Auto-setting timezone to:", matchedTz.value);
+            updated.time_zone = matchedTz.value;
           }
 
           return updated;
@@ -304,13 +304,14 @@ export default function ProfilePage() {
             onChange={handleChange}
             disabled={saveStatus === "saving"}
           >
-            {timezones
-              .sort((a, b) => a.text.localeCompare(b.text))
-              .map(({ value, text }) => (
-                <option key={value} value={value}>
-                  {text}
-                </option>
-              ))}
+          {timezones
+            .slice() // prevent mutation of the original array
+            .sort((a, b) => a.offset - b.offset)
+            .map(({ iana, text }) => (
+              <option key={iana} value={iana}>
+                {text}
+              </option>
+            ))}
           </select>
         </div>
 
