@@ -34,8 +34,10 @@ coverage/
 # -----------------------------------------------------------------------------
 # ENVIRONMENT / SECRETS
 # -----------------------------------------------------------------------------
-.env
-.env.local
+
+#.env                   <<< TEMPORARILY INCLUDING SECRETS FOR JOB INTERVIEW PURPOSES
+#.env.local             <<< TEMPORARILY INCLUDING SECRETS FOR JOB INTERVIEW PURPOSES
+
 .env.development.local
 .env.test.local
 .env.production.local
