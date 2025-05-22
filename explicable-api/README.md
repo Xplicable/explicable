@@ -1,10 +1,3 @@
-⚠️ For demonstration purposes only
-
-This repo includes `.env` files temporarily so that Amazon interviewers can run the app end-to-end.
-
-Please do not use these values in production environments. Tokens and API keys are test-only and may be revoked.
-
-
 # Explicable API
 
 Explicable is a decision-tree platform designed to help users build, manage, and explore interactive branching workflows for education, troubleshooting, and guided decision-making.
