@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+⚠️ For demonstration purposes only
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo includes `.env` files temporarily so that interviewers can run the app end-to-end.
 
-## Available Scripts
+Please do not use these values in production environments. Tokens and API keys are test-only and may be revoked.
 
-In the project directory, you can run:
 
-### `npm start`
+# Explicable UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧠 A React-based frontend for the Explicable project — a modern, serverless user profile app powered by AWS Cognito, Lambda, and DynamoDB.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 What This App Does
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Explicable provides:
 
-### `npm run build`
+- Google login via AWS Cognito
+- User profile management (name, email, phone, time zone, profile photo)
+- Time zone auto-detection + smart dropdown with UTC offsets
+- Profile photo fallback avatar support
+- Responsive UI, organized architecture
+- Clean AWS Lambda integration (for backend persistence)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is designed as a **demonstration of front-end + cloud-integrated architecture** and is used for technical evaluation and portfolio purposes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Tech Stack
 
-### `npm run eject`
+| Area            | Stack                      |
+|-----------------|----------------------------|
+| UI Framework    | React (Create React App)   |
+| Auth            | AWS Cognito                |
+| Backend API     | AWS Lambda + API Gateway   |
+| DB              | DynamoDB (Users table)     |
+| Deploy          | Manual CLI Deploy          |
+| Language        | JavaScript (ES6)           |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the Repo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/Xplicable/explicable.git
+cd explicable/explicable-ui
+```
 
-## Learn More
+### 2. Install Dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Run the App
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Visit: [http://localhost:3000](http://localhost:3000)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔐 `.env` File Notice
 
-### Making a Progressive Web App
+⚠️ **For demonstration/interview purposes only**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This repo **includes `.env` and `.env.local` files** temporarily so interviewers can run the project and validate backend integrations (e.g. Cognito setup, Dynamo endpoints).
 
-### Advanced Configuration
+- **DO NOT use these values in production**
+- All tokens are restricted to test-mode IAM users
+- `.env` will be removed in production branches
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🧪 Features To Test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Login with Google
+- Profile editing
+- Time zone selection
+- Phone number field
+- Avatar rendering & fallback
+- Data persistence via Lambda
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📁 Project Structure
+
+```
+explicable-ui/
+├── public/                 # Static assets and HTML shell
+├── src/
+│   ├── assets/             # Avatar fallback image, etc.
+│   ├── components/         # Reusable React components
+│   ├── constants/          # Shared constants like DEFAULT_AVATAR
+│   ├── pages/              # Page-level components
+│   ├── utils/              # Helper functions (e.g., timezones)
+│   ├── App.js              # Main app wrapper
+│   └── index.js            # CRA entry point
+```
+
+---
+
+## 🧠 Developer Notes
+
+- Clean separation of concerns
+- Designed for future TypeScript conversion
+- Highly composable and testable
+
+---
+
+## ✅ Author
+
+**Paul W.**  
+[GitHub: @prw760](https://github.com/prw760)  
+This is a project submitted for technical review.
+
+---
