@@ -1,0 +1,11 @@
+{
+  "name": "explicable-cognito-profile-sync",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lambda triggered by Cognito PostConfirmation to sync user profile data to DynamoDB.",
+  "main": "handler.mjs",
+  "scripts": {},
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.400.0"
+  }
+}

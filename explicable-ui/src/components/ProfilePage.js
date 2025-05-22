@@ -5,6 +5,10 @@ import { useAuth } from "react-oidc-context";
 import languages from "../i18n/languages";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
 import timezones from "../utils/timezones";
+import { DEFAULT_AVATAR } from "../constants/fallbacks";
+
+console.log("Resolved fallback avatar path:", DEFAULT_AVATAR);
+
 
 export default function ProfilePage() {
   const auth = useAuth();
@@ -233,7 +237,11 @@ export default function ProfilePage() {
         <div className="profile-avatar-wrapper">
           <img
             className="profile-avatar"
-            src={formData.profile_photo_url}
+            src={
+              formData.profile_photo_url?.trim()
+                ? formData.profile_photo_url
+                : DEFAULT_AVATAR
+            }
             alt="Profile avatar"
           />
         </div>

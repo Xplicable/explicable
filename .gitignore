@@ -1,7 +1,5 @@
-# .gitignore (for Explicable's root directory)
-
 # -----------------------------------------------------------------------------
-# GENERAL SYSTEM FILES
+# SYSTEM FILES
 # -----------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
@@ -27,14 +25,14 @@ yarn-error.log*
 .pnp.js
 
 # -----------------------------------------------------------------------------
-# FRONTEND / REACT BUILD ARTIFACTS
+# REACT / FRONTEND BUILD ARTIFACTS
 # -----------------------------------------------------------------------------
-/build
-/dist
-/coverage
+build/
+dist/
+coverage/
 
 # -----------------------------------------------------------------------------
-# ENVIRONMENT & SECRETS
+# ENVIRONMENT / SECRETS
 # -----------------------------------------------------------------------------
 .env
 .env.local
@@ -44,18 +42,22 @@ yarn-error.log*
 .aws-credentials
 
 # -----------------------------------------------------------------------------
-# IDEs / TEXT EDITORS
+# IDE / EDITOR SETTINGS
 # -----------------------------------------------------------------------------
 .idea/
+# Uncomment if you want to ignore VS Code settings
 #.vscode/
 
 # -----------------------------------------------------------------------------
-# SERVERLESS / AWS DEPLOYMENT ARTIFACTS
+# AWS / SERVERLESS / LAMBDA DEPLOYMENTS
 # -----------------------------------------------------------------------------
 .serverless/
+*.zip
+.build/
+dist-lambda/
 
 # -----------------------------------------------------------------------------
-# SCRIPTS (allow specific ones, ignore others)
+# SCRIPTS (ignore all .sh unless explicitly whitelisted)
 # -----------------------------------------------------------------------------
 scripts/*.sh
 !scripts/deploy.sh
@@ -69,5 +71,5 @@ scripts/*.sh
 # -----------------------------------------------------------------------------
 # MISC
 # -----------------------------------------------------------------------------
-build/
-coverage/
+*.tgz
+*.tsbuildinfo
