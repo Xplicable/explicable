@@ -1,29 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
-import { FaSignOutAlt, FaUser, FaCog, FaHome } from 'react-icons/fa';
+import { FaSignOutAlt, FaCog, FaHome } from 'react-icons/fa';
 import { getLanguageContext } from "../i18n/getLanguageContext";
+import Avatar from "./Avatar"; // ✅ reusable avatar
+import { resolveProfilePhoto } from "../utils/user"; // ✅ centralized logic
 
 const { lang, t } = getLanguageContext();
 
 const Header = ({ auth, signOut }) => {
   const navigate = useNavigate();
+
   const [selectedLang, setSelectedLang] = useState(
     localStorage.getItem("lang") || navigator.language.split("-")[0] || "en"
   );
-
-  const handleProfileClick = () => {
-    if (auth?.isAuthenticated) {
-      navigate("/profile");
-    } else {
-      auth?.signinRedirect();
-    }
-  };
-
-  const handleSettingsClick = () => {
-    navigate("/settings");
-  };
 
   const handleLangChange = (e) => {
     const lang = e.target.value;
@@ -31,6 +22,8 @@ const Header = ({ auth, signOut }) => {
     localStorage.setItem("lang", lang);
     window.location.reload();
   };
+
+  const profilePhotoUrl = useMemo(() => resolveProfilePhoto(auth.user), [auth.user]);
 
   return (
     <header className="app-header">
@@ -47,7 +40,7 @@ const Header = ({ auth, signOut }) => {
         )}
       </div>
 
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
         <div className="lang-selector">
           <select value={selectedLang} onChange={handleLangChange}>
             {languages.map((lang) => (
@@ -62,26 +55,28 @@ const Header = ({ auth, signOut }) => {
           <>
             <div
               className="profile-icon"
-              onClick={handleProfileClick}
+              onClick={() => navigate("/profile")}
               title={t.profile}
               aria-label={t.profile}
               role="button"
               tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && handleProfileClick()}
+              onKeyDown={e => e.key === 'Enter' && navigate("/profile")}
             >
-              <FaUser />
+              <Avatar src={profilePhotoUrl} size={32} alt="User avatar" />
             </div>
+
             <div
               className="profile-icon"
-              onClick={handleSettingsClick}
+              onClick={() => navigate("/settings")}
               title={t.settings}
               aria-label={t.settings}
               role="button"
               tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && handleSettingsClick()}
+              onKeyDown={e => e.key === 'Enter' && navigate("/settings")}
             >
               <FaCog />
             </div>
+
             <div
               className="profile-icon"
               onClick={() => navigate("/app")}
@@ -93,6 +88,7 @@ const Header = ({ auth, signOut }) => {
             >
               <FaHome />
             </div>
+
             <div
               className="profile-icon"
               onClick={signOut}
