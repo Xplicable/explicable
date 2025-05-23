@@ -126,6 +126,14 @@ body[data-theme="dark"], html[data-theme="dark"] {
 .profile-icon:hover {
   color: #fff;
 }
+.profile-icon img {
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.profile-icon:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
 .lang-selector select {
   background: rgba(36, 40, 50, 0.87);
   color: #fff;
