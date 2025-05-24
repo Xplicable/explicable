@@ -1,18 +1,31 @@
 import { resolveProfilePhoto } from '../user';
+import { DEFAULT_AVATAR } from '../../../constants/fallbacks';
 
 describe('resolveProfilePhoto()', () => {
-  it('returns custom photo if available', () => {
-    const user = { profile: { profile_photo_url: 'custom.jpg' } };
-    expect(resolveProfilePhoto(user)).toBe('custom.jpg');
+  it('returns custom photo if present', () => {
+    const user = {
+      profile: {
+        profile_photo_url: 'https://example.com/avatar.jpg'
+      }
+    };
+    expect(resolveProfilePhoto(user)).toBe('https://example.com/avatar.jpg');
   });
 
-  it('falls back to Google picture', () => {
-    const user = { profile: { picture: 'google.jpg' } };
-    expect(resolveProfilePhoto(user)).toBe('google.jpg');
+  it('returns Google picture if no custom photo is present', () => {
+    const user = {
+      profile: {
+        picture: 'https://lh3.googleusercontent.com/example'
+      }
+    };
+    expect(resolveProfilePhoto(user)).toBe('https://lh3.googleusercontent.com/example');
   });
 
-  it('returns null when no photo found', () => {
+  it('returns fallback avatar if no photo is present', () => {
     const user = { profile: {} };
-    expect(resolveProfilePhoto(user)).toBeNull();
+    expect(resolveProfilePhoto(user)).toBe(DEFAULT_AVATAR);
+  });
+
+  it('returns fallback avatar if user is null', () => {
+    expect(resolveProfilePhoto(null)).toBe(DEFAULT_AVATAR);
   });
 });
