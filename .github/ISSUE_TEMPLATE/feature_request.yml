@@ -1,0 +1,20 @@
+name: Feature Request
+description: Suggest a new feature
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should this feature do?
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P1
+        - P2
+        - P3
+  - type: input
+    id: related
+    attributes:
+      label: Related Issues or Context

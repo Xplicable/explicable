@@ -231,7 +231,7 @@ export default function ProfilePage() {
       </div>
 
       <div className="profile-avatar-wrapper">
-        <Avatar src={formData.profile_photo_url} className="profile-avatar" />
+        <Avatar src={formData.profile_photo_url} className="profile-avatar" size={72} alt="User avatar" />
       </div>
 
       <form className="profile-form">
