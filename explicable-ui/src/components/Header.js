@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import languages from "../i18n/languages";
 import { FaSignOutAlt, FaCog, FaHome } from 'react-icons/fa';
 import { getLanguageContext } from "../i18n/getLanguageContext";
-import Avatar from "./Avatar"; // ✅ reusable avatar
-import { resolveProfilePhoto } from "../utils/user"; // ✅ centralized logic
+import Avatar from "./Avatar"; 
+import { resolveProfilePhoto } from '../utils/user.ts';
+
 
 const { lang, t } = getLanguageContext();
 
