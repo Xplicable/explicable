@@ -3,6 +3,8 @@ export const DEFAULT_LANG = "en";
 const translations = {
   en: {
     name: "Name",
+    first_name: "First Name",
+    last_name: "Last Name",
     username: "Username",
     email: "Email",
     mobile_number: "Mobile Number",
@@ -35,6 +37,8 @@ const translations = {
   },
   es: {
     name: "Nombre",
+    first_name: "Nombre",
+    last_name: "Apellido",
     username: "Usuario",
     email: "Correo electrónico",
     mobile_number: "Número de móvil",
@@ -67,6 +71,8 @@ const translations = {
   },
   fr: {
     name: "Nom",
+    first_name: "Prénom",
+    last_name: "Nom de famille",
     username: "Nom d'utilisateur",
     email: "Email",
     mobile_number: "Numéro de téléphone",
@@ -99,6 +105,8 @@ const translations = {
   },
   de: {
     name: "Name",
+    first_name: "Vorname",
+    last_name: "Nachname",
     username: "Benutzername",
     email: "E-Mail",
     mobile_number: "Handynummer",
@@ -131,6 +139,8 @@ const translations = {
   },
   it: {
     name: "Nome",
+    first_name: "Nome",
+    last_name: "Cognome",
     username: "Nome utente",
     email: "Email",
     mobile_number: "Numero di telefono",
@@ -163,6 +173,8 @@ const translations = {
   },
   "zh-CN": {
     name: "姓名",
+    first_name: "名",
+    last_name: "姓",
     username: "用户名",
     email: "电子邮件",
     mobile_number: "手机号码",
@@ -195,6 +207,8 @@ const translations = {
   },
   hi: {
     name: "नाम",
+    first_name: "पहला नाम",
+    last_name: "अंतिम नाम",
     username: "उपयोगकर्ता नाम",
     email: "ईमेल",
     mobile_number: "मोबाइल नंबर",
@@ -227,6 +241,8 @@ const translations = {
   },
   ja: {
     name: "名前",
+    first_name: "名",
+    last_name: "姓",
     username: "ユーザー名",
     email: "メールアドレス",
     mobile_number: "携帯番号",
@@ -259,6 +275,8 @@ const translations = {
   },
   ko: {
     name: "이름",
+    first_name: "이름",
+    last_name: "성",
     username: "사용자 이름",
     email: "이메일",
     mobile_number: "휴대폰 번호",
@@ -291,6 +309,8 @@ const translations = {
   },
   vi: {
     name: "Tên",
+    first_name: "Tên",
+    last_name: "Họ",
     username: "Tên người dùng",
     email: "Email",
     mobile_number: "Số điện thoại",
@@ -323,6 +343,8 @@ const translations = {
   },
   id: {
     name: "Nama",
+    first_name: "Nama depan",
+    last_name: "Nama belakang",
     username: "Nama pengguna",
     email: "Email",
     mobile_number: "Nomor ponsel",
@@ -355,6 +377,8 @@ const translations = {
   },
   "pt-BR": {
     name: "Nome",
+    first_name: "Nome",
+    last_name: "Sobrenome",
     username: "Nome de usuário",
     email: "Email",
     mobile_number: "Número de telefone",
@@ -387,6 +411,8 @@ const translations = {
   },
   ar: {
     name: "الاسم",
+    first_name: "الاسم الأول",
+    last_name: "اسم العائلة",
     username: "اسم المستخدم",
     email: "البريد الإلكتروني",
     mobile_number: "رقم الهاتف المحمول",
