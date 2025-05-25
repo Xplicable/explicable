@@ -236,7 +236,7 @@ export default function ProfilePage() {
 
       <form className="profile-form">
         <div className="form-field">
-          <label htmlFor="first_name">First Name:</label>
+          <label htmlFor="first_name">{t.first_name}:</label>
           <input
             id="first_name"
             type="text"
@@ -248,7 +248,7 @@ export default function ProfilePage() {
         </div>
 
         <div className="form-field">
-          <label htmlFor="last_name">Last Name:</label>
+          <label htmlFor="last_name">{t.last_name}:</label>
           <input
             id="last_name"
             type="text"
