@@ -1,3 +1,12 @@
+/**
+ * Header component with language selection, sign-out menu, and user avatar.
+ *
+ * @component
+ * @param {Object} props
+ * @param {string} [props.lang] - Current language code.
+ * @param {Function} [props.setLang] - Callback to change language.
+ * @returns {JSX.Element}
+ */
 import React, { useState, useMemo } from 'react';
 import './Header.css';
 import { useNavigate } from "react-router-dom";

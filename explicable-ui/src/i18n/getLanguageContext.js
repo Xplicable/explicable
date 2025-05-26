@@ -1,3 +1,10 @@
+/**
+ * Provides the current language context (`lang`) and associated
+ * translation object (`t`) based on the user's language preference.
+ *
+ * Used by components to retrieve translated strings dynamically.
+ */
+
 import translations from "./translations";
 
 export const DEFAULT_LANG = "en";

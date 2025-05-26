@@ -1,3 +1,10 @@
+/**
+ * Timezone metadata used for rendering sorted timezone dropdowns.
+ * Includes IANA codes, human-readable labels, and UTC offsets.
+ *
+ * Used in the Profile form to populate and auto-detect the user's time zone.
+ */
+
 const timezones = [
   {
     value: "Dateline Standard Time",

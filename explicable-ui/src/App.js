@@ -1,4 +1,9 @@
-// src/App.js
+/**
+ * Top-level component that defines the core routes and layout of the app.
+ *
+ * Handles routing between pages and passes the OIDC auth context.
+ */
+
 import React, { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 import Header from "./components/Header";

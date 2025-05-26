@@ -1,3 +1,12 @@
+/**
+ * Static translations object for all supported languages.
+ *
+ * Each language block contains keys used throughout the UI
+ * (e.g., form labels, button text, status messages).
+ *
+ * Also exports the default fallback language.
+ */
+
 export const DEFAULT_LANG = "en";
 
 const translations = {

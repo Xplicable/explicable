@@ -1,15 +1,17 @@
-import React, { useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+/**
+ * LandingPage component.
+ * Displays a call-to-action login button and sets locale for Cognito Hosted UI.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Object} props.auth - OIDC auth object with signinRedirect method.
+ * @returns {JSX.Element}
+ */
+import React, { useMemo } from "react";
 import './LandingPage.css';
 import translations, { DEFAULT_LANG } from "../i18n/translations";
 
-// Cognito-supported locales only
-const supportedLocales = ["en", "es", "fr", "de", "it", "ja", "ko", "pt-BR", "zh-CN"];
-
-const LandingPage = ({ auth }) => {
-  const navigate = useNavigate();
-
-  // Memoize language and translations for efficiency
+export default function LandingPage({ auth }) {
   const lang = useMemo(
     () => localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG,
     []
@@ -19,30 +21,17 @@ const LandingPage = ({ auth }) => {
     [lang]
   );
 
-  // Pick the best locale for Cognito Hosted UI
-  const cognitoLocale = useMemo(
-    () => supportedLocales.includes(lang) ? lang : "en",
-    [lang]
-  );
-
-  useEffect(() => {
-    if (!auth.isLoading && auth.isAuthenticated) {
-      navigate("/app", { replace: true });
-    }
-  }, [auth.isLoading, auth.isAuthenticated, navigate]);
+  const cognitoLocale = ["en", "es", "fr", "de", "it", "ja", "ko", "pt-BR", "zh-CN"].includes(lang)
+    ? lang
+    : "en";
 
   const handleLogin = () => {
-    if (auth?.signinRedirect) {
-      auth.signinRedirect({
-        extraQueryParams: {
+    auth?.signinRedirect({
+      extraQueryParams: {
         lang: cognitoLocale,
-        prompt: "select_account"  // 👈 Forces Google to always show account picker
+        prompt: "select_account",
       }
     });
-    } else {
-      // Could show a toast/snackbar here if you want
-      console.warn("Auth not ready yet.");
-    }
   };
 
   return (
@@ -70,6 +59,4 @@ const LandingPage = ({ auth }) => {
       </button>
     </div>
   );
-};
-
-export default LandingPage;
+}

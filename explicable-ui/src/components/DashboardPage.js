@@ -1,9 +1,18 @@
+/**
+ * DashboardPage component.
+ * Displays a simple welcome message with user's email and a logout button.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Object} props.auth - OIDC auth context containing user info.
+ * @param {Function} props.signOut - Function to sign out the user.
+ * @returns {JSX.Element}
+ */
 import React, { useMemo } from "react";
 import './DashboardPage.css';
 import translations, { DEFAULT_LANG } from "../i18n/translations";
 
 export default function DashboardPage({ auth, signOut }) {
-  // Memoize language selection for better performance
   const lang = useMemo(
     () => localStorage.getItem("lang") || navigator.language.split("-")[0] || DEFAULT_LANG,
     []
@@ -13,7 +22,6 @@ export default function DashboardPage({ auth, signOut }) {
     [lang]
   );
 
-  // Remove code/state params from URL if present
   React.useEffect(() => {
     if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
       const url = new URL(window.location.href);

@@ -1,3 +1,10 @@
+/**
+ * SettingsPage component.
+ * Renders a list of settings options with i18n support.
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 import React, { useMemo } from "react";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
 import "./SettingsPage.css";

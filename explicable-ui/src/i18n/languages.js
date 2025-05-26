@@ -1,3 +1,10 @@
+/**
+ * Supported languages and their metadata for the language selector.
+ *
+ * Includes native labels, flag emoji, and language codes.
+ * Used in dropdowns and i18n-related UI.
+ */
+
 const languages = [
     { code: "en", label: "English", flag: "🇺🇸" },          // ~1.5B total speakers
     { code: "zh-CN", label: "中文", flag: "🇨🇳" },           // Chinese (1.3B+)

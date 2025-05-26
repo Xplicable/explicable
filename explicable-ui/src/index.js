@@ -1,4 +1,10 @@
-// index.js
+/**
+ * Main entry point for the React application.
+ * Boots up the root component and mounts the app to the DOM.
+ *
+ * Wraps the app in routing, context providers, and theme layers.
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./Sitewide.css";

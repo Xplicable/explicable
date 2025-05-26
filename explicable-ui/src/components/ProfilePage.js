@@ -1,3 +1,11 @@
+/**
+ * ProfilePage Component
+ * 
+ * Renders and auto-saves user profile data including name, email, mobile number,
+ * time zone, language, and avatar.
+ *
+ * @component
+ */
 import React, { useState, useEffect, useMemo } from "react";
 import './ProfilePage.css';
 import debounce from "lodash.debounce";
@@ -170,6 +178,11 @@ export default function ProfilePage() {
     };
   }, [debouncedSave]);
 
+  /**
+   * Handles input field changes and auto-save.
+   * 
+   * @param {React.ChangeEvent<HTMLInputElement | HTMLSelectElement>} e
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -191,6 +204,12 @@ export default function ProfilePage() {
     debouncedSave(name, value);
   };
 
+  /**
+   * Validates basic international phone number format.
+   *
+   * @param {string} value
+   * @returns {boolean}
+   */
   const isValidPhoneNumber = (value) => {
     if (!value.trim()) return true; // allow blank
     const regex = /^\+?[\d\s\-().]{7,20}$/;
