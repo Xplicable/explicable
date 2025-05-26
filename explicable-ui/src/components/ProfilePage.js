@@ -6,6 +6,7 @@
  *
  * @component
  */
+
 import React, { useState, useEffect, useMemo } from "react";
 import './ProfilePage.css';
 import debounce from "lodash.debounce";
@@ -14,6 +15,11 @@ import languages from "../i18n/languages";
 import translations, { DEFAULT_LANG } from "../i18n/translations";
 import timezones from "../utils/timezones";
 import Avatar from "./Avatar";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isValidPhoneNumber as validatePhone } from "libphonenumber-js";
+import classNames from "classnames";
+
 
 export default function ProfilePage() {
   const auth = useAuth();
@@ -193,14 +199,16 @@ export default function ProfilePage() {
 
     // Mobile validation
     if (name === "mobile_number") {
-      if (!isValidPhoneNumber(value)) {
+      if (name === "mobile_number" && !value) {
+        setMobileError("");
+        return;
+      } else if (!isValidPhoneNumber(value)) {
         setMobileError(t.invalid_phone);
         return; // Do not autosave if invalid
       } else {
         setMobileError("");
       }
     }
-
     debouncedSave(name, value);
   };
 
@@ -211,9 +219,12 @@ export default function ProfilePage() {
    * @returns {boolean}
    */
   const isValidPhoneNumber = (value) => {
-    if (!value.trim()) return true; // allow blank
-    const regex = /^\+?[\d\s\-().]{7,20}$/;
-    return regex.test(value);
+    if (!value || typeof value !== "string") return false;
+    try {
+      return validatePhone(value);
+    } catch {
+      return false;
+    }
   };
 
   const handleBackClick = async () => {
@@ -304,13 +315,19 @@ export default function ProfilePage() {
 
         <div className="form-field">
           <label htmlFor="mobile_number">{t.mobile_number}:</label>
-          <input
+          <PhoneInput
+            international
+            defaultCountry="US"
             id="mobile_number"
-            type="text"
             name="mobile_number"
             value={formData.mobile_number}
-            onChange={handleChange}
+            onChange={(value) =>
+              handleChange({ target: { name: "mobile_number", value } })
+            }
             disabled={saveStatus === "saving"}
+            className={classNames("phone-input", {
+              "input-error": !!mobileError,
+            })}
           />
           {mobileError && (
             <div className="form-error">
